@@ -1,48 +1,54 @@
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
+import ScrollToTop from "./scroll-to-top";
 
 export default function Footer() {
   return (
-    <footer className="bg-(--color-custom-dark-blue) text-white pt-24 -mt-12 rounded-t-[40px]">
+    <footer className="bg-[#0A2558] text-white pt-20  rounded-t-[40px] relative">
       <div className="container mx-auto px-6">
-        <div className="bg-white text-gray-900 rounded-3xl p-8 md:p-12 -mt-36 mb-16 shadow-xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="bg-[#F0F5FF] text-gray-900 rounded-2xl p-8 md:p-12  mb-20 shadow-xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold leading-tight text-balance">
+              <h3 className="text-3xl md:text-4xl font-bold leading-tight">
                 Want product news and updates? <br />
                 Sign up for our newsletter.
               </h3>
-              <p className="mt-2 text-gray-500">
+              <p className="mt-4 text-gray-600">
                 We care about your data. Read our{" "}
-                <Link href="#" className="text-(--color-custom-blue) underline">
+                <Link href="#" className="text-blue-600 underline">
                   Privacy Policy
                 </Link>
                 .
               </p>
             </div>
-            <div>
+            <div className="space-y-4">
+              <p className="font-semibold text-gray-800">Sign up today</p>
               <form className="space-y-4">
-                <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+                <div className="flex items-center bg-white rounded-full p-1 border border-gray-200">
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="flex-grow w-full px-4 py-3 rounded-full border border-gray-300 focus:ring-2 focus:ring-(--color-custom-blue) focus:outline-none"
+                    className="flex-grow w-full px-4 py-2 rounded-full focus:outline-none"
                   />
                   <button
                     type="submit"
-                    className="bg-(--color-custom-blue) text-white font-semibold px-8 py-3 rounded-full hover:bg-blue-700 transition"
+                    className="bg-blue-600 text-white font-semibold px-6 py-2 rounded-full hover:bg-blue-700 transition"
                   >
                     Subscribe
                   </button>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center mt-2">
                   <input
                     id="terms"
                     type="checkbox"
-                    className="h-4 w-4 rounded border-gray-300 text-(--color-custom-blue) focus:ring-(--color-custom-blue)"
+                    className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-600"
                   />
-                  <label htmlFor="terms" className="ml-2 block text-sm text-gray-600">
+                  <label
+                    htmlFor="terms"
+                    className="ml-2 block text-sm text-gray-600"
+                  >
                     I agree to{" "}
-                    <Link href="#" className="text-(--color-custom-blue) underline">
+                    <Link href="#" className="text-blue-600 underline">
                       Terms & Services
                     </Link>
                   </label>
@@ -52,40 +58,62 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12">
           <div className="lg:col-span-2">
-            <div className="text-white text-2xl font-bold">Approved Experiences</div>
-            <p className="mt-4 text-gray-400">Join our community for exclusive travel experiences.</p>
-            <div className="flex space-x-4 mt-6">
+            <Link href="/">
+              <Image
+                src="/Brand.png"
+                alt="Approved Experiences Logo"
+                width={180}
+                height={45}
+              />
+            </Link>
+            <div className="flex space-x-3 mt-6">
               <Link
                 href="#"
-                className="w-8 h-8 flex items-center justify-center border border-gray-600 rounded-full text-gray-400 hover:text-white hover:border-white transition"
+                className="w-9 h-9 flex items-center justify-center border border-gray-700 rounded-md text-gray-400 hover:text-white hover:border-white transition"
               >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                 </svg>
               </Link>
               <Link
                 href="#"
-                className="w-8 h-8 flex items-center justify-center border border-gray-600 rounded-full text-gray-400 hover:text-white hover:border-white transition"
+                className="w-9 h-9 flex items-center justify-center border border-gray-700 rounded-md text-gray-400 hover:text-white hover:border-white transition"
               >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                 </svg>
               </Link>
               <Link
                 href="#"
-                className="w-8 h-8 flex items-center justify-center border border-gray-600 rounded-full text-gray-400 hover:text-white hover:border-white transition"
+                className="w-9 h-9 flex items-center justify-center border border-gray-700 rounded-md text-gray-400 hover:text-white hover:border-white transition"
               >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
+                <svg
+                  className="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
                   <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z" />
                 </svg>
               </Link>
               <Link
                 href="#"
-                className="w-8 h-8 flex items-center justify-center border border-gray-600 rounded-full text-gray-400 hover:text-white hover:border-white transition"
+                className="w-9 h-9 flex items-center justify-center border border-gray-700 rounded-md text-gray-400 hover:text-white hover:border-white transition"
               >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.148-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z" />
                 </svg>
               </Link>
@@ -136,12 +164,18 @@ export default function Footer() {
             <ul className="mt-4 space-y-3 text-gray-400">
               <li>Miami Florida</li>
               <li>
-                <Link href="mailto:support@approvedexperiences.com" className="hover:text-white transition">
+                <Link
+                  href="mailto:support@approvedexperiences.com"
+                  className="hover:text-white transition"
+                >
                   support@approvedexperiences.com
                 </Link>
               </li>
               <li>
-                <Link href="tel:+18666781411" className="hover:text-white transition">
+                <Link
+                  href="tel:+18666781411"
+                  className="hover:text-white transition"
+                >
                   +1 (866) 678-1411
                 </Link>
               </li>
@@ -149,10 +183,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 py-6 border-t border-gray-700 text-center text-gray-500 text-sm">
-          &copy; 2025 Approved Experiences, Inc. All rights reserved.
+        <div className="py-8 border-t border-gray-800 text-center">
+          <p className="text-gray-500 text-sm">
+            &copy; 2025 Approved Experiences, Inc. All rights reserved.
+          </p>
         </div>
       </div>
+      <ScrollToTop />
     </footer>
-  )
+  );
 }
