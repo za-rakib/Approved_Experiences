@@ -159,7 +159,7 @@ export default function PlatformSection() {
         </div>
 
         {/* Slider */}
-        <div className="relative mb-4">
+        <div className="relative mb-4 overflow-hidden">
           <div
             className="flex transition-transform duration-500 gap-4"
             style={{
@@ -169,7 +169,7 @@ export default function PlatformSection() {
             {cards.map((card, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 bg-[#F2F6FC] rounded-2xl shadow-md overflow-hidden"
+                className="flex-shrink-0 bg-[#F2F6FC] rounded-2xl"
                 style={{ width: `${cardWidthPercentage}%` }}
               >
                 <Image
