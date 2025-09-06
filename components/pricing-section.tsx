@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from "next/link";
 
 export default function PricingSection() {
   return (
@@ -8,8 +8,9 @@ export default function PricingSection() {
           Pricing <span className="text-(--color-custom-purple)">Plans</span>
         </h2>
         <p className="mt-4 max-w-3xl mx-auto text-gray-600 text-lg text-pretty">
-          Unlock exclusive access to countless hotels, vacation homes, car rental locations, and flights with our travel
-          membership—crafted for ultimate convenience and style.
+          Unlock exclusive access to countless hotels, vacation homes, car
+          rental locations, and flights with our travel membership—crafted for
+          ultimate convenience and style.
         </p>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto text-left">
@@ -18,21 +19,31 @@ export default function PricingSection() {
             <h3 className="text-2xl font-bold">Gold</h3>
             <p className="text-gray-500 mt-1">Unlock benefits that include</p>
             <div className="my-6">
-              <span className="text-5xl font-extrabold text-gray-900">$699</span>
-              <span className="text-xl font-bold text-gray-400 line-through ml-2">$799</span>
+              <span className="text-5xl font-extrabold text-gray-900">
+                $699
+              </span>
+              <span className="text-xl font-bold text-gray-400 line-through ml-2">
+                $799
+              </span>
               <span className="text-gray-500">/ year</span>
             </div>
             <Link
-              href="#"
+              href="/checkout"
               className="w-full text-center border border-gray-300 text-gray-800 font-semibold py-3 rounded-full hover:bg-gray-100 transition"
             >
               Get Started
             </Link>
             <div className="mt-8 space-y-4 flex-grow">
-              <p className="font-semibold text-gray-900">Unlock benefits that include</p>
+              <p className="font-semibold text-gray-900">
+                Unlock benefits that include
+              </p>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 text-(--color-custom-blue) mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-5 h-5 text-(--color-custom-blue) mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path
                       fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -42,7 +53,11 @@ export default function PricingSection() {
                   Hotels
                 </li>
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 text-(--color-custom-blue) mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-5 h-5 text-(--color-custom-blue) mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path
                       fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -52,7 +67,11 @@ export default function PricingSection() {
                   Cruises
                 </li>
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 text-(--color-custom-blue) mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-5 h-5 text-(--color-custom-blue) mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path
                       fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -68,23 +87,33 @@ export default function PricingSection() {
           {/* Platinum Plan */}
           <div className="bg-(--color-custom-blue) text-white p-8 rounded-3xl shadow-2xl shadow-blue-200 flex flex-col transform md:scale-105">
             <h3 className="text-2xl font-bold">Platinum</h3>
-            <p className="text-blue-200 mt-1">Premium luxury travel experience with the best value.</p>
+            <p className="text-blue-200 mt-1">
+              Premium luxury travel experience with the best value.
+            </p>
             <div className="my-6">
               <span className="text-5xl font-extrabold">$999</span>
-              <span className="text-xl font-bold text-blue-300 line-through ml-2">$1,199</span>
+              <span className="text-xl font-bold text-blue-300 line-through ml-2">
+                $1,199
+              </span>
               <span className="text-blue-200">/ year</span>
             </div>
             <Link
-              href="#"
+              href="/checkout"
               className="w-full text-center bg-white text-(--color-custom-blue) font-semibold py-3 rounded-full hover:bg-gray-100 transition"
             >
               Get Started
             </Link>
             <div className="mt-8 space-y-4 flex-grow">
-              <p className="font-semibold text-white">Unlock benefits that include</p>
+              <p className="font-semibold text-white">
+                Unlock benefits that include
+              </p>
               <ul className="space-y-3 text-blue-200">
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 text-white mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-5 h-5 text-white mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path
                       fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -94,7 +123,11 @@ export default function PricingSection() {
                   Hotels
                 </li>
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 text-white mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-5 h-5 text-white mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path
                       fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -104,7 +137,11 @@ export default function PricingSection() {
                   Cruises
                 </li>
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 text-white mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-5 h-5 text-white mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path
                       fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -114,7 +151,11 @@ export default function PricingSection() {
                   Car Rentals
                 </li>
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 text-white mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-5 h-5 text-white mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path
                       fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -124,7 +165,11 @@ export default function PricingSection() {
                   Villas & Luxury Homes
                 </li>
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 text-white mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-5 h-5 text-white mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path
                       fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -155,23 +200,35 @@ export default function PricingSection() {
           {/* Diamond Plan */}
           <div className="bg-(--color-light-blue-bg) p-8 rounded-3xl border border-gray-200 flex flex-col md:col-span-2 lg:col-span-1">
             <h3 className="text-2xl font-bold">Diamond</h3>
-            <p className="text-gray-500 mt-1">Ultimate luxury travel experience with exclusive benefits.</p>
+            <p className="text-gray-500 mt-1">
+              Ultimate luxury travel experience with exclusive benefits.
+            </p>
             <div className="my-6">
-              <span className="text-5xl font-extrabold text-gray-900">$1,499</span>
-              <span className="text-xl font-bold text-gray-400 line-through ml-2">$1699</span>
+              <span className="text-5xl font-extrabold text-gray-900">
+                $1,499
+              </span>
+              <span className="text-xl font-bold text-gray-400 line-through ml-2">
+                $1699
+              </span>
               <span className="text-gray-500">/ year</span>
             </div>
             <Link
-              href="#"
+              href="/checkout"
               className="w-full text-center border border-gray-300 text-gray-800 font-semibold py-3 rounded-full hover:bg-gray-100 transition"
             >
               Get Started
             </Link>
             <div className="mt-8 space-y-4 flex-grow">
-              <p className="font-semibold text-gray-900">Unlock benefits that include</p>
+              <p className="font-semibold text-gray-900">
+                Unlock benefits that include
+              </p>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 text-(--color-custom-blue) mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-5 h-5 text-(--color-custom-blue) mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path
                       fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -181,7 +238,11 @@ export default function PricingSection() {
                   Hotels
                 </li>
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 text-(--color-custom-blue) mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-5 h-5 text-(--color-custom-blue) mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path
                       fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -191,7 +252,11 @@ export default function PricingSection() {
                   Cruises
                 </li>
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 text-(--color-custom-blue) mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-5 h-5 text-(--color-custom-blue) mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path
                       fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -201,7 +266,11 @@ export default function PricingSection() {
                   Car Rentals
                 </li>
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 text-(--color-custom-blue) mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-5 h-5 text-(--color-custom-blue) mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path
                       fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -211,7 +280,11 @@ export default function PricingSection() {
                   Flights
                 </li>
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 text-(--color-custom-blue) mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-5 h-5 text-(--color-custom-blue) mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path
                       fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -221,7 +294,11 @@ export default function PricingSection() {
                   Villas & Luxury Homes
                 </li>
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 text-(--color-custom-blue) mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-5 h-5 text-(--color-custom-blue) mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path
                       fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -231,7 +308,11 @@ export default function PricingSection() {
                   Reward Credits
                 </li>
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 text-(--color-custom-blue) mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-5 h-5 text-(--color-custom-blue) mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path
                       fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -298,5 +379,5 @@ export default function PricingSection() {
         </Link>
       </div>
     </section>
-  )
+  );
 }

@@ -59,16 +59,16 @@ export default function Header() {
           {/* Action Buttons */}
           <div className="flex items-center space-x-4">
             <Link
-              href="#"
+              href="/login"
               className="text-sm font-medium text-black hover:text-gray-700"
             >
               Log In
             </Link>
             <Link
-              href="/checkout"
+              href="#"
               className="text-sm font-medium text-white bg-gray-800 rounded-full px-5 py-2.5 hover:bg-gray-900 shadow"
             >
-              Get Started
+              Contact Us
             </Link>
           </div>
         </nav>
