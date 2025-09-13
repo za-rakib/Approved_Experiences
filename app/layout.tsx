@@ -2,6 +2,7 @@ import type React from "react"
 import { Inter, Manrope } from "next/font/google"
 import "./globals.css"
 import Script from "next/script";
+import ReduxProvider from "@/redux/providers/reduxProvider";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -30,7 +31,8 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <ReduxProvider>{children}</ReduxProvider></body>
     </html>
   )
 }
