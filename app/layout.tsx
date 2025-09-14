@@ -2,7 +2,8 @@ import type React from "react"
 import { Inter, Manrope } from "next/font/google"
 import "./globals.css"
 import Script from "next/script";
-import ReduxProvider from "@/redux/providers/reduxProvider";
+import StoreProvider from "@/app/reduxProvider";
+
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -20,6 +21,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
   return (
     <html lang="en" className={`${inter.variable} ${manrope.variable} antialiased`}>
       <head>
@@ -32,7 +34,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <ReduxProvider>{children}</ReduxProvider></body>
+        <StoreProvider>{children}</StoreProvider> </body>
     </html>
   )
 }
