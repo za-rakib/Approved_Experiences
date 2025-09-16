@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useSelector } from "react-redux";
 
 export default function Header() {
+  const token = useSelector((state: any) => state.auth.token);
   return (
     <header className="w-full bg-white  py-4">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,7 +64,7 @@ export default function Header() {
               href="/login"
               className="text-sm font-medium text-black hover:text-gray-700"
             >
-              Log In
+              {token ?'Logout':'Log In'}
             </Link>
             <Link
               href="#"
