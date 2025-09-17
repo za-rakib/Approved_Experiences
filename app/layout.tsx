@@ -1,8 +1,11 @@
+
 import type React from "react"
 import { Inter, Manrope } from "next/font/google"
 import "./globals.css"
 import Script from "next/script";
 import StoreProvider from "@/app/reduxProvider";
+import StripeProvider from "@/lib/StripeProvider";
+
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,7 +37,11 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <StoreProvider>{children}</StoreProvider> </body>
+        <StoreProvider>
+          <StripeProvider>
+          {children}
+          </StripeProvider>
+          </StoreProvider> </body>
     </html>
   )
 }

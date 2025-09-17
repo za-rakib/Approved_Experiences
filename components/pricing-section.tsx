@@ -183,7 +183,7 @@ export default function PricingSection(data: any) {
                   <span className="text-gray-500">/ year</span>
                 </div>
                 <Link
-                  href="/checkout"
+                  href={`/checkout/${item.id}`}
                   className="w-full text-center border border-gray-300 text-gray-800 font-semibold py-3 rounded-full hover:bg-gray-100 transition"
                 >
                   Get Started
@@ -247,7 +247,7 @@ export default function PricingSection(data: any) {
                   <span className="text-blue-200">/ year</span>
                 </div>
                 <Link
-                  href="/checkout/"
+                 href={`/checkout/${item.id}`}
                   className="w-full text-center bg-white text-(--color-custom-blue) font-semibold py-3 rounded-full hover:bg-gray-100 transition"
                 >
                   Get Started

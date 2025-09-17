@@ -398,7 +398,7 @@ export default function PricingPlansSection() {
       <div className="grid md:grid-cols-3 gap-8 mt-8">
         {plans.map((plan:any, index:any) => (
           <div key={index} className="text-center">
-            <Button variant="outline" className="w-full bg-transparent">
+            <Button onClick={()=> console.log("first")} variant="outline" className="w-full bg-transparent">
               Get Started
             </Button>
           </div>
