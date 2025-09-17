@@ -14,7 +14,7 @@ import ScrollToTop from "@/components/scroll-to-top";
 import StatsSection from "@/components/stats-section";
 import TrustedSection from "@/components/trusted-section";
 import { useSelector } from "react-redux";
-import { useGetMemberProfileQuery } from '../redux/services/api';
+import { useGetMemberProfileQuery, useGetMembershipPlansQuery } from '../redux/services/api';
 export default function Home() {
 
 
@@ -22,8 +22,14 @@ export default function Home() {
      const { data, error, isLoading, isSuccess, isError, refetch } = useGetMemberProfileQuery(undefined, {
     skip: !token, // Skip the query if no token is available
   });
-  console.log("auth state in home page:", data);
- 
+  console.log("auth state in home page:", data,token);
+  const {data:membershipPlans, 
+    error:membershipError, 
+    isLoading:membershipIsLoading, 
+    isSuccess:membershipIsError, 
+    isError:membershipisError, 
+    refetch:membershipRefetch} = useGetMembershipPlansQuery(undefined);
+  console.log("membership plans:", membershipPlans);
   return (
     <div className="bg-white">
       {/* Header and Hero are siblings */}
@@ -45,7 +51,7 @@ export default function Home() {
 
       {/* Bottom section content */}
       <ClientsSection />
-      <PricingSection />
+      <PricingSection data={membershipPlans?.data}/>
       <ContactSection />
 
       <Footer />

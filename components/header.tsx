@@ -1,8 +1,13 @@
+'use client';
 import Image from "next/image";
 import Link from "next/link";
-import { useSelector } from "react-redux";
+import { useSelector , useDispatch} from "react-redux";
 
 export default function Header() {
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch({ type: 'auth/logout' });
+  }
   const token = useSelector((state: any) => state.auth.token);
   return (
     <header className="w-full bg-white  py-4">
@@ -60,12 +65,19 @@ export default function Header() {
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-4">
-            <Link
+            {!token &&<Link
               href="/login"
               className="text-sm font-medium text-black hover:text-gray-700"
             >
-              {token ?'Logout':'Log In'}
-            </Link>
+              Log In
+            </Link>}
+             {token&&  <Link
+              href="/login"
+              className="text-sm font-medium text-black hover:text-gray-700"
+              onClick={handleLogout}
+            >
+              Logout
+            </Link>}
             <Link
               href="#"
               className="text-sm font-medium text-white bg-gray-800 rounded-full px-5 py-2.5 hover:bg-gray-900 shadow"

@@ -53,6 +53,12 @@ export const api = createApi({
       query: () => '/api/members/profile',
       providesTags: ['Member'],
     }),
+
+    getMembershipPlans: builder.query({
+      query: () => 'api/membership/tiers/',
+      providesTags: ['Member'],
+    }),
+
   }),
 })
 
@@ -61,4 +67,5 @@ export const {
   useRegisterMutation,
   useCreateMemberFromPaymentMutation,
   useGetMemberProfileQuery,
+  useGetMembershipPlansQuery,
 } = api
