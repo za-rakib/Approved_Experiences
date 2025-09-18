@@ -290,21 +290,21 @@ export default function PricingPlansSection() {
   }
 
   const router = useRouter()
-
+console.log("membership plans in pricing section:", membershipPlans.data[0].id);
   // Transform API data into UI-friendly format
   const plans =
     membershipPlans?.data?.map((plan: any) => ({
-      name: plan.name,
-      id:plan.id,
-      price: `$${plan.discountedPrice}`,
-      originalPrice: `$${plan.regularPrice}`,
-      period: `per ${plan.billingPeriod}`,
-      description: plan.description,
-      popular: plan.category === "Premium", // Example: mark Platinum as popular
+      name: plan?.name,
+      id:plan?.id,
+      price: `$${plan?.discountedPrice}`,
+      originalPrice: `$${plan?.regularPrice}`,
+      period: `per ${plan?.billingPeriod}`,
+      description: plan?.description,
+      popular: plan?.category === "Premium", // Example: mark Platinum as popular
       features: {
-        Pricing: `$${plan.discountedPrice}/${plan.billingPeriod}`,
+        Pricing: `$${plan?.discountedPrice}/${plan?.billingPeriod}`,
         ...Object.fromEntries(
-          plan.features.map((f: any) => [f.name, f.isIncluded ? "✓" : "✗"])
+          plan?.features.map((f: any) => [f.name, f.isIncluded ? "✓" : "✗"])
         ),
       },
     })) ?? []
@@ -334,26 +334,26 @@ export default function PricingPlansSection() {
             }`}
           >
             <h3 className="text-2xl font-bold">{plan.name}</h3>
-            <p className={plan.popular ? "text-blue-200 mt-1" : "text-gray-500 mt-1"}>
-              {plan.description}
+            <p className={plan?.popular ? "text-blue-200 mt-1" : "text-gray-500 mt-1"}>
+              {plan?.description}
             </p>
             <div className="my-6">
               <span className="text-5xl font-extrabold">
-                {plan.price}
+                {plan?.price}
               </span>
               <span
                 className={`text-xl font-bold ml-2 line-through ${
-                  plan.popular ? "text-blue-300" : "text-gray-400"
+                  plan?.popular ? "text-blue-300" : "text-gray-400"
                 }`}
               >
-                {plan.originalPrice}
+                {plan?.originalPrice}
               </span>
-              <span className={plan.popular ? "text-blue-200" : "text-gray-500"}>
-                / {plan.period}
+              <span className={plan?.popular ? "text-blue-200" : "text-gray-500"}>
+                / {plan?.period}
               </span>
             </div>
             <Link
-              href="/checkout"
+              href={`/checkout/${String(plan.id)}`} 
               className={`w-full text-center font-semibold py-3 rounded-full hover:bg-gray-100 transition ${
                 plan.popular
                   ? "bg-white text-(--color-custom-blue)"
@@ -403,7 +403,7 @@ export default function PricingPlansSection() {
       <div className="grid md:grid-cols-3 gap-8 mt-8">
         {plans.map((plan:any, index:any) => (
           <div key={index} className="text-center">
-            <Button onClick={()=> router.push(`/checkout/${plan.id}`)} variant="outline" className="w-full bg-transparent">
+            <Button onClick={()=> router.push(`/checkout/${String(plan.id)}`)} variant="outline" className="w-full bg-transparent">
               Get Started
             </Button>
           </div>

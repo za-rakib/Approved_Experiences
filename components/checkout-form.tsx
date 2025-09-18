@@ -600,7 +600,7 @@ import {
   useCreateOrderMutation,
   useCreateMemberFromPaymentMutation,
 } from "@/redux/services/api"
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
+import { CardElement, useStripe, useElements, PaymentElement } from "@stripe/react-stripe-js"
 import PaymentSuccess from "./payment-complete-modal"
 import sha1 from "sha1"
 
@@ -679,7 +679,7 @@ const [cityValue, setCityValue] = useState("san-diego")
 
     // Validate mandatory fields
     if (!firstName || !lastName || !email || !address || !state || !city || !zip || !phone) {
-      alert("Please fill all required fields."+`${firstName }${lastName}  ${email} ${address} ${state} ${city}  ${zip} ${phone}}`,)
+      alert("Please fill all required fields.",)
       return
     }
     const res = await fetch("http://localhost:3027/api/payments/create-intent", {
@@ -895,7 +895,7 @@ const customerEmailSHA1 = sha1(email)
               <div className="flex items-center space-x-2">
                 <Checkbox
                   id="create-account"
-                  checked={createAccount}
+                  checked={!tokenRef.current ?createAccount:false}
                   onCheckedChange={(val) => setCreateAccount(!!val)}
                 />
                 <Label htmlFor="create-account">Create an account for later use</Label>
@@ -932,6 +932,39 @@ const customerEmailSHA1 = sha1(email)
                   </div>
                 )}
               </div>
+               {/* <div>
+          <div className="border p-4 rounded-lg mb-4">
+            <div>
+              <input
+                type="radio"
+                id="credit-card"
+                name="payment"
+                value="credit-card"
+                checked={paymentMethod === "credit-card"}
+                onChange={() => setPaymentMethod("credit-card")}
+              />
+              <label htmlFor="credit-card" className="ml-2">
+                Credit Card
+              </label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="paypal"
+                name="payment"
+                value="paypal"
+                checked={paymentMethod === "paypal"}
+                onChange={() => setPaymentMethod("paypal")}
+              />
+              <label htmlFor="paypal" className="ml-2">
+                PayPal
+              </label>
+            </div>
+          </div>
+
+          {paymentMethod === "credit-card" && <CardElement options={{ hidePostalCode: true }} />}
+          {paymentMethod === "paypal" && <PaymentElement />}
+        </div> */}
               <div className="flex items-center space-x-2 text-sm text-gray-600">
                 <Shield className="w-4 h-4" />
                 <span>We protect your payment information using encryption.</span>

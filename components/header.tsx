@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useSelector , useDispatch} from "react-redux";
 import { useState, useEffect } from "react";
-
+import { logout } from "@/redux/slices/authSlice";
 export default function Header() {
   const dispatch = useDispatch();
   const token = useSelector((state: any) => state.auth.token);
@@ -15,7 +15,7 @@ export default function Header() {
   }, []);
 
   const handleLogout = () => {
-    dispatch({ type: 'auth/logout' });
+    dispatch(logout());
   }
 
   return (
