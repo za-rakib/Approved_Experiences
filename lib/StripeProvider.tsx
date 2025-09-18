@@ -13,7 +13,7 @@ import { ReactNode } from "react"
 // Please see below for the secret key:
 
 // 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
-const stripePromise = loadStripe("pk_live_51OS0xwKIlFfXsCZe7vRqoMUnQCMFPg7xnQAjupDZss0ZCnFUl7eNFDpumiEosui0TZiVOx4fl6F3n3wlEephjqqW00rQzvDGmf")
+const stripePromise = loadStripe("pk_test_51OS0xwKIlFfXsCZeHa9JW0Mq4cuRNFlycfBlqljqhgjqsla3AKTHwrBuLBElsXqbRz60NtixW91LNALL1Hjz5gSy00HKqUnQdS")
 
 export default function StripeProvider({ children }: { children: ReactNode }) {
   return <Elements stripe={stripePromise}>{children}</Elements>

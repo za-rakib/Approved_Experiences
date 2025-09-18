@@ -1,4 +1,6 @@
 "use client";
+declare const ire: any;
+
 import ClientsSection from "@/components/clients-section";
 import ContactSection from "@/components/contact-section";
 import FeaturedSection from "@/components/featured-section";
@@ -15,12 +17,16 @@ import StatsSection from "@/components/stats-section";
 import TrustedSection from "@/components/trusted-section";
 import { useSelector } from "react-redux";
 import { useGetMemberProfileQuery, useGetMembershipPlansQuery } from '../redux/services/api';
+import sha1 from 'sha1'
+import { useEffect, useRef } from "react";
 export default function Home() {
 
 
   const token = useSelector((state: any) => state.auth.token);
+    const tokenRef = useRef(token);
+  tokenRef.current = token; // keep latest token
      const { data, error, isLoading, isSuccess, isError, refetch } = useGetMemberProfileQuery(undefined, {
-    skip: !token, // Skip the query if no token is available
+    skip: !tokenRef, // Skip the query if no token is available
   });
   console.log("auth state in home page:", data,token);
   const {data:membershipPlans, 
@@ -30,6 +36,31 @@ export default function Home() {
     isError:membershipisError, 
     refetch:membershipRefetch} = useGetMembershipPlansQuery(undefined);
   console.log("membership plans:", membershipPlans);
+  // const { data: profile , error, isLoading, isSuccess, isError, refetch} = useGetMemberProfileQuery(undefined, { skip: !token })
+
+  useEffect(() => {
+    if (!tokenRef.current) return;
+
+    let isMounted = true;
+
+    refetch().then((res) => {
+      if (!isMounted) return;
+      const profile = res?.data;
+
+      if (typeof ire !== "undefined" && profile?.user?.email) {
+        const customerEmailSHA1 = sha1(profile.user.email);
+        ire("identify", {
+          customerId: tokenRef.current || profile.user.id,
+          customerEmail: customerEmailSHA1,
+          customProfileId: tokenRef.current,
+        });
+      }
+    });
+
+    return () => {
+      isMounted = false; // cancel if unmounted
+    };
+  }, []); 
   return (
     <div className="bg-white">
       {/* Header and Hero are siblings */}

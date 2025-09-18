@@ -62,7 +62,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/">
               <Image
-                src="/Brand.png"
+                src="/Logowhite.png"
                 alt="Approved Experiences Logo"
                 width={180}
                 height={45}

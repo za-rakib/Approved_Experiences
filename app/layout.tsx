@@ -1,34 +1,17 @@
-
-import type React from "react"
-import { Inter, Manrope } from "next/font/google"
-import "./globals.css"
+import type React from "react";
+import { Inter, Manrope } from "next/font/google";
+import "./globals.css";
 import Script from "next/script";
-import StoreProvider from "@/app/reduxProvider";
-import StripeProvider from "@/lib/StripeProvider";
+import ClientWrapper from "./ClientWrapper";
 
+const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
+const manrope = Manrope({ subsets: ["latin"], display: "swap", variable: "--font-manrope" });
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-})
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-manrope",
-})
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${manrope.variable} antialiased`}>
       <head>
-         <Script
+        <Script
           id="impact-universal-tag"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
@@ -37,15 +20,10 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <StoreProvider>
-          <StripeProvider>
-          {children}
-          </StripeProvider>
-          </StoreProvider> </body>
+        <ClientWrapper>{children}</ClientWrapper>
+      </body>
     </html>
-  )
+  );
 }
 
-export const metadata = {
-      generator: 'v0.app'
-    };
+export const metadata = { generator: "v0.app" };

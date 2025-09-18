@@ -248,6 +248,8 @@ import { Button } from "@/components/ui/button"
 import { useGetMembershipPlansQuery } from "@/redux/services/api"
 import { Check } from "lucide-react"
 import Link from "next/link"
+import { useRouter } from "next/navigation";
+
 
 const featureCategories = [
   "Pricing",
@@ -287,10 +289,13 @@ export default function PricingPlansSection() {
     return <p className="text-center text-red-500">Failed to load plans</p>
   }
 
+  const router = useRouter()
+
   // Transform API data into UI-friendly format
   const plans =
     membershipPlans?.data?.map((plan: any) => ({
       name: plan.name,
+      id:plan.id,
       price: `$${plan.discountedPrice}`,
       originalPrice: `$${plan.regularPrice}`,
       period: `per ${plan.billingPeriod}`,
@@ -398,7 +403,7 @@ export default function PricingPlansSection() {
       <div className="grid md:grid-cols-3 gap-8 mt-8">
         {plans.map((plan:any, index:any) => (
           <div key={index} className="text-center">
-            <Button onClick={()=> console.log("first")} variant="outline" className="w-full bg-transparent">
+            <Button onClick={()=> router.push(`/checkout/${plan.id}`)} variant="outline" className="w-full bg-transparent">
               Get Started
             </Button>
           </div>

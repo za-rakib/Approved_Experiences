@@ -25,7 +25,7 @@ const baseQuery = fetchBaseQuery({
 export const api = createApi({
   reducerPath: 'api',
   baseQuery,
-  tagTypes: ['Member'],
+  tagTypes: ['Member','Order'],
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (credentials) => ({
@@ -49,6 +49,14 @@ export const api = createApi({
       }),
       invalidatesTags: ['Member'],
     }),
+     createOrder: builder.mutation({
+      query: (orderData) => ({
+        url: '/api/orders/',
+        method: 'POST',
+        body: orderData,
+      }),
+      invalidatesTags: ['Order'],
+    }),
     getMemberProfile: builder.query({
       query: () => '/api/members/profile',
       providesTags: ['Member'],
@@ -66,6 +74,7 @@ export const {
   useLoginMutation,
   useRegisterMutation,
   useCreateMemberFromPaymentMutation,
+  useCreateOrderMutation,
   useGetMemberProfileQuery,
   useGetMembershipPlansQuery,
 } = api
