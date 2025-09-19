@@ -1,10 +1,8 @@
-
-
-'use client';
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { useAuthApi } from "../../redux/hooks/useApi";
 
 export default function LoginPage() {
@@ -12,7 +10,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const router = useRouter();
   const { login } = useAuthApi();
 
@@ -44,17 +42,32 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex h-screen">
-      <div className="w-1/2 h-full">
+    <div className="relative min-h-screen md:flex">
+      {/* Background image for mobile, hidden on md+ */}
+      <div className="absolute inset-0 md:hidden">
+        <Image
+          src="/loginGirl.jpg"
+          alt="background"
+          fill
+          className="object-cover"
+          quality={100}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-transparent" />
+      </div>
+
+      {/* Image for desktop, hidden on mobile */}
+      <div className="hidden w-1/2 md:block">
         <Image
           src="/loginGirl.jpg"
           alt="Woman enjoying travel"
           width={800}
           height={1200}
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
         />
       </div>
-      <div className="w-1/2 flex items-center justify-center bg-white p-12">
+
+      {/* Form section */}
+      <div className="relative z-10 flex w-full items-center justify-center p-6 md:w-1/2 md:p-12">
         <div className="w-full max-w-md">
           <Link
             href="/"
@@ -68,20 +81,20 @@ export default function LoginPage() {
           <p className="mt-4 text-gray-500">
             Your exclusive travel and lifestyle benefits are within your reach.
           </p>
-          
+
           {error && (
-            <div className="mt-4 p-3 bg-red-100 text-red-700 rounded-md">
+            <div className="mt-4 rounded-md bg-red-100 p-3 text-red-700">
               {error}
             </div>
           )}
-          
+
           <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="email" className="sr-only">
                 Email address
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                   <svg
                     className="h-5 w-5 text-gray-400"
                     xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +115,7 @@ export default function LoginPage() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="appearance-none rounded-full relative block w-full pl-10 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  className="relative block w-full appearance-none rounded-full border border-gray-300 px-3 py-2 pl-10 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -114,7 +127,7 @@ export default function LoginPage() {
                 Password
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                   <svg
                     className="h-5 w-5 text-gray-400"
                     xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +148,7 @@ export default function LoginPage() {
                   type="password"
                   autoComplete="current-password"
                   required
-                  className="appearance-none rounded-full relative block w-full pl-10 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  className="relative block w-full appearance-none rounded-full border border-gray-300 px-3 py-2 pl-10 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                   placeholder="Enter your Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -146,17 +159,20 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="group relative flex w-full justify-center rounded-full border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {isLoading ? "Signing In..." : "Sign In"}
               </button>
             </div>
           </form>
-          
+
           <div className="mt-6 text-center">
             <p className="text-gray-600">
               Don't have an account?{" "}
-              <Link href="/register" className="text-blue-600 hover:text-blue-800">
+              <Link
+                href="/register"
+                className="text-blue-600 hover:text-blue-800"
+              >
                 Sign up here
               </Link>
             </p>

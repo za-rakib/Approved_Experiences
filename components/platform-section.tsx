@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useMobile } from "./ui/use-mobile";
 
 export default function PlatformSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const isMobile = useMobile();
 
   const cards = [
     {
@@ -35,78 +37,33 @@ export default function PlatformSection() {
         "Indulge in luxurious vacation homes across the globe, perfect for any getaway.",
       alt: "Modern vacation home",
     },
-    {
-      image: "/modern-luxury-vacation-home.jpg",
-      title: "Homes",
-      description:
-        "Indulge in luxurious vacation homes across the globe, perfect for any getaway.",
-      alt: "Modern vacation home",
-    },
-    {
-      image: "/modern-luxury-vacation-home.jpg",
-      title: "Homes",
-      description:
-        "Indulge in luxurious vacation homes across the globe, perfect for any getaway.",
-      alt: "Modern vacation home",
-    },
-    {
-      image: "/modern-luxury-vacation-home.jpg",
-      title: "Homes",
-      description:
-        "Indulge in luxurious vacation homes across the globe, perfect for any getaway.",
-      alt: "Modern vacation home",
-    },
-    {
-      image: "/modern-luxury-vacation-home.jpg",
-      title: "Homes",
-      description:
-        "Indulge in luxurious vacation homes across the globe, perfect for any getaway.",
-      alt: "Modern vacation home",
-    },
-    {
-      image: "/modern-luxury-vacation-home.jpg",
-      title: "Homes",
-      description:
-        "Indulge in luxurious vacation homes across the globe, perfect for any getaway.",
-      alt: "Modern vacation home",
-    },
-    {
-      image: "/modern-luxury-vacation-home.jpg",
-      title: "Homes",
-      description:
-        "Indulge in luxurious vacation homes across the globe, perfect for any getaway.",
-      alt: "Modern vacation home",
-    },
   ];
 
-  // number of cards visible (3.5 cards)
-  const visibleCards = 3.5;
+  const visibleCards = isMobile ? 1 : 3.5;
 
   const nextSlide = () => {
-    setCurrentSlide((prev) =>
-      prev < cards.length - visibleCards ? prev + 1 : 0
-    );
+    setCurrentSlide((prev) => {
+      const maxSlide = cards.length - Math.ceil(visibleCards);
+      return prev < maxSlide ? prev + 1 : 0;
+    });
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) =>
-      prev > 0 ? prev - 1 : cards.length - visibleCards
-    );
+    setCurrentSlide((prev) => {
+      const maxSlide = cards.length - Math.ceil(visibleCards);
+      return prev > 0 ? prev - 1 : maxSlide;
+    });
   };
 
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
-
-  const cardWidthPercentage = 100 / visibleCards; // width in %
+  const cardWidth = 100 / visibleCards;
 
   return (
-    <section className="py-24">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+    <section className="py-12 md:py-24">
+      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        {/* Header for desktop */}
+        <div className="hidden md:flex md:flex-row md:items-center md:justify-between">
           <div>
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900">
+            <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
               All-In-One <span className="text-blue-600">Platform</span>
             </h2>
             <p className="mt-4 max-w-2xl text-lg text-gray-500">
@@ -115,11 +72,10 @@ export default function PlatformSection() {
               for ultimate convenience and style.
             </p>
           </div>
-
-          <div className="flex  items-center space-x-2 mt-6 md:mt-0">
+          <div className="mt-6 flex items-center space-x-2 md:mt-0">
             <button
               onClick={prevSlide}
-              className="p-3 border border-gray-300 rounded-full hover:bg-gray-200 transition-colors"
+              className="rounded-full border border-gray-300 p-3 transition-colors hover:bg-gray-200"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +94,7 @@ export default function PlatformSection() {
             </button>
             <button
               onClick={nextSlide}
-              className="p-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors"
+              className="rounded-full bg-blue-600 p-3 text-white transition-colors hover:bg-blue-700"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -158,22 +114,36 @@ export default function PlatformSection() {
           </div>
         </div>
 
+        {/* Header for mobile */}
+        <div className="md:hidden">
+          <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
+            All-In-One <span className="text-blue-600">Platform</span>
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg text-gray-500">
+            Unlock exclusive access to countless hotels, vacation homes, car
+            rental locations, and flights with our travel membership—crafted for
+            ultimate convenience and style.
+          </p>
+        </div>
+
         {/* Slider */}
-        <div className="relative mb-4 overflow-hidden">
+        <div className="relative mt-8 overflow-hidden">
           <div
-            className="flex transition-transform duration-500 gap-4"
+            className="flex gap-4 transition-transform duration-500 md:gap-6"
             style={{
-              transform: `translateX(-${currentSlide * cardWidthPercentage}%)`,
+              transform: `translateX(-${currentSlide * cardWidth}%)`,
             }}
           >
             {cards.map((card, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 bg-[#F2F6FC] rounded-2xl"
-                style={{ width: `${cardWidthPercentage}%` }}
+                className="flex-shrink-0 rounded-2xl bg-[#F2F6FC]"
+                style={{
+                  width: isMobile ? "100%" : `calc(${cardWidth}% - 1rem)`,
+                }}
               >
                 <Image
-                  className="h-48 w-full object-cover"
+                  className="h-48 w-full rounded-t-2xl object-cover"
                   src={card.image}
                   alt={card.alt}
                   width={400}
@@ -183,13 +153,55 @@ export default function PlatformSection() {
                   <h3 className="text-lg font-bold text-gray-900">
                     {card.title}
                   </h3>
-                  <p className="mt-2 text-gray-500 text-sm">
+                  <p className="mt-2 text-sm text-gray-500">
                     {card.description}
                   </p>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Navigation for mobile */}
+        <div className="mt-6 flex items-center justify-center space-x-2 md:hidden">
+          <button
+            onClick={prevSlide}
+            className="rounded-full border border-gray-300 p-3 transition-colors hover:bg-gray-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-gray-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button
+            onClick={nextSlide}
+            className="rounded-full bg-blue-600 p-3 text-white transition-colors hover:bg-blue-700"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
