@@ -1,8 +1,8 @@
-'use client';
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { useAuthApi } from "../../redux/hooks/useApi";
 
 export default function LoginPage() {
@@ -12,7 +12,7 @@ export default function LoginPage() {
   const [lastName, setLastName] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const router = useRouter();
   const { register } = useAuthApi();
 
@@ -23,7 +23,7 @@ export default function LoginPage() {
 
     try {
       // Remove .unwrap() here since it's already handled in the hook
-      const result = await register({email, password ,firstName,lastName });
+      const result = await register({ email, password, firstName, lastName });
       console.log("first", result);
       if (result.success) {
         // Redirect to dashboard or home page after successful login
@@ -44,17 +44,32 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex h-screen">
-      <div className="w-1/2 h-full">
+    <div className="relative min-h-screen md:flex">
+      {/* Background image for mobile, hidden on md+ */}
+      <div className="absolute inset-0 md:hidden">
+        <Image
+          src="/4xsize.png"
+          alt="background"
+          fill
+          className="object-cover"
+          quality={100}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-transparent" />
+      </div>
+
+      {/* Image for desktop, hidden on mobile */}
+      <div className="hidden w-1/2 md:block">
         <Image
           src="/4xsize.png"
           alt="Woman enjoying travel"
           width={800}
           height={1200}
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
         />
       </div>
-      <div className="w-1/2 flex items-center justify-center bg-white p-12">
+
+      {/* Form section */}
+      <div className="relative z-10 flex w-full items-center justify-center p-6 md:w-1/2 md:p-12">
         <div className="w-full max-w-md">
           <Link
             href="/"
@@ -68,15 +83,15 @@ export default function LoginPage() {
           <p className="mt-4 text-gray-500">
             Your exclusive travel and lifestyle benefits are within your reach.
           </p>
-          
+
           {error && (
             <div className="mt-4 p-3 bg-red-100 text-red-700 rounded-md">
               {error}
             </div>
           )}
-          
+
           <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-            <div >
+            <div>
               <div>
                 <label htmlFor="firstName" className="sr-only">
                   First Name
@@ -110,10 +125,8 @@ export default function LoginPage() {
                   />
                 </div>
               </div>
-            
             </div>
-                        <div >
-              
+            <div>
               <div>
                 <label htmlFor="lastName" className="sr-only">
                   Last Name
@@ -224,7 +237,7 @@ export default function LoginPage() {
               </button>
             </div>
           </form>
-          
+
           <div className="mt-6 text-center">
             <p className="text-gray-600">
               Already have an account?{" "}
