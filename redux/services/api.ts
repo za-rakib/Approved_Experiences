@@ -4,7 +4,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3027',
+  baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL || 'http://145.223.75.199:3027',
   prepareHeaders: (headers, { getState, endpoint }) => {
     // Skip adding authorization header for endpoints that don't need it
     const noAuthEndpoints = ['login', 'register', 'createMemberFromPayment'];
