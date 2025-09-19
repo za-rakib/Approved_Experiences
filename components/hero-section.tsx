@@ -19,7 +19,7 @@ const JamesJustJoined = ({ className }: { className?: string }) => (
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden p-4">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 rounded-3xl m-4">
         <Image
@@ -35,9 +35,9 @@ export default function HeroSection() {
       {/* Become a member button */}
       <Link
         href="/register"
-        className="mr-6 absolute z-30 right-0 top-1/2 -translate-y-1/2 rotate-180 bg-blue-600 text-white font-semibold py-4 px-6 [writing-mode:vertical-lr] rounded-full hover:bg-blue-700 shadow-lg transition-transform transform hover:scale-105"
+        className="absolute z-30 right-6 top-1/2 -translate-y-1/2  bg-blue-600 text-white font-semibold py-4 px-6 [writing-mode:vertical-lr] rounded-full hover:bg-blue-700 shadow-lg transition-transform transform hover:scale-105"
       >
-        Become a Member
+        Become A Member
       </Link>
 
       {/* Hero Content */}
@@ -83,35 +83,42 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom Actions */}
-      <div className="absolute bottom-8 w-full px-4 md:px-8 z-20">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:justify-between">
-          {/* Left Spacer for Desktop */}
-          <div className="hidden md:block flex-1"></div>
+      <div className="absolute bottom-8 w-full z-20">
+        {/* Mobile view */}
+        <div className="md:hidden flex flex-col gap-4 mx-6">
+          <JamesJustJoined className="self-end" />
+          <Link
+            href="/#how-it-works"
+            className="text-center bg-blue-600 text-white font-semibold rounded-full px-8 py-3.5 hover:bg-blue-700 shadow-lg transition-transform transform hover:scale-105"
+          >
+            How It Works
+          </Link>
+          <Link
+            href="/pricing"
+            className="w-full text-center bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full px-8 py-3.5 hover:bg-white/30 shadow-lg transition-transform transform hover:scale-105"
+          >
+            Explore Pricing
+          </Link>
+        </div>
 
-          {/* Buttons and Mobile Notification */}
-          <div className="flex flex-col items-center gap-6 flex-shrink-0">
-            {/* Mobile Notification */}
-            <div className="md:hidden">
-              <JamesJustJoined />
-            </div>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/#how-it-works"
-                className="w-full sm:w-auto text-center bg-blue-600 text-white font-semibold rounded-full px-8 py-3.5 hover:bg-blue-700 shadow-lg transition-transform transform hover:scale-105"
-              >
-                How It Works
-              </Link>
-              <Link
-                href="/pricing"
-                className="w-full sm:w-auto text-center bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full px-8 py-3.5 hover:bg-white/30 shadow-lg transition-transform transform hover:scale-105"
-              >
-                Explore Pricing
-              </Link>
-            </div>
+        {/* Desktop view */}
+        <div className="hidden md:flex max-w-6xl mx-auto items-center px-4">
+          <div className="flex-1" />
+          <div className="flex items-center gap-4">
+            <Link
+              href="/#how-it-works"
+              className="text-center bg-blue-600 text-white font-semibold rounded-full px-8 py-3.5 hover:bg-blue-700 shadow-lg transition-transform transform hover:scale-105"
+            >
+              How It Works
+            </Link>
+            <Link
+              href="/pricing"
+              className="text-center bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full px-8 py-3.5 hover:bg-white/30 shadow-lg transition-transform transform hover:scale-105"
+            >
+              Explore Pricing
+            </Link>
           </div>
-
-          {/* Desktop Notification */}
-          <div className="hidden md:flex flex-1 justify-end">
+          <div className="flex-1 flex justify-end">
             <JamesJustJoined />
           </div>
         </div>
