@@ -101,13 +101,12 @@ export default function RewardCreditsSection() {
           </div>
         </div>
 
-        <div className="mt-16">
+        <div className="mt-16 relative aspect-[3/4] md:aspect-video rounded-3xl overflow-hidden">
           <Image
-            className="w-full h-auto object-cover rounded-3xl"
+            className="object-cover"
             src="/luxury-resort.jpg"
             alt="Luxury resort swimming pool with lounge chairs and palm trees"
-            width={1200}
-            height={400}
+            fill
           />
         </div>
       </section>

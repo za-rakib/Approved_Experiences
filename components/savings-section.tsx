@@ -77,19 +77,22 @@ export default function SavingsSection() {
       <section className="py-16 sm:py-24 font-manrope">
         <div className="text-center">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight text-balance">
-            See The <span className="text-indigo-600">Savings</span>
+            See The{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3149FA] to-[#8E98FE]">
+              Savings
+            </span>
           </h2>
           <p className="mt-4 text-lg text-slate-500">
             One week in {activeTab} for two adults.
           </p>
         </div>
-        <div className="mt-8 flex items-center gap-2">
+        <div className="mt-8 flex justify-center items-center gap-2">
           <button
             onClick={() => setActiveTab("Mexico")}
             className={`px-4 py-2 text-sm font-semibold rounded-md ${
               activeTab === "Mexico"
-                ? "text-indigo-700 bg-indigo-100"
-                : "text-slate-500 hover:bg-slate-100"
+                ? "text-[#2563EB] bg-[#E9F0FF]"
+                : "text-black hover:bg-slate-100"
             }`}
           >
             Mexico
@@ -98,8 +101,8 @@ export default function SavingsSection() {
             onClick={() => setActiveTab("Miami")}
             className={`px-4 py-2 text-sm font-semibold rounded-md ${
               activeTab === "Miami"
-                ? "text-indigo-700 bg-indigo-100"
-                : "text-slate-500 hover:bg-slate-100"
+                ? "text-[#2563EB] bg-[#E9F0FF]"
+                : "text-black hover:bg-slate-100"
             }`}
           >
             Miami
