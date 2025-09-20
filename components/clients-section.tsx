@@ -49,7 +49,9 @@ export default function ClientsSection() {
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 text-balance">
           Our Happy{" "}
-          <span className="text-(--color-custom-purple)">Clients</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3149FA] to-[#8E98FE]">
+            Clients
+          </span>
         </h2>
         <p className="mt-4 max-w-3xl mx-auto text-gray-600 text-lg text-pretty">
           Unlock exclusive access to countless hotels, vacation homes, car
@@ -117,7 +119,10 @@ export default function ClientsSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
             {/* Left Testimonial */}
-            <div className="text-left bg-(--color-light-blue-bg) p-8 rounded-2xl hidden md:block opacity-60 transform scale-95">
+            <div
+              className="text-left p-8 rounded-2xl hidden md:block opacity-60 transform scale-95"
+              style={{ backgroundColor: "#F7FAFF", borderColor: "#E9F0FF" }}
+            >
               <p className="text-gray-600">
                 {testimonials[getTestimonialIndex(-1)].text}
               </p>
@@ -156,7 +161,10 @@ export default function ClientsSection() {
             </div>
 
             {/* Center Testimonial (Active) */}
-            <div className="text-left bg-white p-8 rounded-2xl shadow-xl border border-gray-100 relative">
+            <div
+              className="text-left bg-white p-8 rounded-2xl shadow-xl border relative"
+              style={{ backgroundColor: "#F7FAFF", borderColor: "#E9F0FF" }}
+            >
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-2">
                 <svg
                   width="40"
@@ -223,7 +231,10 @@ export default function ClientsSection() {
             </div>
 
             {/* Right Testimonial */}
-            <div className="text-left bg-(--color-light-blue-bg) p-8 rounded-2xl hidden md:block opacity-60 transform scale-95">
+            <div
+              className="text-left p-8 rounded-2xl hidden md:block opacity-60 transform scale-95"
+              style={{ backgroundColor: "#F7FAFF", borderColor: "#E9F0FF" }}
+            >
               <p className="text-gray-600">
                 {testimonials[getTestimonialIndex(1)].text}
               </p>

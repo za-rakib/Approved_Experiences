@@ -2,34 +2,34 @@ export default function TrustedSection() {
   return (
     <div className="bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <section className="py-16 sm:py-24 font-manrope">
+        <section className="py-5 sm:py-24 font-manrope">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
                 Trusted by thousands <br />
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-400">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3149FA] to-[#8E98FE]">
                   of travelers worldwide
                 </span>
               </h2>
             </div>
-            <div className="grid grid-cols-2 gap-8 text-left">
-              <div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-center lg:w-1/2">
+              <div className="sm:text-left">
                 <p className="text-3xl font-bold text-blue-800">1,100+</p>
                 <p className="mt-1 text-slate-500">
                   Private jet charters fulfilled
                 </p>
               </div>
-              <div>
+              <div className="sm:text-left">
                 <p className="text-3xl font-bold text-blue-800">5,000+</p>
                 <p className="mt-1 text-slate-500">
                   Private aviation hours flown
                 </p>
               </div>
-              <div>
+              <div className="sm:text-left">
                 <p className="text-3xl font-bold text-blue-800">1,000+</p>
                 <p className="mt-1 text-slate-500">Clients serviced</p>
               </div>
-              <div>
+              <div className="sm:text-left">
                 <p className="text-3xl font-bold text-blue-800">3,000+</p>
                 <p className="mt-1 text-slate-500">Commercial flights booked</p>
               </div>

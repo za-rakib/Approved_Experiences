@@ -1,7 +1,6 @@
 // 'use client';
 // import Link from "next/link";
 
-
 // export default function PricingSection(data:any) {
 //   console.log("membership plans in pricing section:", data);
 //   return (
@@ -127,7 +126,7 @@
 //                   {feat?.feature?.name}
 //                 </li>)
 //               )}
-                
+
 //               </ul>
 //             </div>
 //           </div>))}
@@ -145,8 +144,7 @@
 //   );
 // }
 
-
-'use client';
+"use client";
 import Link from "next/link";
 
 export default function PricingSection(data: any) {
@@ -165,14 +163,23 @@ export default function PricingSection(data: any) {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto text-left">
           {data?.data?.map((item: any) => {
             // Separate features into non-exclusive and exclusive
-            const nonExclusiveFeatures = item.tierFeatures.filter((feat: any) => !feat.isExclusive);
-            const exclusiveFeatures = item.tierFeatures.filter((feat: any) => feat.isExclusive);
-            
+            const nonExclusiveFeatures = item.tierFeatures.filter(
+              (feat: any) => !feat.isExclusive
+            );
+            const exclusiveFeatures = item.tierFeatures.filter(
+              (feat: any) => feat.isExclusive
+            );
+
             return item.name !== "Platinum" ? (
               // Gold/Silver Plan
-              <div key={item.id} className="bg-(--color-light-blue-bg) p-8 rounded-3xl border border-gray-200 flex flex-col">
+              <div
+                key={item.id}
+                className="bg-(--color-light-blue-bg) p-8 rounded-3xl border border-gray-200 flex flex-col"
+              >
                 <h3 className="text-2xl font-bold">{item?.name}</h3>
-                <p className="text-gray-500 mt-1">Unlock benefits that include</p>
+                <p className="text-gray-500 mt-1">
+                  Unlock benefits that include
+                </p>
                 <div className="my-6">
                   <span className="text-5xl font-extrabold text-gray-900">
                     ${item?.discountedPrice}
@@ -210,10 +217,13 @@ export default function PricingSection(data: any) {
                         {feat?.feature?.name}
                       </li>
                     ))}
-                    
+
                     {/* Then render exclusive features */}
                     {exclusiveFeatures.map((feat: any) => (
-                      <li key={feat.id} className="flex items-center text-gray-800 font-medium">
+                      <li
+                        key={feat.id}
+                        className="flex items-center text-gray-800 font-medium"
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="w-5 h-5 text-(--color-custom-blue) mr-2"
@@ -234,20 +244,25 @@ export default function PricingSection(data: any) {
               </div>
             ) : (
               // Platinum Plan
-              <div key={item.id} className="bg-(--color-custom-blue) text-white p-8 rounded-3xl shadow-2xl shadow-blue-200 flex flex-col transform md:scale-105">
+              <div
+                key={item.id}
+                className="bg-(--color-custom-blue) text-white p-8 rounded-3xl shadow-2xl shadow-blue-200 flex flex-col transform md:scale-105"
+              >
                 <h3 className="text-2xl font-bold">{item?.name}</h3>
                 <p className="text-blue-200 mt-1">
                   Premium luxury travel experience with the best value.
                 </p>
                 <div className="my-6">
-                  <span className="text-5xl font-extrabold">${item?.discountedPrice}</span>
+                  <span className="text-5xl font-extrabold">
+                    ${item?.discountedPrice}
+                  </span>
                   <span className="text-xl font-bold text-blue-300 line-through ml-2">
                     ${item?.regularPrice}
                   </span>
                   <span className="text-blue-200">/ year</span>
                 </div>
                 <Link
-                 href={`/checkout/${item.id}`}
+                  href={`/checkout/${item.id}`}
                   className="w-full text-center bg-white text-(--color-custom-blue) font-semibold py-3 rounded-full hover:bg-gray-100 transition"
                 >
                   Get Started
@@ -274,10 +289,13 @@ export default function PricingSection(data: any) {
                         {feat?.feature?.name}
                       </li>
                     ))}
-                    
+
                     {/* Then render exclusive features */}
                     {exclusiveFeatures.map((feat: any) => (
-                      <li key={feat.id} className="flex items-center font-semibold text-white">
+                      <li
+                        key={feat.id}
+                        className="flex items-center font-semibold text-white"
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="w-5 h-5 mr-2"
@@ -310,4 +328,3 @@ export default function PricingSection(data: any) {
     </section>
   );
 }
-
