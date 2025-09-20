@@ -131,7 +131,11 @@ export default function PlatformSection() {
           <div
             className="flex gap-4 transition-transform duration-500 md:gap-6"
             style={{
-              transform: `translateX(-${currentSlide * cardWidth}%)`,
+              transform: isMobile
+                ? `translateX(calc(-${currentSlide * 100}% - ${
+                    currentSlide * 1
+                  }rem))`
+                : `translateX(-${currentSlide * cardWidth}%)`,
             }}
           >
             {cards.map((card, index) => (
