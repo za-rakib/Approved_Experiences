@@ -5,7 +5,7 @@ import Link from "next/link";
 // Reusable component for the notification
 const JamesJustJoined = ({ className }: { className?: string }) => (
   <div
-    className={`bg-white/20 backdrop-blur-sm p-3 rounded-2xl shadow-lg w-max ${className}`}
+    className={`bg-transparent backdrop-blur-lg p-3 rounded-2xl shadow-lg w-max border border-white/20 ${className}`}
   >
     <div className="flex items-center gap-2">
       <p className="font-semibold text-white text-sm">James just joined!</p>
@@ -35,7 +35,7 @@ export default function HeroSection() {
       {/* Become a member button */}
       <Link
         href="/register"
-        className="fixed z-30 right-6 top-1/2 -translate-y-1/2 bg-blue-600 text-white font-semibold py-4 px-4 rounded-full hover:bg-blue-700 shadow-lg transition-transform transform hover:scale-105"
+        className="fixed text-center z-30 right-6 top-1/2 -translate-y-1/2 bg-blue-600 text-white font-semibold py-4 px-4 rounded-full hover:bg-blue-700 shadow-lg transition-transform transform hover:scale-105"
       >
         <span className="[writing-mode:vertical-lr]">Become A Member</span>
       </Link>
@@ -95,7 +95,7 @@ export default function HeroSection() {
           </Link>
           <Link
             href="/pricing"
-            className="w-full text-center bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full px-8 py-3.5 hover:bg-white/30 shadow-lg transition-transform transform hover:scale-105"
+            className="w-full text-center bg-white/10 backdrop-blur-lg text-white font-semibold rounded-full px-8 py-3.5 hover:bg-white/20 shadow-lg transition-transform transform hover:scale-105 border border-white/20"
           >
             Explore Pricing
           </Link>
@@ -113,7 +113,7 @@ export default function HeroSection() {
             </Link>
             <Link
               href="/pricing"
-              className="text-center bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full px-8 py-3.5 hover:bg-white/30 shadow-lg transition-transform transform hover:scale-105"
+              className="text-center bg-white/10 backdrop-blur-lg text-white font-semibold rounded-full px-8 py-3.5 hover:bg-white/20 shadow-lg transition-transform transform hover:scale-105 border border-white/20"
             >
               Explore Pricing
             </Link>
