@@ -99,7 +99,7 @@ export default function ClientsSection() {
         <div className="mt-12 relative flex items-center justify-center">
           <button
             onClick={prevTestimonial}
-            className="hidden md:block absolute -left-8 text-gray-400 border border-gray-300 rounded-full w-12 h-12 items-center justify-center hover:bg-gray-100 transition"
+            className="hidden md:flex absolute -left-8 text-gray-400 border border-gray-300 rounded-full w-12 h-12 items-center justify-center hover:bg-gray-100 transition"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -275,7 +275,7 @@ export default function ClientsSection() {
 
           <button
             onClick={nextTestimonial}
-            className="hidden md:block absolute -right-8 text-white bg-(--color-custom-blue) rounded-full w-12 h-12 items-center justify-center hover:bg-blue-700 transition"
+            className="hidden md:flex absolute -right-8 text-white bg-blue-600 rounded-full w-12 h-12 items-center justify-center hover:bg-blue-700 transition"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -316,7 +316,7 @@ export default function ClientsSection() {
           </button>
           <button
             onClick={nextTestimonial}
-            className="text-white bg-(--color-custom-blue) rounded-full w-12 h-12 flex items-center justify-center hover:bg-blue-700 transition"
+            className="text-white bg-blue-600 rounded-full w-12 h-12 flex items-center justify-center hover:bg-blue-700 transition"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

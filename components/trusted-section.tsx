@@ -12,7 +12,7 @@ export default function TrustedSection() {
                 </span>
               </h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-center lg:w-1/2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 text-center">
               <div className="sm:text-left">
                 <p className="text-3xl font-bold text-blue-800">1,100+</p>
                 <p className="mt-1 text-slate-500">
