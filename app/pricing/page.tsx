@@ -1,5 +1,4 @@
 "use client";
-"use client";
 declare const ire: any;
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
@@ -7,6 +6,7 @@ import Header from "@/components/header";
 import PricingFaqSection from "@/components/pricing-faq-section";
 import PricingPlansSection from "@/components/pricing-plans-section";
 import ScrollToTop from "@/components/scroll-to-top";
+import { useGetMemberProfileQuery } from "@/redux/services/api";
 import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import sha1 from "sha1";

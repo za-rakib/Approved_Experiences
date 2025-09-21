@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="bg-[#F0F5FF] text-gray-900 rounded-2xl p-8 md:p-12  mb-20 shadow-xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-3xl md:text-4xl font-bold leading-tight">
+              <h3 className="text-3xl md:text-4xl font-bold leading-tight text-black">
                 Want product news and updates? <br />
                 Sign up for our newsletter.
               </h3>
@@ -22,17 +22,17 @@ export default function Footer() {
               </p>
             </div>
             <div className="space-y-4">
-              <p className="font-semibold text-gray-800">Sign up today</p>
+              <p className="font-semibold text-black">Sign up today</p>
               <form className="space-y-4">
-                <div className="flex items-center bg-white rounded-full p-1 border border-gray-200">
+                <div className="flex items-center bg-white rounded-lg p-1 border border-gray-200">
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="flex-grow w-full px-4 py-2 rounded-full focus:outline-none"
+                    className="flex-grow w-full px-4 py-2 rounded-lg focus:outline-none"
                   />
                   <button
                     type="submit"
-                    className="bg-blue-600 text-white font-semibold px-6 py-2 rounded-full hover:bg-blue-700 transition"
+                    className="bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-700 transition"
                   >
                     Subscribe
                   </button>
@@ -58,8 +58,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12">
-          <div className="lg:col-span-2">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 pb-12">
+          <div className="lg:col-span-2 flex flex-row items-center justify-between lg:flex-col lg:items-start">
             <Link href="/">
               <Image
                 src="/Logowhite.png"
@@ -68,7 +68,7 @@ export default function Footer() {
                 height={45}
               />
             </Link>
-            <div className="flex space-x-3 mt-6">
+            <div className="flex space-x-3 lg:mt-6">
               <Link
                 href="#"
                 className="w-9 h-9 flex items-center justify-center border border-gray-700 rounded-md text-gray-400 hover:text-white hover:border-white transition"
@@ -119,67 +119,69 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-          <div>
-            <h4 className="font-bold text-lg">Navigation</h4>
-            <ul className="mt-4 space-y-3 text-gray-400">
-              <li>
-                <Link href="#" className="hover:text-white transition">
-                  Traveler 2.0
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition">
-                  Concierge
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition">
-                  Company
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition">
-                  Privacy
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-bold text-lg">Resource</h4>
-            <ul className="mt-4 space-y-3 text-gray-400">
-              <li>
-                <Link href="#" className="hover:text-white transition">
-                  FAQs
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-bold text-lg">Contact</h4>
-            <ul className="mt-4 space-y-3 text-gray-400">
-              <li>Miami Florida</li>
-              <li>
-                <Link
-                  href="mailto:support@approvedexperiences.com"
-                  className="hover:text-white transition"
-                >
-                  support@approvedexperiences.com
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="tel:+18666781411"
-                  className="hover:text-white transition"
-                >
-                  +1 (866) 678-1411
-                </Link>
-              </li>
-            </ul>
+          <div className="lg:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-10">
+            <div className="md:col-span-1">
+              <h4 className="font-bold text-lg">Navigation</h4>
+              <ul className="mt-4 space-y-3 text-gray-400">
+                <li>
+                  <Link href="#" className="hover:text-white transition">
+                    Traveler 2.0
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white transition">
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white transition">
+                    Concierge
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white transition">
+                    Company
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white transition">
+                    Privacy
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="md:col-span-1">
+              <h4 className="font-bold text-lg">Resource</h4>
+              <ul className="mt-4 space-y-3 text-gray-400">
+                <li>
+                  <Link href="#" className="hover:text-white transition">
+                    FAQs
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="col-span-2 md:col-span-1">
+              <h4 className="font-bold text-lg">Contact</h4>
+              <ul className="mt-4 space-y-3 text-gray-400">
+                <li>Miami Florida</li>
+                <li>
+                  <Link
+                    href="mailto:support@approvedexperiences.com"
+                    className="hover:text-white transition"
+                  >
+                    support@approvedexperiences.com
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="tel:+18666781411"
+                    className="hover:text-white transition"
+                  >
+                    +1 (866) 678-1411
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
