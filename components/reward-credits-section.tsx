@@ -3,10 +3,14 @@ import Image from "next/image";
 export default function RewardCreditsSection() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <section className="py-16 sm:py-24 font-manrope">
+      <section className="py-10 sm:py-24 font-manrope">
         <div className="text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight text-balance">
-            Build Up <span className="text-indigo-600">Reward Credits</span>
+            Build Up{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3149FA] to-[#8E98FE]">
+              Reward{" "}
+            </span>{" "}
+            Credits
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-500 text-pretty">
             Earn reward points for every purchase on the platform and enjoy
@@ -16,7 +20,7 @@ export default function RewardCreditsSection() {
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Card 1: Earn with friends */}
-          <div className="bg-slate-50 rounded-3xl p-8">
+          <div className="bg-[#F7FAFF] rounded-3xl p-8 border border-[#E9F0FF]">
             <div className="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100">
               <svg
                 className="h-6 w-6 text-indigo-600"
@@ -43,7 +47,7 @@ export default function RewardCreditsSection() {
           </div>
 
           {/* Card 2: Redeem gift cards */}
-          <div className="bg-slate-50 rounded-3xl p-8">
+          <div className="bg-[#F7FAFF] rounded-3xl p-8 border border-[#E9F0FF]">
             <div className="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100">
               <svg
                 className="h-6 w-6 text-indigo-600"
@@ -70,7 +74,7 @@ export default function RewardCreditsSection() {
           </div>
 
           {/* Card 3: Redeem travel */}
-          <div className="bg-slate-50 rounded-3xl p-8">
+          <div className="bg-[#F7FAFF] rounded-3xl p-8 border border-[#E9F0FF]">
             <div className="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100">
               <svg
                 className="h-6 w-6 text-indigo-600"
@@ -97,13 +101,12 @@ export default function RewardCreditsSection() {
           </div>
         </div>
 
-        <div className="mt-16">
+        <div className="mt-16 relative aspect-[3/4] md:aspect-video rounded-3xl overflow-hidden">
           <Image
-            className="w-full h-auto object-cover rounded-3xl"
+            className="object-cover"
             src="/luxury-resort.jpg"
             alt="Luxury resort swimming pool with lounge chairs and palm trees"
-            width={1200}
-            height={400}
+            fill
           />
         </div>
       </section>

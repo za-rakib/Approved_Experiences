@@ -64,7 +64,10 @@ export default function PlatformSection() {
         <div className="hidden md:flex md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-              All-In-One <span className="text-blue-600">Platform</span>
+              All-In-One{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3149FA] to-[#8E98FE]">
+                Platform
+              </span>
             </h2>
             <p className="mt-4 max-w-2xl text-lg text-gray-500">
               Unlock exclusive access to countless hotels, vacation homes, car
@@ -117,7 +120,10 @@ export default function PlatformSection() {
         {/* Header for mobile */}
         <div className="md:hidden">
           <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-            All-In-One <span className="text-blue-600">Platform</span>
+            All-In-One{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3149FA] to-[#8E98FE]">
+              Platform
+            </span>
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-gray-500">
             Unlock exclusive access to countless hotels, vacation homes, car

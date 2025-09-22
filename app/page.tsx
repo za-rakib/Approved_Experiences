@@ -16,25 +16,29 @@ import ScrollToTop from "@/components/scroll-to-top";
 import StatsSection from "@/components/stats-section";
 import TrustedSection from "@/components/trusted-section";
 import { useSelector } from "react-redux";
-import { useGetMemberProfileQuery, useGetMembershipPlansQuery } from '../redux/services/api';
-import sha1 from 'sha1'
+import {
+  useGetMemberProfileQuery,
+  useGetMembershipPlansQuery,
+} from "../redux/services/api";
+import sha1 from "sha1";
 import { useEffect, useRef } from "react";
 export default function Home() {
-
-
   const token = useSelector((state: any) => state.auth.token);
-    const tokenRef = useRef(token);
+  const tokenRef = useRef(token);
   tokenRef.current = token; // keep latest token
-     const { data, error, isLoading, isSuccess, isError, refetch } = useGetMemberProfileQuery(undefined, {
-    skip: !tokenRef, // Skip the query if no token is available
-  });
-  console.log("auth state in home page:", data,token);
-  const {data:membershipPlans, 
-    error:membershipError, 
-    isLoading:membershipIsLoading, 
-    isSuccess:membershipIsError, 
-    isError:membershipisError, 
-    refetch:membershipRefetch} = useGetMembershipPlansQuery(undefined);
+  const { data, error, isLoading, isSuccess, isError, refetch } =
+    useGetMemberProfileQuery(undefined, {
+      skip: !tokenRef, // Skip the query if no token is available
+    });
+  console.log("auth state in home page:", data, token);
+  const {
+    data: membershipPlans,
+    error: membershipError,
+    isLoading: membershipIsLoading,
+    isSuccess: membershipIsError,
+    isError: membershipisError,
+    refetch: membershipRefetch,
+  } = useGetMembershipPlansQuery(undefined);
   console.log("membership plans:", membershipPlans);
   // const { data: profile , error, isLoading, isSuccess, isError, refetch} = useGetMemberProfileQuery(undefined, { skip: !token })
 
@@ -60,7 +64,7 @@ export default function Home() {
     return () => {
       isMounted = false; // cancel if unmounted
     };
-  }, []); 
+  }, []);
   return (
     <div className="bg-white">
       {/* Header and Hero are siblings */}
@@ -82,7 +86,7 @@ export default function Home() {
 
       {/* Bottom section content */}
       <ClientsSection />
-      <PricingSection data={membershipPlans?.data}/>
+      <PricingSection data={membershipPlans?.data} />
       <ContactSection />
 
       <Footer />

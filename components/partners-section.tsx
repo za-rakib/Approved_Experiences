@@ -2,11 +2,14 @@ import Image from "next/image";
 
 export default function PartnersSection() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-10 bg-white">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 text-balance">
-            Partners In <span className="text-blue-600">Our Network</span>
+            Partners In{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3149FA] to-[#8E98FE]">
+              Our Network
+            </span>
           </h2>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-500 text-pretty">
             Unlock exclusive access to countless hotels, vacation homes, car
@@ -15,8 +18,8 @@ export default function PartnersSection() {
           </p>
         </div>
 
-        <div className="mt-16 flex items-center justify-between">
-          <div className="flex items-center gap-4 p-3 rounded-full border border-gray-200">
+        <div className="mt-16 flex flex-col md:flex-row items-center justify-between gap-12">
+          <div className="flex items-center gap-4 p-3 rounded-full border border-gray-200 bg-gray-50 w-max">
             <span className="text-gray-700 font-medium">Follow</span>
             <div className="flex items-center gap-3">
               <a href="#" className="text-gray-500 hover:text-blue-600">
@@ -49,7 +52,7 @@ export default function PartnersSection() {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full md:w-auto">
             <div className="p-4 border border-gray-200 rounded-lg flex items-center justify-center">
               <Image
                 className="h-8 w-auto"
