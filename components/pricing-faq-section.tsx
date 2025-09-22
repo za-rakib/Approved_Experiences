@@ -1,4 +1,9 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const faqs = [
   {
@@ -36,31 +41,40 @@ const faqs = [
     answer:
       "While some promotional rates may have restrictions, our core member benefits have minimal blackout dates. We strive to provide maximum flexibility for your travel plans throughout the year.",
   },
-]
+];
 
 export default function PricingFaqSection() {
   return (
     <section className="py-16 px-4 max-w-4xl mx-auto">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-4">
-          Here are some frequently <span className="text-blue-600">asked questions</span>
+          Here are some frequently{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3149FA] to-[#8E98FE]">
+            asked questions
+          </span>
         </h2>
         <p className="text-gray-600">
-          Everything you need to know about the product and billing. Can't find the answer you're looking for? Please
-          chat to our friendly team.
+          Everything you need to know about the product and billing. Can't find
+          the answer you're looking for? Please chat to our friendly team.
         </p>
       </div>
 
       <Accordion type="single" collapsible className="space-y-4">
         {faqs.map((faq, index) => (
-          <AccordionItem key={index} value={`item-${index}`} className="border border-gray-200 rounded-lg px-6">
+          <AccordionItem
+            key={index}
+            value={`item-${index}`}
+            className="border border-gray-200 rounded-lg px-6"
+          >
             <AccordionTrigger className="text-left font-semibold text-gray-900 hover:no-underline">
               {faq.question}
             </AccordionTrigger>
-            <AccordionContent className="text-gray-600 pb-4">{faq.answer}</AccordionContent>
+            <AccordionContent className="text-gray-600 pb-4">
+              {faq.answer}
+            </AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
     </section>
-  )
+  );
 }
