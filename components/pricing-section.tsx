@@ -1,13 +1,29 @@
 "use client";
+import { useGetMembershipPlansQuery } from "@/redux/services/api";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function PricingSection({ data }: any) {
   const [activePlan, setActivePlan] = useState("Platinum");
+  const {
+    data: membershipPlans,
+    error: membershipError,
+    isLoading: membershipIsLoading,
+    isSuccess: membershipIsError,
+    isError: membershipisError,
+    refetch: membershipRefetch,
+  } = useGetMembershipPlansQuery(undefined);
 
-  const plans = data?.data || [];
+  console.log("ajkhsgdkj", membershipPlans);
+
+  const plans = membershipPlans?.data || [];
 
   const activePlanData = plans.find((plan: any) => plan.name === activePlan);
+
+  // const token = useSelector((state: any) => state.auth.token);
+  // const tokenRef = useRef(token);
+  // tokenRef.current = token; // keep latest token
 
   return (
     <section className="py-16 md:py-24 bg-white">

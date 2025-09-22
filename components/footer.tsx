@@ -24,15 +24,15 @@ export default function Footer() {
             <div className="space-y-4">
               <p className="font-semibold text-black">Sign up today</p>
               <form className="space-y-4">
-                <div className="flex items-center bg-white rounded-lg p-1 border border-gray-200">
+                <div className="flex items-center bg-white rounded-full  border border-gray-200">
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="flex-grow w-full px-4 py-2 rounded-lg focus:outline-none"
+                    className="flex-grow w-full px-4 py-2 rounded-full focus:outline-none"
                   />
                   <button
                     type="submit"
-                    className="bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+                    className="bg-blue-600 text-white font-semibold px-6 py-2 rounded-full hover:bg-blue-700 transition"
                   >
                     Subscribe
                   </button>
@@ -71,7 +71,7 @@ export default function Footer() {
             <div className="flex space-x-3 lg:mt-6">
               <Link
                 href="#"
-                className="w-9 h-9 flex items-center justify-center border border-gray-700 rounded-md text-gray-400 hover:text-white hover:border-white transition"
+                className="w-9 h-9 flex items-center justify-center border border-gray-700 rounded-md text-white-400 hover:text-white hover:border-white transition"
               >
                 <svg
                   className="w-4 h-4"
@@ -83,7 +83,7 @@ export default function Footer() {
               </Link>
               <Link
                 href="#"
-                className="w-9 h-9 flex items-center justify-center border border-gray-700 rounded-md text-gray-400 hover:text-white hover:border-white transition"
+                className="w-9 h-9 flex items-center justify-center border border-gray-700 rounded-md text-white-400 hover:text-white hover:border-white transition"
               >
                 <svg
                   className="w-4 h-4"
@@ -95,7 +95,7 @@ export default function Footer() {
               </Link>
               <Link
                 href="#"
-                className="w-9 h-9 flex items-center justify-center border border-gray-700 rounded-md text-gray-400 hover:text-white hover:border-white transition"
+                className="w-9 h-9 flex items-center justify-center border border-gray-700 rounded-md text-white-400 hover:text-white hover:border-white transition"
               >
                 <svg
                   className="w-4 h-4"
@@ -107,7 +107,7 @@ export default function Footer() {
               </Link>
               <Link
                 href="#"
-                className="w-9 h-9 flex items-center justify-center border border-gray-700 rounded-md text-gray-400 hover:text-white hover:border-white transition"
+                className="w-9 h-9 flex items-center justify-center border border-gray-700 rounded-md text-white-400 hover:text-white hover:border-white transition"
               >
                 <svg
                   className="w-4 h-4"
@@ -122,7 +122,7 @@ export default function Footer() {
           <div className="lg:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-10">
             <div className="md:col-span-1">
               <h4 className="font-bold text-lg">Navigation</h4>
-              <ul className="mt-4 space-y-3 text-gray-400">
+              <ul className="mt-4 space-y-3 text-white-400">
                 <li>
                   <Link href="#" className="hover:text-white transition">
                     Traveler 2.0
@@ -152,7 +152,7 @@ export default function Footer() {
             </div>
             <div className="md:col-span-1">
               <h4 className="font-bold text-lg">Resource</h4>
-              <ul className="mt-4 space-y-3 text-gray-400">
+              <ul className="mt-4 space-y-3 text-white-400">
                 <li>
                   <Link href="#" className="hover:text-white transition">
                     FAQs
@@ -162,7 +162,7 @@ export default function Footer() {
             </div>
             <div className="col-span-2 md:col-span-1">
               <h4 className="font-bold text-lg">Contact</h4>
-              <ul className="mt-4 space-y-3 text-gray-400">
+              <ul className="mt-4 space-y-3 text-white-400">
                 <li>Miami Florida</li>
                 <li>
                   <Link
