@@ -646,7 +646,7 @@ export default function CheckoutForm({ plan }: CheckoutFormProps) {
               </div>
               <Button
                 onClick={handleSubmit}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-semibold"
+                className="w-full rounded-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-semibold"
                 disabled={!stripe || !elements}
               >
                 Pay US${plan.discountedPrice + 149.99}
