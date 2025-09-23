@@ -24,11 +24,11 @@ export default function Footer() {
             <div className="space-y-4">
               <p className="font-semibold text-black">Sign up today</p>
               <form className="space-y-4">
-                <div className="flex items-center bg-white rounded-full  border border-gray-200">
+                <div className="flex items-center rounded-full  border-2 border-black">
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="flex-grow w-full px-4 py-2 rounded-full focus:outline-none"
+                    className="flex-grow w-full px-4 py-2 rounded-full focus:outline-none text-[#525253]"
                   />
                   <button
                     type="submit"
@@ -41,14 +41,14 @@ export default function Footer() {
                   <input
                     id="terms"
                     type="checkbox"
-                    className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-600"
+                    className="h-4 w-4 rounded border-gray-300 text-[#2563EB] focus:ring-[#2563EB]"
                   />
                   <label
                     htmlFor="terms"
                     className="ml-2 block text-sm text-gray-600"
                   >
                     I agree to{" "}
-                    <Link href="#" className="text-blue-600 underline">
+                    <Link href="#" className="text-[#2563EB] underline">
                       Terms & Services
                     </Link>
                   </label>
@@ -59,7 +59,7 @@ export default function Footer() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 pb-12">
-          <div className="lg:col-span-2 flex flex-row items-center justify-between lg:flex-col lg:items-start">
+          <div className="lg:col-span-2 flex flex-row items-center  lg:flex-col lg:items-start">
             <Link href="/">
               <Image
                 src="/Logowhite.png"

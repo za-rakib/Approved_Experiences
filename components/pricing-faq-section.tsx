@@ -5,41 +5,104 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const faqs = [
+import { HelpCircle } from "lucide-react";
+
+const faqSections = [
   {
-    question: "What is Approved Experiences Traveler?",
-    answer:
-      "Approved Experiences Traveler is a premium travel membership that provides exclusive access to discounted hotels, flights, cruises, and personalized concierge services to help you save money and enhance your travel experiences.",
+    title: "General",
+    faqs: [
+      {
+        question: "What is Approved Experiences Traveler?",
+        answer:
+          "Approved Experiences Traveler is an annual membership program that gives you access to deeply discounted, curated travel services—including luxury hotels, vacation homes, car rentals, flights and timeshares—through our proprietary platform and concierge team.",
+      },
+      {
+        question: "Who is the program designed for?",
+        answer:
+          "Our program is perfect for frequent leisure and business travelers who value upscale accommodations, seamless booking, white-glove support, and want to save up to 70% off retail rates.",
+      },
+    ],
   },
   {
-    question: "Who is the program designed for?",
-    answer:
-      "Our program is designed for frequent travelers and families who want to maximize their travel savings and enjoy premium experiences. Whether you're planning business trips or family vacations, our membership provides significant value.",
+    title: "Membership & Pricing",
+    faqs: [
+      {
+        question: "How much does membership cost?",
+        answer:
+          "The annual membership fee varies contingent upon the membership that you have. Becoming a Gold Member is a $799 investment. Becoming a Platinum Member is a $1,199 investment. Becoming a Diamond Member is a $1,499 investment. We accept all major credit cards (Visa, Mastercard, AMEX, Discover) as well as ACH bank transfers for corporate memberships. Payment plans are available upon request for groups or corporate buys.",
+      },
+    ],
   },
   {
-    question: "How much does membership cost?",
-    answer:
-      "We offer three membership tiers: Gold ($699/year), Platinum ($999/year), and Diamond ($1,499/year). Each tier includes different benefits and savings opportunities to match your travel needs.",
+    title: "Booking & Benefits",
+    faqs: [
+      {
+        question: "How do I make a booking?",
+        answer:
+          "Log in to the member portal at traveler.approvedexperiences.com, provide your travel dates, desired itinerary and any special requests; we’ll handle the rest.",
+      },
+      {
+        question: "What discounts can I expect?",
+        answer:
+          "Hotels: Up to 70% off rack rates at 1 million+ properties\nCruises: Up to 40% off on 44+ cruise lines\nVacation Homes: Access to 500,000+ homes at exclusive member rates\nCar Rentals: Up to 50% off at 30,000+ locations\nFlights & Timeshares: Special negotiated savings and points-earning opportunities",
+      },
+      {
+        question: "Are blackout dates or restrictions applied?",
+        answer:
+          "Some peak-season dates and special-event properties may have limited availability. We’ll always transparently note any booking restrictions when you search or inquire.",
+      },
+    ],
   },
   {
-    question: "Booking & Reservations",
-    answer:
-      "Members can book through our dedicated platform with access to exclusive rates and inventory. Our concierge team is available 24/7 to assist with bookings and special requests.",
+    title: "Changes, Cancellations & Support",
+    faqs: [
+      {
+        question: "What is your cancellation policy?",
+        answer:
+          "Cancellation policies vary by provider. If you need to cancel or modify, contact us at least 72 hours before your travel date for most accommodations. Our team will guide you through penalty-free options whenever possible.",
+      },
+      {
+        question: "How do I get help during my trip?",
+        answer:
+          "Our dedicated customer support team is available via phone from 9:00 AM EST to 9:00 PM EST. If anything goes wrong—flight delays, room issues, ground transport hiccups—we’ll intervene immediately.",
+      },
+    ],
   },
   {
-    question: "How do I make a booking?",
-    answer:
-      "Simply log into your member portal, search for your desired destination and dates, and book directly through our platform. You can also call our concierge team for personalized assistance with complex itineraries.",
+    title: "Refund Policy",
+    faqs: [
+      {
+        question:
+          "What is your Approved Experiences Traveler membership refund policy?",
+        answer:
+          "All Approved Experiences Traveler membership fees are final and non-refundable. Once your membership is activated, no refunds, credits or prorated reimbursements will be issued under any circumstances. Please review our membership terms carefully before you join.",
+      },
+    ],
   },
   {
-    question: "What discounts can I expect?",
-    answer:
-      "Members typically save 20-70% on hotels, up to 40% on flights, and receive exclusive cruise deals. Savings vary by destination, season, and availability, but our members consistently report significant cost reductions.",
+    title: "Corporate & Group Programs",
+    faqs: [
+      {
+        question: "Do you offer corporate or group memberships?",
+        answer:
+          "Yes. We have volume-discounted corporate packages starting at 10 seats, with customized reporting, virtual payment cards and centralized billing. Contact hello@approvedexperiences.com for a tailored quote.",
+      },
+      {
+        question: "How do I get help during my trip?",
+        answer:
+          "Our dedicated customer support team is available via phone from 9:00 AM EST to 9:00 PM EST. If anything goes wrong—flight delays, room issues, ground transport hiccups—we’ll intervene immediately.",
+      },
+    ],
   },
   {
-    question: "Are blackout dates or restrictions applied?",
-    answer:
-      "While some promotional rates may have restrictions, our core member benefits have minimal blackout dates. We strive to provide maximum flexibility for your travel plans throughout the year.",
+    title: "Getting Started",
+    faqs: [
+      {
+        question: "How do I join?",
+        answer:
+          "Visit our membership page at www.approvedexperiences.com/traveler, choose your plan, and complete the quick 3-step registration.",
+      },
+    ],
   },
 ];
 
@@ -59,22 +122,36 @@ export default function PricingFaqSection() {
         </p>
       </div>
 
-      <Accordion type="single" collapsible className="space-y-4">
-        {faqs.map((faq, index) => (
-          <AccordionItem
-            key={index}
-            value={`item-${index}`}
-            className="border border-gray-200 rounded-lg px-6"
-          >
-            <AccordionTrigger className="text-left font-semibold text-gray-900 hover:no-underline">
-              {faq.question}
-            </AccordionTrigger>
-            <AccordionContent className="text-gray-600 pb-4">
-              {faq.answer}
-            </AccordionContent>
-          </AccordionItem>
+      <div className="space-y-8">
+        {faqSections.map((section, sectionIndex) => (
+          <div key={sectionIndex}>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              {section.title}
+            </h3>
+            <Accordion type="single" collapsible className="space-y-4">
+              {section.faqs.map((faq, faqIndex) => (
+                <AccordionItem
+                  key={faqIndex}
+                  value={`item-${sectionIndex}-${faqIndex}`}
+                  className="border border-[#E9F0FF] rounded-lg px-6"
+                >
+                  <AccordionTrigger className="text-left font-semibold text-gray-900 hover:no-underline">
+                    <div className="flex items-center">
+                      <div className="rounded-full p-2 mr-4">
+                        <HelpCircle className="text-[#6898FF]" />
+                      </div>
+                      {faq.question}
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 pb-4">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         ))}
-      </Accordion>
+      </div>
     </section>
   );
 }
