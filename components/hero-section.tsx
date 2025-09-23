@@ -35,9 +35,11 @@ export default function HeroSection() {
       {/* Become a member button */}
       <Link
         href="/register"
-        className="fixed text-center z-30 right-6 top-1/2 -translate-y-1/2 bg-blue-600 text-white font-semibold py-4 px-4 rounded-full hover:bg-blue-700 shadow-lg transition-transform transform hover:scale-105"
+        className="fixed flex items-center justify-center z-30 right-6 top-1/2 -translate-y-1/2 bg-blue-600 text-white font-semibold py-4 px-3 rounded-full hover:bg-blue-700 shadow-lg transition-transform transform hover:scale-105"
       >
-        <span className="[writing-mode:vertical-lr]">Become A Member</span>
+        <span className="[writing-mode:vertical-rl] rotate-180">
+          Become A Member
+        </span>
       </Link>
 
       {/* Hero Content */}
