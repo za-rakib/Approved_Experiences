@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function ContactSection() {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-12 md:py-12">
       <div className="container mx-auto px-6">
-        <div className="rounded-3xl p-10 md:p-20 text-center bg-[--color-light-blue-bg] bg-[radial-gradient(#d8e3ff_1px,transparent_1px)] [background-size:16px_16px]">
+        <div className="rounded-3xl md:p-16 text-center bg-[--color-light-blue-bg] bg-[radial-gradient(#d8e3ff_1px,transparent_1px)] [background-size:16px_16px]">
           <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 text-balance">
             Contact Us
           </h2>
