@@ -478,7 +478,7 @@ export default function CheckoutForm({ plan }: CheckoutFormProps) {
                           options={{
                             style: {
                               base: {
-                                color: "transparent",
+                                color: "#333",
                                 "::placeholder": { color: "transparent" },
                               },
                             },
@@ -521,7 +521,7 @@ export default function CheckoutForm({ plan }: CheckoutFormProps) {
                           options={{
                             style: {
                               base: {
-                                color: "transparent",
+                                color: "#333",
                                 "::placeholder": { color: "transparent" },
                               },
                             },
@@ -566,7 +566,7 @@ export default function CheckoutForm({ plan }: CheckoutFormProps) {
                           options={{
                             style: {
                               base: {
-                                color: "transparent",
+                                color: "#333",
                                 "::placeholder": { color: "transparent" },
                               },
                             },
