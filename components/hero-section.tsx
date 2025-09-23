@@ -97,7 +97,7 @@ export default function HeroSection() {
           </Link>
           <Link
             href="/pricing"
-            className="w-full text-center bg-white/10 backdrop-blur-lg text-white font-semibold rounded-full px-8 py-3.5 hover:bg-white/20 shadow-lg transition-transform transform hover:scale-105 border border-white/20"
+            className="w-full text-center bg-transparent backdrop-blur-lg backdrop-blur-lg text-white font-semibold rounded-full px-8 py-3.5 hover:bg-white/20 shadow-lg transition-transform transform hover:scale-105 border border-white/20"
           >
             Explore Pricing
           </Link>
@@ -115,7 +115,7 @@ export default function HeroSection() {
             </Link>
             <Link
               href="/pricing"
-              className="text-center bg-white/10 backdrop-blur-lg text-white font-semibold rounded-full px-8 py-3.5 hover:bg-white/20 shadow-lg transition-transform transform hover:scale-105 border border-white/20"
+              className="bg-transparent backdrop-blur-lg text-center  backdrop-blur-lg text-white font-semibold rounded-full px-8 py-3.5 hover:bg-white/20 shadow-lg transition-transform transform hover:scale-105 border border-white/20"
             >
               Explore Pricing
             </Link>
