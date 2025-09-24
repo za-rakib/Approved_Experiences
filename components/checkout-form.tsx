@@ -135,7 +135,7 @@ export default function CheckoutForm({ plan }: CheckoutFormProps) {
       return;
     }
     const res = await fetch(
-      "http://localhost:3027/api/payments/create-intent",
+      "https://selene-trickish-bennett.ngrok-free.app/api/payments/create-intent",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
