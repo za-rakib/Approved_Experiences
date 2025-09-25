@@ -139,10 +139,10 @@ export default function ClientsSection() {
 
             {/* Center Testimonial (Active) */}
             <div className="text-left bg-[#F7FAFF] p-8 rounded-2xl shadow-xl relative border border-[#E9F0FF]">
-              <div className="absolute -top-4 -left-4 w-8 h-8 border-t-1 border-l-1 border-[#2563EB] "></div>
-              <div className="absolute -top-4 -right-4 w-8 h-8 border-t-1 border-r-1 border-[#2563EB]"></div>
-              <div className="absolute -bottom-4 -left-4 w-8 h-8 border-b-1 border-l-1 border-[#2563EB]"></div>
-              <div className="absolute -bottom-4 -right-4 w-8 h-8 border-b-1 border-r-1 border-[#2563EB]"></div>
+              <div className="absolute -top-4 -left-4 w-4 h-4 border-t-1 border-l-1 border-[#2563EB] "></div>
+              <div className="absolute -top-4 -right-4 w-4 h-4 border-t-1 border-r-1 border-[#2563EB]"></div>
+              <div className="absolute -bottom-4 -left-4 w-4 h-4 border-b-1 border-l-1 border-[#2563EB]"></div>
+              <div className="absolute -bottom-4 -right-4 w-4 h-4 border-b-1 border-r-1 border-[#2563EB]"></div>
               <p className="text-gray-600">{testimonials[currentIndex].text}</p>
               <div className="flex items-center mt-6">
                 <Image
@@ -223,7 +223,7 @@ export default function ClientsSection() {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              className="h-6 w-6 text-gray-600"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -232,7 +232,7 @@ export default function ClientsSection() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M15 19l-7-7 7-7"
+                d="M7 16l-4-4m0 0l4-4m-4 4h18"
               />
             </svg>
           </button>
@@ -251,7 +251,7 @@ export default function ClientsSection() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M9 5l7 7-7 7"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>
           </button>
