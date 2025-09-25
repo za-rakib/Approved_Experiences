@@ -86,7 +86,7 @@ export default function SavingsSection() {
             One week in {activeTab} for two adults.
           </p>
         </div>
-        <div className="mt-8 flex justify-center items-center gap-2">
+        <div className="mt-8 flex justify-center md:justify-start items-center gap-2">
           <button
             onClick={() => setActiveTab("Mexico")}
             className={`px-4 py-2 text-sm font-semibold rounded-md ${
@@ -113,10 +113,10 @@ export default function SavingsSection() {
           {deals[activeTab].map((deal) => (
             <div
               key={deal.id}
-              className="bg-slate-50 rounded-3xl p-4 sm:p-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+              className="bg-[#F7FAFF] rounded-3xl px-2 sm:p-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
             >
               <Image
-                className="w-full h-80 object-cover rounded-2xl"
+                className="w-full h-90 object-cover rounded-2xl"
                 src={deal.image}
                 alt={deal.alt}
                 width={600}
@@ -130,8 +130,8 @@ export default function SavingsSection() {
 
                 <div className="mt-6 space-y-4 text-slate-600">
                   <div className="flex justify-between items-center text-lg">
-                    <span className="font-bold text-slate-800">Traveler</span>
-                    <span className="font-bold text-slate-800">
+                    <span className="font-bold text-[#0E0E0F]">Traveler</span>
+                    <span className="font-bold text-[#0E0E0F]">
                       ${deal.travelerPrice.toLocaleString()}
                     </span>
                   </div>
@@ -146,19 +146,19 @@ export default function SavingsSection() {
                   ))}
                 </div>
 
-                <hr className="my-6 border-slate-200" />
+                <hr className="my-6 border-[#F7FAFF]" />
 
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
                   <div>
-                    <p className="text-sm text-slate-500">Total Price</p>
-                    <p className="text-2xl font-bold text-slate-900">
+                    <p className="text-sm text-[#0E0E0F]">Total Price</p>
+                    <p className="text-2xl font-bold text-[#001F63]">
                       ${deal.travelerPrice.toLocaleString()}{" "}
-                      <span className="text-lg font-normal text-slate-400 line-through">
+                      <span className="text-lg font-normal text-[#001F63] line-through">
                         ${deal.competitorPrice.toLocaleString()}
                       </span>
                     </p>
                   </div>
-                  <div className="bg-indigo-100 text-indigo-700 text-sm font-semibold px-4 py-2 rounded-full whitespace-nowrap">
+                  <div className="bg-[#E9F0FF] text-[#001F63] text-sm font-semibold px-4 py-2 rounded-full whitespace-nowrap">
                     Savings with Traveler{" "}
                     <span className="font-bold">
                       ${deal.savings.toLocaleString()}

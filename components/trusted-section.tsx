@@ -14,23 +14,23 @@ export default function TrustedSection() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 text-center">
               <div className="sm:text-left">
-                <p className="text-3xl font-bold text-blue-800">1,100+</p>
+                <p className="text-3xl font-bold text-[#001F63]">1,100+</p>
                 <p className="mt-1 text-slate-500">
                   Private jet charters fulfilled
                 </p>
               </div>
               <div className="sm:text-left">
-                <p className="text-3xl font-bold text-blue-800">5,000+</p>
+                <p className="text-3xl font-bold text-[#001F63]">5,000+</p>
                 <p className="mt-1 text-slate-500">
                   Private aviation hours flown
                 </p>
               </div>
               <div className="sm:text-left">
-                <p className="text-3xl font-bold text-blue-800">1,000+</p>
+                <p className="text-3xl font-bold text-[#001F63]">1,000+</p>
                 <p className="mt-1 text-slate-500">Clients serviced</p>
               </div>
               <div className="sm:text-left">
-                <p className="text-3xl font-bold text-blue-800">3,000+</p>
+                <p className="text-3xl font-bold text-[#001F63]">3,000+</p>
                 <p className="mt-1 text-slate-500">Commercial flights booked</p>
               </div>
             </div>
