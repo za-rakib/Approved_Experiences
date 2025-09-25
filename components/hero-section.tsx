@@ -85,7 +85,7 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom Actions */}
-      <div className="absolute bottom-8 w-full z-20">
+      <div className="absolute bottom-16 w-full z-20">
         {/* Mobile view */}
         <div className="md:hidden flex flex-col gap-4 mx-6">
           <JamesJustJoined className="self-end" />
