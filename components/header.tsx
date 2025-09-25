@@ -34,32 +34,32 @@ export default function Header() {
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="#" className="text-sm font-medium text-black bg-blue-400/20 rounded-full px-4 py-2">
+            <Link href="#" className="text-sm font-medium text-[#2563EB] bg-[#F7FAFF] rounded-full px-4 py-2">
               Traveler 2.0
             </Link>
-            <Link href="#" className="text-sm font-medium text-black hover:text-gray-700">Concierge</Link>
-            <Link href="#" className="text-sm font-medium text-black hover:text-gray-700">Company</Link>
-            <Link href="#" className="text-sm font-medium text-black hover:text-gray-700">Blog</Link>
-            <Link href="#" className="text-sm font-medium text-black hover:text-gray-700">{"FAQ's"}</Link>
-            <Link href="/pricing" className="text-sm font-medium text-black hover:text-gray-700">Pricing</Link>
+            <Link href="#" className="text-sm font-medium text-[#525253] hover:text-gray-700">Concierge</Link>
+            <Link href="#" className="text-sm font-medium text-[#525253] hover:text-gray-700">Company</Link>
+            <Link href="#" className="text-sm font-medium text-[#525253] hover:text-gray-700">Blog</Link>
+            <Link href="#" className="text-sm font-medium text-[#525253] hover:text-gray-700">{"FAQ's"}</Link>
+            <Link href="/pricing" className="text-sm font-medium text-[#525253] hover:text-gray-700">Pricing</Link>
           </div>
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-4">
             {mounted && !token && (
-              <Link href="/login" className="text-sm font-medium text-black hover:text-gray-700">
+              <Link href="/login" className="text-sm font-medium text-[#001F63] hover:text-gray-700">
                 Log In
               </Link>
             )}
             {mounted && token && (
               <button
                 onClick={handleLogout}
-                className="text-sm font-medium text-black hover:text-gray-700"
+                className="text-sm font-medium text-[#001F63] hover:text-gray-700"
               >
                 Logout
               </button>
             )}
-            <Link href="#" className="text-sm font-medium text-white bg-gray-800 rounded-full px-5 py-2.5 hover:bg-gray-900 shadow">
+            <Link href="#" className="text-sm font-medium text-white bg-[#001F63] rounded-full px-5 py-2.5 hover:bg-gray-900 shadow">
               Contact Us
             </Link>
           </div>
