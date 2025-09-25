@@ -97,32 +97,9 @@ export default function ClientsSection() {
         </div>
 
         <div className="mt-12 relative flex items-center justify-center">
-          <button
-            onClick={prevTestimonial}
-            className="hidden md:flex absolute -left-8 text-gray-400 border border-gray-300 rounded-full w-12 h-12 items-center justify-center hover:bg-gray-100 transition"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
             {/* Left Testimonial */}
-            <div
-              className="text-left p-8 rounded-2xl hidden md:block opacity-60 transform scale-95"
-              style={{ backgroundColor: "#F7FAFF", borderColor: "#E9F0FF" }}
-            >
+            <div className="text-left p-8 rounded-2xl hidden md:block opacity-60 transform scale-95 bg-[#F7FAFF] border border-[#E9F0FF]">
               <p className="text-gray-600">
                 {testimonials[getTestimonialIndex(-1)].text}
               </p>
@@ -161,43 +138,11 @@ export default function ClientsSection() {
             </div>
 
             {/* Center Testimonial (Active) */}
-            <div
-              className="text-left bg-white p-8 rounded-2xl shadow-xl border relative"
-              style={{ backgroundColor: "#F7FAFF", borderColor: "#E9F0FF" }}
-            >
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-2">
-                <svg
-                  width="40"
-                  height="4"
-                  viewBox="0 0 40 4"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    y="0.5"
-                    width="8"
-                    height="3"
-                    rx="1.5"
-                    fill={currentIndex === 0 ? "#4361EE" : "#D1D5DB"}
-                  />
-                  <rect
-                    x="16"
-                    y="0.5"
-                    width="8"
-                    height="3"
-                    rx="1.5"
-                    fill={currentIndex === 1 ? "#4361EE" : "#D1D5DB"}
-                  />
-                  <rect
-                    x="32"
-                    y="0.5"
-                    width="8"
-                    height="3"
-                    rx="1.5"
-                    fill={currentIndex === 2 ? "#4361EE" : "#D1D5DB"}
-                  />
-                </svg>
-              </div>
+            <div className="text-left bg-[#F7FAFF] p-8 rounded-2xl shadow-xl relative border border-[#E9F0FF]">
+              <div className="absolute -top-4 -left-4 w-8 h-8 border-t-1 border-l-1 border-[#2563EB] "></div>
+              <div className="absolute -top-4 -right-4 w-8 h-8 border-t-1 border-r-1 border-[#2563EB]"></div>
+              <div className="absolute -bottom-4 -left-4 w-8 h-8 border-b-1 border-l-1 border-[#2563EB]"></div>
+              <div className="absolute -bottom-4 -right-4 w-8 h-8 border-b-1 border-r-1 border-[#2563EB]"></div>
               <p className="text-gray-600">{testimonials[currentIndex].text}</p>
               <div className="flex items-center mt-6">
                 <Image
@@ -231,10 +176,7 @@ export default function ClientsSection() {
             </div>
 
             {/* Right Testimonial */}
-            <div
-              className="text-left p-8 rounded-2xl hidden md:block opacity-60 transform scale-95"
-              style={{ backgroundColor: "#F7FAFF", borderColor: "#E9F0FF" }}
-            >
+            <div className="text-left p-8 rounded-2xl hidden md:block opacity-60 transform scale-95 bg-[#F7FAFF] border border-[#E9F0FF]">
               <p className="text-gray-600">
                 {testimonials[getTestimonialIndex(1)].text}
               </p>
@@ -272,29 +214,9 @@ export default function ClientsSection() {
               </div>
             </div>
           </div>
-
-          <button
-            onClick={nextTestimonial}
-            className="hidden md:flex absolute -right-8 text-white bg-blue-600 rounded-full w-12 h-12 items-center justify-center hover:bg-blue-700 transition"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
         </div>
 
-        <div className="mt-8 flex md:hidden justify-center space-x-4">
+        <div className="mt-8 flex justify-center space-x-4">
           <button
             onClick={prevTestimonial}
             className="text-gray-400 border border-gray-300 rounded-full w-12 h-12 flex items-center justify-center hover:bg-gray-100 transition"
