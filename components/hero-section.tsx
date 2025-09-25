@@ -5,7 +5,7 @@ import Link from "next/link";
 // Reusable component for the notification
 const JamesJustJoined = ({ className }: { className?: string }) => (
   <div
-    className={`bg-transparent backdrop-blur-lg p-3 rounded-2xl shadow-lg w-max border border-white/20 ${className}`}
+    className={`bg-transparent backdrop-blur-lg px-2 rounded-2xl shadow-lg w-max border border-white/20 ${className}`}
   >
     <div className="flex items-center gap-2">
       <p className="font-semibold text-white text-sm">James just joined!</p>
@@ -29,7 +29,7 @@ export default function HeroSection() {
           priority
           className="object-cover rounded-3xl"
         />
-        <div className="absolute inset-0 bg-blue-900/40 rounded-3xl" />
+        <div className="absolute inset-0  rounded-3xl" />
       </div>
 
       {/* Become a member button */}
@@ -120,7 +120,7 @@ export default function HeroSection() {
               Explore Pricing
             </Link>
           </div>
-          <div className="flex-1 flex justify-end">
+          <div className="flex-1 flex justify-end mr-2">
             <JamesJustJoined />
           </div>
         </div>

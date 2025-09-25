@@ -127,8 +127,9 @@ export default function PlatformSection() {
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-gray-500">
             Unlock exclusive access to countless hotels, vacation homes, car
-            rental locations, and flights with our travel membership—crafted for
-            ultimate convenience and style.
+            rental locations, and
+            <br /> flights with our travel membership—crafted for ultimate
+            convenience and style.
           </p>
         </div>
 
@@ -147,7 +148,7 @@ export default function PlatformSection() {
             {cards.map((card, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 rounded-2xl bg-[#F2F6FC]"
+                className="flex-shrink-0 rounded-2xl bg-[#F7FAFF]"
                 style={{
                   width: isMobile ? "100%" : `calc(${cardWidth}% - 1rem)`,
                 }}
