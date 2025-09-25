@@ -2,7 +2,7 @@ export default function TrustedSection() {
   return (
     <div className="bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <section className="py-5 sm:py-24 font-manrope">
+        <section className="py-5 sm:py-10 font-manrope">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
@@ -35,8 +35,9 @@ export default function TrustedSection() {
               </div>
             </div>
           </div>
-          <div className="mt-16 text-center max-w-3xl mx-auto">
-            <p className="text-xl text-slate-600 leading-relaxed">
+          {/* bottom text */}
+          <div className=" flex mt-16 text-center max-w-3xl mx-auto">
+            <p className="text-base md:text-3xl text-[#757575] leading-relaxed">
               With 30+ years of industry experience, Approved Experiences has
               left its mark on the travel industry.
             </p>

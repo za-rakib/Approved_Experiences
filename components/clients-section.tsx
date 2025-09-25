@@ -45,7 +45,7 @@ export default function ClientsSection() {
   };
 
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-10 md:py-10">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 text-balance">
           Our Happy{" "}
