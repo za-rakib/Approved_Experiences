@@ -40,8 +40,7 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-inter);
-  --font-manrope: var(--font-manrope);
+  --font-sans: var(--font-geist-sans);
 
   --color-custom-blue: #4361ee;
   --color-custom-purple: #888bf4;

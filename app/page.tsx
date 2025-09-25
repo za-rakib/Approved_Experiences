@@ -15,13 +15,13 @@ import SavingsSection from "@/components/savings-section";
 import ScrollToTop from "@/components/scroll-to-top";
 import StatsSection from "@/components/stats-section";
 import TrustedSection from "@/components/trusted-section";
+import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
+import sha1 from "sha1";
 import {
   useGetMemberProfileQuery,
   useGetMembershipPlansQuery,
 } from "../redux/services/api";
-import sha1 from "sha1";
-import { useEffect, useRef } from "react";
 export default function Home() {
   const token = useSelector((state: any) => state.auth.token);
   const tokenRef = useRef(token);
@@ -47,7 +47,7 @@ export default function Home() {
 
     let isMounted = true;
 
-    refetch().then((res) => {
+    refetch().then((res: { data: any }) => {
       if (!isMounted) return;
       const profile = res?.data;
 
