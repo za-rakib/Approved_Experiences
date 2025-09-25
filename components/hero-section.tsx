@@ -104,9 +104,9 @@ export default function HeroSection() {
         </div>
 
         {/* Desktop view */}
-        <div className="hidden md:flex max-w-6xl mx-auto items-center px-4">
+        <div className="hidden md:flex items-center px-4">
           <div className="flex-1" />
-          <div className="flex items-center gap-4">
+          <div className="flex items-center justify-center gap-4">
             <Link
               href="/#how-it-works"
               className="text-center bg-blue-600 text-white font-semibold rounded-full px-8 py-3.5 hover:bg-blue-700 shadow-lg transition-transform transform hover:scale-105"
