@@ -148,13 +148,13 @@ export default function PlatformSection() {
             {cards.map((card, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 rounded-2xl bg-[#F7FAFF]"
+                className="flex-shrink-0 rounded-2xl bg-[#F7FAFF] p-2"
                 style={{
                   width: isMobile ? "100%" : `calc(${cardWidth}% - 1rem)`,
                 }}
               >
                 <Image
-                  className="h-48 w-full rounded-t-2xl object-cover"
+                  className="h-48 w-full rounded-2xl object-cover"
                   src={card.image}
                   alt={card.alt}
                   width={400}
