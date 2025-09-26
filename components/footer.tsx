@@ -5,26 +5,26 @@ import ScrollToTop from "./scroll-to-top";
 export default function Footer() {
   return (
     <footer className="px-4 text-white relative">
-      <div className="bg-[#001F63] container mx-auto px-16  rounded-t-[40px] pt-16">
-        <div className="bg-[#E9F0FF] text-gray-900 rounded-2xl p-8 md:p-12  mb-20 shadow-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-3xl md:text-4xl font-semibold leading-tight text-black">
+      <div className="bg-[#001F63] container mx-auto px-12  rounded-t-[40px] pt-12">
+        <div className="bg-[#E9F0FF] text-gray-900 rounded-2xl p-6 md:py-12 md:p-6 mb-20 shadow-xl">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="">
+              <h3 className="text-3xl md:text-[36px] font-semibold leading-tight text-[#0E0E0F]">
                 Want product news and updates? <br />
                 Sign up for our newsletter.
               </h3>
-              <p className="mt-4 text-gray-600">
+              <p className="mt-4 text-[#525253]">
                 We care about your data. Read our{" "}
-                <Link href="#" className="text-blue-600 underline">
+                <Link href="#" className="text-[#2563EB] underline">
                   Privacy Policy
                 </Link>
                 .
               </p>
             </div>
-            <div className="space-y-4">
-              <p className="font-semibold text-black">Sign up today</p>
+            <div className="">
+              <p className="font-semibold text-black mb-4">Sign up today</p>
               <form className="space-y-4">
-                <div className="flex items-center rounded-full  border-2 border-black">
+                <div className="flex items-center rounded-full  border-1 border-[#001F63]">
                   <input
                     type="email"
                     placeholder="Enter your email"
@@ -32,7 +32,7 @@ export default function Footer() {
                   />
                   <button
                     type="submit"
-                    className="bg-blue-600 text-white font-semibold px-6 py-2 rounded-full hover:bg-blue-700 transition"
+                    className="bg-[#2563EB] text-white font-semibold px-6 py-2 rounded-full hover:bg-blue-700 transition"
                   >
                     Subscribe
                   </button>
@@ -41,7 +41,7 @@ export default function Footer() {
                   <input
                     id="terms"
                     type="checkbox"
-                    className="h-4 w-4 rounded border-gray-300 text-[#2563EB] focus:ring-[#2563EB]"
+                    className="h-4 w-4 rounded border border-[#2563EB] text-[#2563EB] focus:ring-[#2563EB]"
                   />
                   <label
                     htmlFor="terms"
@@ -185,8 +185,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="py-8 border-t border-gray-800 text-center">
-          <p className="text-gray-500 text-sm">
+        <div className="py-8 border-t border-[#0739A7] text-center">
+          <p className="text-[#F4F4F4] text-sm">
             &copy; 2025 Approved Experiences, Inc. All rights reserved.
           </p>
         </div>
