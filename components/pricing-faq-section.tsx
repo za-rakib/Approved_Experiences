@@ -125,7 +125,7 @@ export default function PricingFaqSection() {
       <div className="space-y-8">
         {faqSections.map((section, sectionIndex) => (
           <div key={sectionIndex}>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
+            <h3 className="text-[18px] font-medium text-[#525253] mb-4">
               {section.title}
             </h3>
             <Accordion type="single" collapsible className="space-y-4">
@@ -135,7 +135,7 @@ export default function PricingFaqSection() {
                   value={`item-${sectionIndex}-${faqIndex}`}
                   className="border border-[#E9F0FF] rounded-lg px-6"
                 >
-                  <AccordionTrigger className="text-left font-semibold text-gray-900 hover:no-underline">
+                  <AccordionTrigger className="text-left text-[20px] font-medium text-[#0E0E0F] hover:no-underline">
                     <div className="flex items-center">
                       <div className="rounded-full p-2 mr-4">
                         <HelpCircle className="text-[#6898FF]" />
@@ -143,7 +143,7 @@ export default function PricingFaqSection() {
                       {faq.question}
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 pb-4">
+                  <AccordionContent className="text-[#525253] font-normal text-[14px] pb-4">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
