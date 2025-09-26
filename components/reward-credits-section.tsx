@@ -5,7 +5,7 @@ export default function RewardCreditsSection() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <section className="py-10 sm:py-24 font-manrope">
         <div className="text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight text-balance">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-slate-900 tracking-tight text-balance">
             Build Up{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3149FA] to-[#8E98FE]">
               Reward{" "}

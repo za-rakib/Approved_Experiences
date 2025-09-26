@@ -382,9 +382,7 @@ export default function PricingPlansSection() {
                   <h3 className="text-2xl font-bold">{plan.name}</h3>
                   <p className="mt-1 mb-6 text-lg">{plan.description}</p>
                   <div>
-                    <span className="text-4xl font-extrabold">
-                      {plan.price}
-                    </span>
+                    <span className="text-4xl font-semibold">{plan.price}</span>
                     <span className="text-xl font-bold  line-through ml-2">
                       {plan.originalPrice}
                     </span>

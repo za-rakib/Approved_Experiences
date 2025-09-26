@@ -80,7 +80,7 @@ export default function PricingSection({ data }: any) {
                 </p>
                 <div className="my-6">
                   <span
-                    className={`text-5xl font-extrabold ${
+                    className={`text-5xl font-semibold ${
                       activePlanData.name !== "Platinum" && "text-gray-900"
                     }`}
                   >

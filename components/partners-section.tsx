@@ -5,7 +5,7 @@ export default function PartnersSection() {
     <section className="py-10 bg-white">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 text-balance">
+          <h2 className="text-4xl sm:text-5xl font-semibold text-gray-900 text-balance">
             Partners In{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3149FA] to-[#8E98FE]">
               Our Network

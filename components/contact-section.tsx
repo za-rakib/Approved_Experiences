@@ -5,7 +5,7 @@ export default function ContactSection() {
     <section className="py-12 md:py-12">
       <div className="container mx-auto px-4">
         <div className="rounded-3xl p-8 md:p-25 text-center bg-[#FAFAFA] bg-[radial-gradient(#DFDFDF_1px,transparent_1px)] [background-size:16px_16px]">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 text-balance">
+          <h2 className="text-3xl md:text-5xl font-semibold text-[#001F63] text-balance">
             Contact Us
           </h2>
           <p className="mt-4 text-gray-600 text-lg">
