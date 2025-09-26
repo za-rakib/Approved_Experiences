@@ -196,8 +196,8 @@ export default function ClientsSection() {
 
             {/* Center Testimonial (Active) */}
             <div className="relative z-20">
-              <div className="text-left bg-[#F7FAFF] p-8 rounded-2xl  border border-[#E9F0FF] w-80 mx-auto min-h-[260px]">
-                <div className="absolute -top-1 -left-2 w-4 h-4 border-t-2 border-l-2 border-[#2563EB]"></div>
+              <div className="text-left bg-[#F7FAFF] p-3 rounded-2xl  border border-[#E9F0FF] w-80 mx-auto min-h-[200px]">
+                <div className="absolute -top-5 -left-2 w-4 h-4 border-t-2 border-l-2 border-[#2563EB]"></div>
                 <div className="absolute -top-4 -right-4 w-4 h-4 border-t-2 border-r-2 border-[#2563EB]"></div>
                 <div className="absolute -bottom-4 -left-4 w-4 h-4 border-b-2 border-l-2 border-[#2563EB]"></div>
                 <div className="absolute -bottom-4 -right-4 w-4 h-4 border-b-2 border-r-2 border-[#2563EB]"></div>
