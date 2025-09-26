@@ -143,7 +143,7 @@ export default function PricingFaqSection() {
                       {faq.question}
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="text-[#525253] font-normal text-[14px] pb-4">
+                  <AccordionContent className="text-[#525253] font-normal text-[14px] pb-4 pl-14">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
