@@ -8,8 +8,8 @@ import { useAuthApi } from "../../redux/hooks/useApi";
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [fullName, setFullName] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -18,6 +18,15 @@ export default function LoginPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+
+    const nameParts = fullName.trim().split(/\s+/);
+    const firstName = nameParts[0] || "";
+    const lastName = nameParts.slice(1).join(" ");
     setIsLoading(true);
     setError("");
 
@@ -122,8 +131,8 @@ export default function LoginPage() {
                       required
                       className="appearance-none rounded-full relative block w-full pl-10 px-3 py-2 border-none bg-transparent placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-0 focus:z-10 sm:text-sm"
                       placeholder="Enter your name"
-                      value={firstName}
-                      onChange={(e) => setFirstName(e.target.value)}
+                      value={fullName}
+                      onChange={(e) => setFullName(e.target.value)}
                     />
                   </div>
                 </div>
@@ -252,20 +261,20 @@ export default function LoginPage() {
                   <input
                     id="confirmpassword"
                     name="confirmpassword"
-                    type="confirmpassword"
+                    type="password"
                     autoComplete="new-password"
                     required
                     className="appearance-none rounded-full relative block w-full pl-10 px-3 py-2 border-none bg-transparent placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-0 focus:z-10 sm:text-sm"
                     placeholder="Confirm Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
                   />
                 </div>
               </div>
               <div>
                 <button
                   type="submit"
-                  disabled={isLoading}
+                  disabled={isLoading || password !== confirmPassword}
                   className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isLoading ? "Creating Account..." : "Create Account"}
