@@ -110,7 +110,7 @@ export default function ClientsSection() {
           />
         </div>
 
-        <div className="mt-12 relative flex items-center justify-center overflow-hidden">
+        <div className="mt-12 relative flex items-center justify-center ">
           <div className="flex items-center justify-center w-full max-w-7xl relative">
             {/* Far Left Testimonial (Faded) */}
             <div className="absolute left-0 transform -translate-x-1/2 opacity-30 scale-75 hidden lg:block">
@@ -195,7 +195,7 @@ export default function ClientsSection() {
             </div>
 
             {/* Center Testimonial (Active) */}
-            <div className="relative z-20">
+            {/* <div className="relative z-20">
               <div className="text-left bg-[#F7FAFF] p-3 rounded-2xl  border border-[#E9F0FF] w-80 mx-auto min-h-[200px]">
                 <div className="absolute top-1 -left-2 w-4 h-4 border-t-2 border-l-2 border-[#2563EB]"></div>
                 <div className="absolute -top-4 -right-4 w-4 h-4 border-t-2 border-r-2 border-[#2563EB]"></div>
@@ -234,7 +234,53 @@ export default function ClientsSection() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
+{/* Center Testimonial (Active) */}
+{/* Center Testimonial (Active) */}
+{/* Center Testimonial (Active) */}
+<div className="relative z-20 w-80 mx-auto">
+  <div className="relative bg-[#F7FAFF] p-6 rounded-2xl border border-[#E9F0FF] min-h-[200px]">
+    {/* Top-left corner */}
+    <div className="absolute -top-2 -left-2 w-5 h-5 border-t-[1.5px] border-l-[1.5px] border-blue-500"></div>
+    {/* Top-right corner */}
+    <div className="absolute -top-2 -right-2 w-5 h-5 border-t-[1.5px] border-r-[1.5px] border-blue-500"></div>
+    {/* Bottom-left corner */}
+    <div className="absolute -bottom-2 -left-2 w-5 h-5 border-b-[1.5px] border-l-[1.5px] border-blue-500"></div>
+    {/* Bottom-right corner */}
+    <div className="absolute -bottom-2 -right-2 w-5 h-5 border-b-[1.5px] border-r-[1.5px] border-blue-500"></div>
+
+    <p className="text-gray-600">{testimonials[currentIndex].text}</p>
+    <div className="flex items-center mt-6">
+      <Image
+        src={testimonials[currentIndex].image || "/placeholder.svg"}
+        alt={testimonials[currentIndex].name}
+        width={48}
+        height={48}
+        className="w-12 h-12 rounded-full object-cover"
+      />
+      <div className="ml-4">
+        <p className="font-semibold text-gray-900 flex items-center">
+          {testimonials[currentIndex].name}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4 text-blue-500 ml-1"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a.75.75 0 00-1.06-1.06L9 10.94l-1.72-1.72a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.06 0l4.25-4.25z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </p>
+        <p className="text-sm text-gray-500">{testimonials[currentIndex].title}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
             {/* Right Testimonial */}
             <div className="absolute right-1/4 transform translate-x-1/2 opacity-60 scale-90 hidden md:block z-10">
