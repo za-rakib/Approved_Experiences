@@ -559,13 +559,14 @@ export default function PricingPlansSection() {
           </div>
 
           {/* Desktop Bottom Buttons */}
-          <div className="flex justify-center gap-8 mt-8">
+          <div className="grid grid-cols-4 gap-4 mt-8">
+            <div /> {/* Empty div for feature column */}
             {plans.map((plan: any) => (
-              <div key={plan.name} className="w-full max-w-xs">
+              <div key={plan.name} className="text-center">
                 <Button
                   onClick={() => router.push(`/checkout/${String(plan.id)}`)}
                   variant="outline"
-                  className="w-full bg-[#F7FAFF] border border-[#001F63] text-[#001F63] font-semibold py-6 rounded-full hover:bg-gray-100 transition"
+                  className="w-full max-w-xs bg-[#F7FAFF] border border-[#001F63] text-[#001F63] font-semibold py-6 rounded-full hover:bg-gray-100 transition"
                 >
                   Get Started
                 </Button>
