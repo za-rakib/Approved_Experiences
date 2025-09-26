@@ -138,7 +138,7 @@ export default function ClientsSection() {
             </div>
 
             {/* Center Testimonial (Active) */}
-            <div className="text-left bg-[#F7FAFF] p-8 rounded-2xl shadow-xl relative border border-[#E9F0FF]">
+            <div className="text-left bg-[#F7FAFF] p-8 rounded-2xl shadow-l relative border border-[#E9F0FF]">
               <div className="absolute -top-4 -left-4 w-4 h-4 border-t-1 border-l-1 border-[#2563EB] "></div>
               <div className="absolute -top-4 -right-4 w-4 h-4 border-t-1 border-r-1 border-[#2563EB]"></div>
               <div className="absolute -bottom-4 -left-4 w-4 h-4 border-b-1 border-l-1 border-[#2563EB]"></div>

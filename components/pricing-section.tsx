@@ -1,8 +1,7 @@
 "use client";
 import { useGetMembershipPlansQuery } from "@/redux/services/api";
 import Link from "next/link";
-import { useRef, useState } from "react";
-import { useSelector } from "react-redux";
+import { useState } from "react";
 
 export default function PricingSection({ data }: any) {
   const [activePlan, setActivePlan] = useState("Platinum");
@@ -26,10 +25,13 @@ export default function PricingSection({ data }: any) {
   // tokenRef.current = token; // keep latest token
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-16 bg-white">
       <div className="container mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 text-balance">
-          Pricing <span className="text-blue-600">Plans</span>
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 text-balance">
+          Pricing{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3149FA] to-[#8E98FE]">
+            Plans
+          </span>
         </h2>
         <p className="mt-4 max-w-3xl mx-auto text-gray-600 text-lg text-pretty">
           Unlock exclusive access to countless hotels, vacation homes, car
@@ -182,24 +184,26 @@ export default function PricingSection({ data }: any) {
             return item.name !== "Platinum" ? (
               <div
                 key={item.id}
-                className="bg-gray-100 p-8 rounded-3xl border border-gray-200 flex flex-col"
+                className="bg-[#F7FAFF] p-8 rounded-3xl border border-[#E9F0FF] flex flex-col"
               >
-                <h3 className="text-2xl font-bold">{item?.name}</h3>
+                <h3 className="text-xl font-bold text-[#0E0E0F]">
+                  {item?.name}
+                </h3>
                 <p className="text-gray-500 mt-1">
                   Unlock benefits that include
                 </p>
                 <div className="my-6">
-                  <span className="text-5xl font-extrabold text-gray-900">
+                  <span className="text-[32px] font-bold text-[#001F63]">
                     ${item?.discountedPrice}
                   </span>
-                  <span className="text-xl font-bold text-gray-400 line-through ml-2">
+                  <span className="text-xl font-bold text-[#001F63] line-through ml-2">
                     ${item?.regularPrice}
                   </span>
                   <span className="text-gray-500">/ year</span>
                 </div>
                 <Link
                   href={`/checkout/${item.id}`}
-                  className="w-full text-center border border-gray-300 text-gray-800 font-semibold py-3 rounded-full hover:bg-gray-100 transition"
+                  className="w-full text-center border border-[#001F63] text-[#001F63] font-semibold py-3 rounded-full hover:bg-gray-100 transition"
                 >
                   Get Started
                 </Link>
@@ -207,41 +211,40 @@ export default function PricingSection({ data }: any) {
                   <p className="font-semibold text-gray-900">
                     Unlock benefits that include
                   </p>
-                  <ul className="space-y-3 text-gray-600">
+                  <ul className="space-y-2 text-[#525253]">
                     {nonExclusiveFeatures.map((feat: any) => (
-                      <li key={feat.id} className="flex items-center">
+                      <li key={feat.id} className="flex items-center gap-2">
                         <svg
-                          className="w-5 h-5 text-blue-600 mr-2"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={20}
+                          height={21}
+                          fill="none"
                         >
                           <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clipRule="evenodd"
-                          ></path>
+                            fill="#2563EB"
+                            d="M10 1.08a8.958 8.958 0 0 1 8.958 8.958A8.958 8.958 0 0 1 10 18.996a8.958 8.958 0 0 1-8.958-8.958A8.958 8.958 0 0 1 10 1.08Zm0 1.25a7.708 7.708 0 1 0 0 15.416A7.708 7.708 0 1 0 10 2.33Zm2.873 4.786a.625.625 0 1 1 .92.844l-4.582 5a.626.626 0 0 1-.903.02l-2.083-2.084a.625.625 0 0 1 .883-.883l1.622 1.622 4.143-4.519Z"
+                          />
                         </svg>
-                        {feat?.feature?.name}
+                        <p className="text-[16px]">{feat?.feature?.name}</p>
                       </li>
                     ))}
                     {exclusiveFeatures.map((feat: any) => (
                       <li
                         key={feat.id}
-                        className="flex items-center text-gray-800 font-medium"
+                        className="flex items-center text-[#525253] font-semibold  gap-2"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className="w-5 h-5 text-blue-600 mr-2"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
+                          width={20}
+                          height={21}
+                          fill="none"
                         >
                           <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
-                            clipRule="evenodd"
+                            fill="#2563EB"
+                            d="M10 1.08a8.958 8.958 0 0 1 8.958 8.958A8.958 8.958 0 0 1 10 18.996a8.958 8.958 0 0 1-8.958-8.958A8.958 8.958 0 0 1 10 1.08Zm0 1.25a7.708 7.708 0 1 0 0 15.416A7.708 7.708 0 1 0 10 2.33Zm0 3.75c.345 0 .625.28.625.625v2.708h2.708a.625.625 0 1 1 0 1.25h-2.708v2.708a.625.625 0 1 1-1.25 0v-2.708H6.667a.625.625 0 1 1 0-1.25h2.708V6.705c0-.345.28-.625.625-.625Z"
                           />
                         </svg>
-                        {feat?.feature?.name}
+                        <p className="text-[16px]"> {feat?.feature?.name}</p>
                       </li>
                     ))}
                   </ul>
@@ -252,12 +255,12 @@ export default function PricingSection({ data }: any) {
                 key={item.id}
                 className="bg-blue-600 text-white p-8 rounded-3xl shadow-2xl shadow-blue-200 flex flex-col transform md:scale-105"
               >
-                <h3 className="text-2xl font-bold">{item?.name}</h3>
+                <h3 className="text-xl font-bold">{item?.name}</h3>
                 <p className="text-blue-200 mt-1">
                   Premium luxury travel experience with the best value.
                 </p>
                 <div className="my-6">
-                  <span className="text-5xl font-extrabold">
+                  <span className="text-[32px] font-bold">
                     ${item?.discountedPrice}
                   </span>
                   <span className="text-xl font-bold text-blue-300 line-through ml-2">
@@ -277,17 +280,20 @@ export default function PricingSection({ data }: any) {
                   </p>
                   <ul className="space-y-3 text-blue-200">
                     {nonExclusiveFeatures.map((feat: any) => (
-                      <li key={feat.id} className="flex items-center">
+                      <li
+                        key={feat.id}
+                        className="flex items-center gap-2 text-[#F4F4F4]"
+                      >
                         <svg
-                          className="w-5 h-5 text-white mr-2"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={20}
+                          height={21}
+                          fill="none"
                         >
                           <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clipRule="evenodd"
-                          ></path>
+                            fill="#fff"
+                            d="M10 1.08a8.958 8.958 0 0 1 8.958 8.958A8.958 8.958 0 0 1 10 18.996a8.958 8.958 0 0 1-8.958-8.958A8.958 8.958 0 0 1 10 1.08Zm0 1.25a7.708 7.708 0 1 0 0 15.416A7.708 7.708 0 1 0 10 2.33Zm2.873 4.786a.625.625 0 1 1 .92.844l-4.582 5a.626.626 0 0 1-.903.02l-2.083-2.084a.625.625 0 0 1 .883-.883l1.622 1.622 4.143-4.519Z"
+                          />
                         </svg>
                         {feat?.feature?.name}
                       </li>
@@ -295,18 +301,17 @@ export default function PricingSection({ data }: any) {
                     {exclusiveFeatures.map((feat: any) => (
                       <li
                         key={feat.id}
-                        className="flex items-center font-semibold text-white"
+                        className="flex items-center font-semibold text-white gap-2"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className="w-5 h-5 mr-2"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
+                          width={20}
+                          height={21}
+                          fill="none"
                         >
                           <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
-                            clipRule="evenodd"
+                            fill="#fff"
+                            d="M10 1.08a8.958 8.958 0 0 1 8.958 8.958A8.958 8.958 0 0 1 10 18.996a8.958 8.958 0 0 1-8.958-8.958A8.958 8.958 0 0 1 10 1.08Zm0 1.25a7.708 7.708 0 1 0 0 15.416A7.708 7.708 0 1 0 10 2.33Zm0 3.75c.345 0 .625.28.625.625v2.708h2.708a.625.625 0 1 1 0 1.25h-2.708v2.708a.625.625 0 1 1-1.25 0v-2.708H6.667a.625.625 0 1 1 0-1.25h2.708V6.705c0-.345.28-.625.625-.625Z"
                           />
                         </svg>
                         {feat?.feature?.name}
@@ -321,7 +326,7 @@ export default function PricingSection({ data }: any) {
 
         <Link
           href="/pricing"
-          className="mt-12 inline-block bg-blue-600 text-white font-semibold px-8 py-4 rounded-full hover:bg-blue-700 transition"
+          className="mt-15 inline-block bg-[#2563EB] text-[#F7FAFF] font-medium px-8 py-4 rounded-full hover:bg-blue-700 transition"
         >
           View Detailed Comparison
         </Link>
