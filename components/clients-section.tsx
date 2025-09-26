@@ -47,7 +47,7 @@ export default function ClientsSection() {
   return (
     <section className="py-10 md:py-10">
       <div className="container mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 text-balance">
+        <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 text-balance">
           Our Happy{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3149FA] to-[#8E98FE]">
             Clients

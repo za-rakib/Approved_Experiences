@@ -63,7 +63,7 @@ export default function PlatformSection() {
         {/* Header for desktop */}
         <div className="hidden md:flex md:flex-row md:items-center md:justify-between">
           <div>
-            <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
+            <h2 className="text-4xl font-semibold text-gray-900 sm:text-5xl">
               All-In-One{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3149FA] to-[#8E98FE]">
                 Platform
@@ -119,7 +119,7 @@ export default function PlatformSection() {
 
         {/* Header for mobile */}
         <div className="md:hidden">
-          <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
+          <h2 className="text-4xl font-semibold text-gray-900 sm:text-5xl">
             All-In-One{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3149FA] to-[#8E98FE]">
               Platform

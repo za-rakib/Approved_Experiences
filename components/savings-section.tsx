@@ -76,7 +76,7 @@ export default function SavingsSection() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <section className="py-16 sm:py-24 font-manrope">
         <div className="text-center">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight text-balance">
+          <h2 className="text-4xl sm:text-5xl font-semibold text-slate-900 tracking-tight text-balance">
             See The{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3149FA] to-[#8E98FE]">
               Savings
