@@ -59,7 +59,7 @@ export default function ClientsSection() {
   };
 
   return (
-    <section className="py-10 md:py-10">
+    <section className="py-10 md:py-10 overflow-hidden">
       <div className=" mx-auto text-center">
         <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 text-balance">
           Our Happy{" "}
