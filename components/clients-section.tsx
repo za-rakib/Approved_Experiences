@@ -25,10 +25,24 @@ const testimonials = [
     title: "Budget Traveler",
     image: "/professional-woman-headshot.png",
   },
+  {
+    id: 4,
+    text: "Approved Experiences has transformed how I plan and book my adventures. The exclusive deals and seamless booking process make travel planning a joy!",
+    name: "Sarah Johnson",
+    title: "Adventure Seeker",
+    image: "/woman-profile.png",
+  },
+  {
+    id: 5,
+    text: "As someone who travels frequently for work, I appreciate the efficiency and savings that Approved Experiences provides. It's become an essential tool for my travel needs.",
+    name: "David Chen",
+    title: "Business Traveler",
+    image: "/man-profile.png",
+  },
 ];
 
 export default function ClientsSection() {
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(2); // Start with middle item
 
   const nextTestimonial = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
@@ -46,7 +60,7 @@ export default function ClientsSection() {
 
   return (
     <section className="py-10 md:py-10">
-      <div className="container mx-auto px-6 text-center">
+      <div className=" mx-auto text-center">
         <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 text-balance">
           Our Happy{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3149FA] to-[#8E98FE]">
@@ -96,120 +110,210 @@ export default function ClientsSection() {
           />
         </div>
 
-        <div className="mt-12 relative flex items-center justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
+        <div className="mt-12 relative flex items-center justify-center overflow-hidden">
+          <div className="flex items-center justify-center w-full max-w-7xl relative">
+            {/* Far Left Testimonial (Faded) */}
+            <div className="absolute left-0 transform -translate-x-1/2 opacity-30 scale-75 hidden lg:block">
+              <div className="text-left p-6 rounded-2xl bg-[#F7FAFF] border border-[#E9F0FF] w-80 min-h-[260px]">
+                <p className="text-gray-600 text-sm line-clamp-4">
+                  {testimonials[getTestimonialIndex(-2)].text}
+                </p>
+                <div className="flex items-center mt-4">
+                  <Image
+                    src={
+                      testimonials[getTestimonialIndex(-2)].image ||
+                      "/placeholder.svg"
+                    }
+                    alt={testimonials[getTestimonialIndex(-2)].name}
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 rounded-full object-cover"
+                  />
+                  <div className="ml-3">
+                    <p className="font-semibold text-gray-900 flex items-center text-sm">
+                      {testimonials[getTestimonialIndex(-2)].name}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-3 w-3 text-blue-500 ml-1"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a.75.75 0 00-1.06-1.06L9 10.94l-1.72-1.72a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.06 0l4.25-4.25z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </p>
+                    <p className="text-xs text-gray-500">
+                      {testimonials[getTestimonialIndex(-2)].title}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Left Testimonial */}
-            <div className="text-left p-8 rounded-2xl hidden md:block opacity-60 transform scale-95 bg-[#F7FAFF] border border-[#E9F0FF]">
-              <p className="text-gray-600">
-                {testimonials[getTestimonialIndex(-1)].text}
-              </p>
-              <div className="flex items-center mt-6">
-                <Image
-                  src={
-                    testimonials[getTestimonialIndex(-1)].image ||
-                    "/placeholder.svg"
-                  }
-                  alt={testimonials[getTestimonialIndex(-1)].name}
-                  width={48}
-                  height={48}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
-                <div className="ml-4">
-                  <p className="font-semibold text-gray-900 flex items-center">
-                    {testimonials[getTestimonialIndex(-1)].name}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 text-blue-500 ml-1"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a.75.75 0 00-1.06-1.06L9 10.94l-1.72-1.72a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.06 0l4.25-4.25z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    {testimonials[getTestimonialIndex(-1)].title}
-                  </p>
+            <div className="absolute left-1/4 transform -translate-x-1/2 opacity-60 scale-90 hidden md:block z-10">
+              <div className="text-left p-8 rounded-2xl bg-[#F7FAFF] border border-[#E9F0FF] w-80 min-h-[260px]">
+                <p className="text-gray-600">
+                  {testimonials[getTestimonialIndex(-1)].text}
+                </p>
+                <div className="flex items-center mt-6">
+                  <Image
+                    src={
+                      testimonials[getTestimonialIndex(-1)].image ||
+                      "/placeholder.svg"
+                    }
+                    alt={testimonials[getTestimonialIndex(-1)].name}
+                    width={48}
+                    height={48}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div className="ml-4">
+                    <p className="font-semibold text-gray-900 flex items-center">
+                      {testimonials[getTestimonialIndex(-1)].name}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 text-blue-500 ml-1"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a.75.75 0 00-1.06-1.06L9 10.94l-1.72-1.72a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.06 0l4.25-4.25z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      {testimonials[getTestimonialIndex(-1)].title}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Center Testimonial (Active) */}
-            <div className="text-left bg-[#F7FAFF] p-8 rounded-2xl shadow-l relative border border-[#E9F0FF]">
-              <div className="absolute -top-4 -left-4 w-4 h-4 border-t-1 border-l-1 border-[#2563EB] "></div>
-              <div className="absolute -top-4 -right-4 w-4 h-4 border-t-1 border-r-1 border-[#2563EB]"></div>
-              <div className="absolute -bottom-4 -left-4 w-4 h-4 border-b-1 border-l-1 border-[#2563EB]"></div>
-              <div className="absolute -bottom-4 -right-4 w-4 h-4 border-b-1 border-r-1 border-[#2563EB]"></div>
-              <p className="text-gray-600">{testimonials[currentIndex].text}</p>
-              <div className="flex items-center mt-6">
-                <Image
-                  src={testimonials[currentIndex].image || "/placeholder.svg"}
-                  alt={testimonials[currentIndex].name}
-                  width={48}
-                  height={48}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
-                <div className="ml-4">
-                  <p className="font-semibold text-gray-900 flex items-center">
-                    {testimonials[currentIndex].name}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 text-blue-500 ml-1"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a.75.75 0 00-1.06-1.06L9 10.94l-1.72-1.72a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.06 0l4.25-4.25z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    {testimonials[currentIndex].title}
-                  </p>
+            <div className="relative z-20">
+              <div className="text-left bg-[#F7FAFF] p-8 rounded-2xl  border border-[#E9F0FF] w-80 mx-auto min-h-[260px]">
+                <div className="absolute -top-1 -left-2 w-4 h-4 border-t-2 border-l-2 border-[#2563EB]"></div>
+                <div className="absolute -top-4 -right-4 w-4 h-4 border-t-2 border-r-2 border-[#2563EB]"></div>
+                <div className="absolute -bottom-4 -left-4 w-4 h-4 border-b-2 border-l-2 border-[#2563EB]"></div>
+                <div className="absolute -bottom-4 -right-4 w-4 h-4 border-b-2 border-r-2 border-[#2563EB]"></div>
+                <p className="text-gray-600">
+                  {testimonials[currentIndex].text}
+                </p>
+                <div className="flex items-center mt-6">
+                  <Image
+                    src={testimonials[currentIndex].image || "/placeholder.svg"}
+                    alt={testimonials[currentIndex].name}
+                    width={48}
+                    height={48}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div className="ml-4">
+                    <p className="font-semibold text-gray-900 flex items-center">
+                      {testimonials[currentIndex].name}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 text-blue-500 ml-1"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a.75.75 0 00-1.06-1.06L9 10.94l-1.72-1.72a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.06 0l4.25-4.25z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      {testimonials[currentIndex].title}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Right Testimonial */}
-            <div className="text-left p-8 rounded-2xl hidden md:block opacity-60 transform scale-95 bg-[#F7FAFF] border border-[#E9F0FF]">
-              <p className="text-gray-600">
-                {testimonials[getTestimonialIndex(1)].text}
-              </p>
-              <div className="flex items-center mt-6">
-                <Image
-                  src={
-                    testimonials[getTestimonialIndex(1)].image ||
-                    "/placeholder.svg"
-                  }
-                  alt={testimonials[getTestimonialIndex(1)].name}
-                  width={48}
-                  height={48}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
-                <div className="ml-4">
-                  <p className="font-semibold text-gray-900 flex items-center">
-                    {testimonials[getTestimonialIndex(1)].name}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 text-blue-500 ml-1"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a.75.75 0 00-1.06-1.06L9 10.94l-1.72-1.72a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.06 0l4.25-4.25z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    {testimonials[getTestimonialIndex(1)].title}
-                  </p>
+            <div className="absolute right-1/4 transform translate-x-1/2 opacity-60 scale-90 hidden md:block z-10">
+              <div className="text-left p-8 rounded-2xl bg-[#F7FAFF] border border-[#E9F0FF] w-80 min-h-[260px]">
+                <p className="text-gray-600">
+                  {testimonials[getTestimonialIndex(1)].text}
+                </p>
+                <div className="flex items-center mt-6">
+                  <Image
+                    src={
+                      testimonials[getTestimonialIndex(1)].image ||
+                      "/placeholder.svg"
+                    }
+                    alt={testimonials[getTestimonialIndex(1)].name}
+                    width={48}
+                    height={48}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div className="ml-4">
+                    <p className="font-semibold text-gray-900 flex items-center">
+                      {testimonials[getTestimonialIndex(1)].name}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 text-blue-500 ml-1"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a.75.75 0 00-1.06-1.06L9 10.94l-1.72-1.72a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.06 0l4.25-4.25z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      {testimonials[getTestimonialIndex(1)].title}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Far Right Testimonial (Faded) */}
+            <div className="absolute right-0 transform translate-x-1/2 opacity-30 scale-75 hidden lg:block">
+              <div className="text-left p-6 rounded-2xl bg-[#F7FAFF] border border-[#E9F0FF] w-80 min-h-[260px]">
+                <p className="text-gray-600 text-sm line-clamp-4">
+                  {testimonials[getTestimonialIndex(2)].text}
+                </p>
+                <div className="flex items-center mt-4">
+                  <Image
+                    src={
+                      testimonials[getTestimonialIndex(2)].image ||
+                      "/placeholder.svg"
+                    }
+                    alt={testimonials[getTestimonialIndex(2)].name}
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 rounded-full object-cover"
+                  />
+                  <div className="ml-3">
+                    <p className="font-semibold text-gray-900 flex items-center text-sm">
+                      {testimonials[getTestimonialIndex(2)].name}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-3 w-3 text-blue-500 ml-1"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a.75.75 0 00-1.06-1.06L9 10.94l-1.72-1.72a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.06 0l4.25-4.25z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </p>
+                    <p className="text-xs text-gray-500">
+                      {testimonials[getTestimonialIndex(2)].title}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
