@@ -565,7 +565,7 @@ export default function PricingPlansSection() {
                 <Button
                   onClick={() => router.push(`/checkout/${String(plan.id)}`)}
                   variant="outline"
-                  className="w-full bg-[#F7FAFF] border border-black text-black font-semibold py-6 rounded-full hover:bg-gray-100 transition"
+                  className="w-full bg-[#F7FAFF] border border-[#001F63] text-[#001F63] font-semibold py-6 rounded-full hover:bg-gray-100 transition"
                 >
                   Get Started
                 </Button>
