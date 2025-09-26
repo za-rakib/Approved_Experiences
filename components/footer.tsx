@@ -5,7 +5,7 @@ import ScrollToTop from "./scroll-to-top";
 export default function Footer() {
   return (
     <footer className="px-4 text-white relative">
-      <div className="bg-[#001F63] container mx-auto px-12  rounded-t-[40px] pt-12">
+      <div className="bg-[#001F63] container mx-auto px-8  rounded-t-[40px] pt-12">
         <div className="bg-[#E9F0FF] text-gray-900 rounded-2xl p-6 md:py-12 md:p-6 mb-20 shadow-xl">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="">
@@ -58,8 +58,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 pb-12">
-          <div className="lg:col-span-2 flex flex-row items-center  lg:flex-col lg:items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-6 pb-12">
+          <div className="lg:col-span-2 flex flex-row items-center justify-between lg:flex-col lg:items-start lg:justify-start">
             <Link href="/">
               <Image
                 src="/Logowhite.png"
@@ -68,7 +68,7 @@ export default function Footer() {
                 height={45}
               />
             </Link>
-            <div className="flex space-x-3 lg:mt-6">
+            <div className="flex space-x-2 lg:mt-6">
               <Link
                 href="#"
                 className="w-9 h-9 flex items-center justify-center border border-gray-700 rounded-md text-white-400 hover:text-white hover:border-white transition"
@@ -119,7 +119,7 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-          <div className="lg:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-10">
+          <div className="lg:col-span-4 grid grid-cols-2 md:grid-cols-4 gap-x-8">
             <div className="md:col-span-1">
               <h4 className="font-bold text-lg">Navigation</h4>
               <ul className="mt-4 space-y-3 text-white-400">

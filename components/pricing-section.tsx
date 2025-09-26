@@ -253,20 +253,22 @@ export default function PricingSection({ data }: any) {
             ) : (
               <div
                 key={item.id}
-                className="bg-blue-600 text-white p-8 rounded-3xl shadow-2xl shadow-blue-200 flex flex-col transform md:scale-105"
+                className="bg-[#2563EB] text-[#F4F4F4] p-8 rounded-3xl shadow-2xl shadow-blue-200 flex flex-col transform md:scale-105"
               >
-                <h3 className="text-xl font-bold">{item?.name}</h3>
-                <p className="text-blue-200 mt-1">
+                <h3 className="text-xl text-[#F4F4F4] font-bold">
+                  {item?.name}
+                </h3>
+                <p className="text-[#F4F4F4] mt-1">
                   Premium luxury travel experience with the best value.
                 </p>
                 <div className="my-6">
                   <span className="text-[32px] font-bold">
                     ${item?.discountedPrice}
                   </span>
-                  <span className="text-xl font-bold text-blue-300 line-through ml-2">
+                  <span className="text-xl font-bold text-[#F7FAFF] line-through ml-2">
                     ${item?.regularPrice}
                   </span>
-                  <span className="text-blue-200">/ year</span>
+                  <span className="text-[#F4F4F4]">/ year</span>
                 </div>
                 <Link
                   href={`/checkout/${item.id}`}
