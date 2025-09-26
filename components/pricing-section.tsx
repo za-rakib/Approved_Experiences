@@ -272,7 +272,7 @@ export default function PricingSection({ data }: any) {
                 </div>
                 <Link
                   href={`/checkout/${item.id}`}
-                  className="w-full text-center bg-white text-blue-600 font-semibold py-3 rounded-full hover:bg-gray-100 transition"
+                  className="w-full text-center bg-white text-[#2563EB] text-[18px] font-semibold py-3 rounded-full hover:bg-gray-100 transition"
                 >
                   Get Started
                 </Link>

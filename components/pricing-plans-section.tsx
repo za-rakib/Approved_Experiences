@@ -245,7 +245,13 @@
 
 import { Button } from "@/components/ui/button";
 import { useGetMembershipPlansQuery } from "@/redux/services/api";
-import { CheckCircle2, Circle, MinusCircle, PlusCircle } from "lucide-react";
+import {
+  CheckCircle2,
+  Circle,
+  CircleMinus,
+  CircleMinusIcon,
+  PlusCircle,
+} from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -332,7 +338,7 @@ export default function PricingPlansSection() {
     })) ?? [];
 
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto">
+    <section className="py-16 px-6 max-w-7xl mx-auto">
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -356,10 +362,10 @@ export default function PricingPlansSection() {
               <button
                 key={plan.name}
                 onClick={() => setSelectedPlan(plan.name)}
-                className={`px-6 py-2 rounded-full text-base font-semibold transition-colors ${
+                className={`px-6 py-4 rounded-xl text-base font-semibold transition-colors ${
                   selectedPlan === plan.name
-                    ? "bg-blue-100 text-blue-600"
-                    : "bg-transparent text-gray-600"
+                    ? "bg-[#E9F0FF] text-[#2563EB]"
+                    : "bg-transparent text-[#001F63]"
                 }`}
               >
                 {plan.name}
@@ -372,21 +378,21 @@ export default function PricingPlansSection() {
             .filter((plan: any) => plan.name === selectedPlan)
             .map((plan: any) => (
               <div key={plan.name}>
-                <div className="bg-blue-600 text-white p-6 rounded-3xl shadow-lg">
+                <div className="bg-[#2563EB] text-white p-6 rounded-3xl shadow-lg">
                   <h3 className="text-2xl font-bold">{plan.name}</h3>
-                  <p className="text-blue-200 mt-1 mb-6">{plan.description}</p>
+                  <p className="mt-1 mb-6 text-lg">{plan.description}</p>
                   <div>
-                    <span className="text-5xl font-extrabold">
+                    <span className="text-4xl font-extrabold">
                       {plan.price}
                     </span>
-                    <span className="text-xl font-bold text-blue-300 line-through ml-2">
+                    <span className="text-xl font-bold  line-through ml-2">
                       {plan.originalPrice}
                     </span>
-                    <span className="text-blue-200">/ {plan.period}</span>
+                    <span className="">/ {plan.period}</span>
                   </div>
                   <Button
                     onClick={() => router.push(`/checkout/${String(plan.id)}`)}
-                    className="w-full bg-white text-blue-600 font-semibold py-3 mt-6 rounded-full hover:bg-gray-100 transition"
+                    className="w-full bg-white text-[#2563EB] font-medium py-3 mt-6 rounded-full hover:bg-gray-100 transition"
                   >
                     Get Started
                   </Button>
@@ -424,7 +430,7 @@ export default function PricingPlansSection() {
                               );
                             }
                             return (
-                              <MinusCircle className="w-6 h-6 text-gray-300" />
+                              <CircleMinusIcon className="w-6 h-6 text-gray-300" />
                             );
                           })()}
                         </div>
@@ -452,23 +458,29 @@ export default function PricingPlansSection() {
                 key={idx}
                 className={`p-8 rounded-3xl flex flex-col ${
                   plan.popular
-                    ? "bg-blue-600 text-white shadow-2xl shadow-blue-200 transform md:scale-105"
-                    : "bg-gray-100 border border-gray-200"
+                    ? "bg-[#2563EB] text-white transform md:scale-105"
+                    : "bg-[#F7FAFF] border border-gray-200"
                 }`}
               >
                 <h3 className="text-2xl font-bold">{plan.name}</h3>
                 <p
                   className={
-                    plan.popular ? "text-blue-200 mt-1" : "text-gray-500 mt-1"
+                    plan.popular ? "text-[#F4F4F4] mt-1" : "text-[#525253] mt-1"
                   }
                 >
                   {plan.description}
                 </p>
                 <div className="my-6">
-                  <span className="text-5xl font-extrabold">{plan.price}</span>
+                  <span
+                    className={`text-4xl font-bold ${
+                      plan.popular ? "text-white" : "text-[#001F63]"
+                    }`}
+                  >
+                    {plan.price}
+                  </span>
                   <span
                     className={`text-xl font-bold ml-2 line-through ${
-                      plan.popular ? "text-blue-300" : "text-gray-400"
+                      plan.popular ? "text-white" : "text-[#001F63]"
                     }`}
                   >
                     {plan.originalPrice}
@@ -481,10 +493,10 @@ export default function PricingPlansSection() {
                 </div>
                 <Link
                   href={`/checkout/${String(plan.id)}`}
-                  className={`w-full text-center font-semibold py-3 rounded-full transition ${
+                  className={`w-full text-center font-medium text-[16px] py-3 rounded-full transition ${
                     plan.popular
-                      ? "bg-white text-blue-600 hover:bg-gray-100"
-                      : "border border-gray-300 text-gray-800 hover:bg-gray-200"
+                      ? "bg-white text-[#2563EB] hover:bg-gray-100"
+                      : "border border-[#001F63] text-gray-800 hover:bg-gray-200"
                   }`}
                 >
                   Get Started
@@ -497,11 +509,11 @@ export default function PricingPlansSection() {
           <div className="overflow-x-auto">
             <div className="min-w-full">
               <div className="grid grid-cols-4 gap-4 mb-4">
-                <div className="font-semibold text-gray-900">Features</div>
+                <div className="font-semibold text-[#0E0E0F]">Features</div>
                 {plans.map((plan: any) => (
                   <div
                     key={plan.name}
-                    className="text-center font-semibold text-gray-900"
+                    className="text-center font-semibold text-[#0E0E0F]"
                   >
                     {plan.name}
                   </div>
@@ -524,31 +536,17 @@ export default function PricingPlansSection() {
                             </span>
                           );
                         }
-                        if (feature === "Friends & Family Benefit Sharing") {
-                          return plan.name === "Gold" ? (
-                            <PlusCircle className="w-5 h-5 text-blue-500 mx-auto" />
-                          ) : (
-                            <MinusCircle className="w-5 h-5 text-gray-400 mx-auto" />
-                          );
-                        }
-                        if (
-                          [
-                            "Boomerang Rewards",
-                            "Approved Lux Concierge (24/7)",
-                          ].includes(feature)
-                        ) {
-                          return (
-                            <MinusCircle className="w-5 h-5 text-gray-400 mx-auto" />
-                          );
-                        }
                         if (plan.features[feature] === "✓") {
-                          return ["Cruises", "Car Rentals"].includes(feature) &&
-                            plan.name === "Gold" ? (
-                            <PlusCircle className="w-5 h-5 text-blue-500 mx-auto" />
-                          ) : (
-                            <CheckCircle2 className="w-5 h-5 text-green-500 mx-auto" />
+                          return (
+                            <CheckCircle2 className="w-5 h-5 text-[#2563EB] mx-auto" />
                           );
                         }
+                        if (plan.features[feature] === "✗") {
+                          return (
+                            <CircleMinus className="w-5 h-5 text-gray-400 mx-auto" />
+                          );
+                        }
+                        // Default case if feature status is not explicitly defined
                         return (
                           <Circle className="w-5 h-5 text-gray-300 mx-auto" />
                         );

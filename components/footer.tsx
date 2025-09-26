@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="bg-[#E9F0FF] text-gray-900 rounded-2xl p-6 md:py-12 md:p-6 mb-20 shadow-xl">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="">
-              <h3 className="text-3xl md:text-[36px] font-semibold leading-tight text-[#0E0E0F]">
+              <h3 className="text-3xl md:text-[32px] font-medium leading-tight text-[#0E0E0F]">
                 Want product news and updates? <br />
                 Sign up for our newsletter.
               </h3>
