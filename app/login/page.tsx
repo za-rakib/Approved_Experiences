@@ -71,7 +71,7 @@ export default function LoginPage() {
         <div className="w-full max-w-md">
           <Link
             href="/"
-            className="flex items-center text-gray-500 hover:text-gray-700"
+            className="flex items-center text-[#525253] hover:text-gray-700"
           >
             &larr; Back home
           </Link>

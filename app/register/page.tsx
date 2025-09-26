@@ -70,11 +70,11 @@ export default function LoginPage() {
         </div>
 
         {/* Form section */}
-        <div className="relative z-10 flex w-full items-center justify-center p-6 md:w-1/2 md:p-12">
+        <div className="relative z-10 flex w-full  justify-center p-6 md:w-1/2 md:p-12">
           <div className="w-full max-w-md">
             <Link
               href="/"
-              className="flex items-center text-gray-500 hover:text-gray-700"
+              className="flex items-center text-[#525253] hover:text-gray-700"
             >
               &larr; Back home
             </Link>
@@ -339,12 +339,12 @@ export default function LoginPage() {
                 </a>
               </div>
             </div>
-            <div className="mt-6 text-center">
-              <p className="text-gray-600">
+            <div className="mt-6">
+              <p className="text-[#757575]">
                 Already have an account?{" "}
                 <Link
                   href="/login"
-                  className="text-blue-600 hover:text-blue-800"
+                  className="text-[#2563EB] hover:text-blue-800"
                 >
                   Sign in here
                 </Link>
