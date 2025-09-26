@@ -43,7 +43,7 @@ function AccordionTrigger({
         {children}
         <>
           {/* <PlusIcon className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200 [&[data-state=open]>]:hidden" /> */}
-          <MinusIcon className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200 [&[data-state=closed]>]:hidden" />
+          <MinusIcon className="text-[#2563EB] pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200 [&[data-state=closed]>]:hidden" />
         </>
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
