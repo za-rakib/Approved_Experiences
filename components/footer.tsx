@@ -4,12 +4,12 @@ import ScrollToTop from "./scroll-to-top";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0A2558] text-white pt-20  rounded-t-[40px] relative">
-      <div className="container mx-auto px-6">
-        <div className="bg-[#F0F5FF] text-gray-900 rounded-2xl p-8 md:p-12  mb-20 shadow-xl">
+    <footer className="px-4 text-white relative">
+      <div className="bg-[#001F63] container mx-auto px-16  rounded-t-[40px] pt-16">
+        <div className="bg-[#E9F0FF] text-gray-900 rounded-2xl p-8 md:p-12  mb-20 shadow-xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-3xl md:text-4xl font-bold leading-tight text-black">
+              <h3 className="text-3xl md:text-4xl font-semibold leading-tight text-black">
                 Want product news and updates? <br />
                 Sign up for our newsletter.
               </h3>
