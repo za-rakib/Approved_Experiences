@@ -18,8 +18,9 @@ export default function PartnersSection() {
           </p>
         </div>
 
-        <div className="mt-16 flex flex-col md:flex-row items-center justify-between gap-12">
-          <div className="flex items-center gap-4 p-3 rounded-full border border-gray-200 bg-gray-50 w-max">
+        <div className="mt-16 flex flex-col md:flex-row items-center justify-center gap-12">
+          {/* social media  */}
+          {/* <div className="flex items-center gap-4 p-3 rounded-full border border-gray-200 bg-gray-50 w-max">
             <span className="text-gray-700 font-medium">Follow</span>
             <div className="flex items-center gap-3">
               <a href="#" className="text-gray-500 hover:text-blue-600">
@@ -50,8 +51,8 @@ export default function PartnersSection() {
                 />
               </a>
             </div>
-          </div>
-
+          </div> */}
+{/* parter image */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full md:w-auto">
             <div className="p-4 border border-gray-200 rounded-lg flex items-center justify-center">
               <Image
