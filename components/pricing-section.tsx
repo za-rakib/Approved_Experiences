@@ -33,10 +33,8 @@ export default function PricingSection({ data }: any) {
             Plans
           </span>
         </h2>
-        <p className="mt-4 max-w-3xl mx-auto text-gray-600 text-lg text-pretty">
-          Unlock exclusive access to countless hotels, vacation homes, car
-          rental locations, and flights with our travel membership—crafted for
-          ultimate convenience and style.
+        <p className="mt-4 max-w-3xl mx-auto text-[#525253] text-lg text-pretty">
+        Pick the package that best suits your needs, ranging from friends & family benefit sharing to heavily discounted private jet empty leg access.
         </p>
 
         {/* Mobile Tabs */}

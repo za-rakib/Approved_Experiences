@@ -12,10 +12,16 @@ export default function FeaturedSection() {
             </span>{" "}
             In
           </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-slate-500 text-pretty">
-            Unlock exclusive access to countless hotels, vacation homes, car
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-[#525253] text-pretty">
+            {/* Unlock exclusive access to countless hotels, vacation homes, car
             rental locations, and <br /> flights with our travel
-            membership—crafted for ultimate convenience and style.
+            membership—crafted for ultimate convenience and style. */}
+            With 1,100 private jet charters, 5,000+ hours flown, 1,000+ clients
+            served,
+            <br />
+            and 3,000+ flights booked, Approved Experiences Traveler delivers
+            <br />
+            unmatched expertise built on decades in luxury travel
           </p>
         </div>
         {/* bottom part */}

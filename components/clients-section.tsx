@@ -67,10 +67,10 @@ export default function ClientsSection() {
             Clients
           </span>
         </h2>
-        <p className="mt-4 max-w-3xl mx-auto text-gray-600 text-lg text-pretty">
-          Unlock exclusive access to countless hotels, vacation homes, car
-          rental locations, and flights with our travel membership—crafted for
-          ultimate convenience and style.
+        <p className="mt-4 max-w-3xl mx-auto text-[#525253] text-lg text-pretty">
+          With an average savings of $1,000 per trip, we have saved our clients
+          $146,048,827 and offer a 110% value guarantee if you find a better
+          price with our competitors.
         </p>
         <div className="flex justify-center items-center mt-8 space-x-2">
           <Image
@@ -92,21 +92,21 @@ export default function ClientsSection() {
             alt="Client 3"
             width={48}
             height={48}
-            className="w-12 h-12 rounded-full object-cover border-2 border-white -ml-3"
+            className="w-12 h-12 rounded-full object-cover border-2 border-white "
           />
           <Image
             src="/man-profile.png"
             alt="Client 4"
             width={48}
             height={48}
-            className="w-12 h-12 rounded-full object-cover border-2 border-white -ml-3"
+            className="w-12 h-12 rounded-full object-cover border-2 border-white"
           />
           <Image
             src="/person-headshot.png"
             alt="Client 5"
             width={48}
             height={48}
-            className="w-12 h-12 rounded-full object-cover border-2 border-white -ml-3"
+            className="w-12 h-12 rounded-full object-cover border-2 border-white"
           />
         </div>
 
