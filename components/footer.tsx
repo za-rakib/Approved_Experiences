@@ -154,6 +154,11 @@ export default function Footer() {
               <h4 className="font-bold text-lg">Resource</h4>
               <ul className="mt-4 space-y-3 text-white-400">
                 <li>
+                  <Link href="https://app.termly.io/policy-viewer/policy.html?policyUUID=c3a2a159-a4b8-4b03-b7f8-2d38bd2de0c9" className="hover:text-white transition">
+                    Terms & Conditions
+                  </Link>
+                </li>
+                 <li>
                   <Link href="#" className="hover:text-white transition">
                     FAQs
                   </Link>
