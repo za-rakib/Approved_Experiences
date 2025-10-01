@@ -87,7 +87,7 @@ export default function Home() {
 
       {/* Bottom section content */}
       <ClientWrapper>
-        <ClientsSection />
+      <ClientsSection />
       </ClientWrapper>
       <PricingSection data={membershipPlans?.data} />
       <ContactSection />

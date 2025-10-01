@@ -49,21 +49,21 @@ export default function HeroSection() {
           <div className="flex -space-x-3">
             <Image
               className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
-              src="/woman-profile.png"
+              src="/CustomerTestimonialPhotos-3.png"
               alt="User 1"
               width={40}
               height={40}
             />
             <Image
               className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
-              src="/man-profile.png"
+              src="/CustomerTestimonialPhotos-2.png"
               alt="User 2"
               width={40}
               height={40}
             />
             <Image
               className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
-              src="/diverse-person-profile.png"
+              src="/CustomerTestimonialPhotos.png"
               alt="User 3"
               width={40}
               height={40}
