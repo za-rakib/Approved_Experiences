@@ -163,7 +163,7 @@ export default function Footer() {
             <div className="col-span-2 md:col-span-1">
               <h4 className="font-bold text-lg">Contact</h4>
               <ul className="mt-4 space-y-3 text-white-400">
-                <li>Miami Florida</li>
+                <li>Miami, Florida</li>
                 <li>
                   <Link
                     href="mailto:support@approvedexperiences.com"
