@@ -1,6 +1,7 @@
 "use client";
 declare const ire: any;
 
+import ClientWrapper from "@/app/ClientWrapper";
 import ClientsSection from "@/components/clients-section";
 import ContactSection from "@/components/contact-section";
 import FeaturedSection from "@/components/featured-section";
@@ -47,7 +48,7 @@ export default function Home() {
 
     let isMounted = true;
 
-    refetch().then((res: { data: any }) => {
+    refetch().then((res: any) => {
       if (!isMounted) return;
       const profile = res?.data;
 
@@ -85,7 +86,9 @@ export default function Home() {
       <TrustedSection />
 
       {/* Bottom section content */}
-      <ClientsSection />
+      <ClientWrapper>
+        <ClientsSection />
+      </ClientWrapper>
       <PricingSection data={membershipPlans?.data} />
       <ContactSection />
 

@@ -9,36 +9,58 @@ const testimonials = [
     text: "I've never experienced travel like this before. The wholesale pricing is incredible, and the rewards program is a game-changer. Highly recommend Approved Experiences!",
     name: "Malcolm Stevens",
     title: "Luxury Travel Blogger",
-    image: "/malcolm-stevens-headshot.jpg",
+    image: "/CustomerTestimonialPhotos.png",
   },
   {
     id: 2,
     text: "The convenience and style of Approved Experiences are unmatched. Booking flights and hotels has never been easier, and the discounts are fantastic. A must-have for any traveler!",
     name: "Emily White",
     title: "Travel Enthusiast",
-    image: "/emily-white-headshot.jpg",
+    image: "/CustomerTestimonialPhotos-4.png",
   },
   {
     id: 3,
     text: "I'm saving so much money using Approved Experiences! The platform is easy to use, and the customer service is excellent. I'm telling all my friends about this!",
     name: "Yuki Tanaka",
     title: "Budget Traveler",
-    image: "/professional-woman-headshot.png",
+    image: "/CustomerTestimonialPhotos-2.png",
   },
   {
     id: 4,
     text: "Approved Experiences has transformed how I plan and book my adventures. The exclusive deals and seamless booking process make travel planning a joy!",
     name: "Sarah Johnson",
     title: "Adventure Seeker",
-    image: "/woman-profile.png",
+    image: "/CustomerTestimonialPhotos-2.png",
   },
   {
     id: 5,
     text: "As someone who travels frequently for work, I appreciate the efficiency and savings that Approved Experiences provides. It's become an essential tool for my travel needs.",
     name: "David Chen",
     title: "Business Traveler",
-    image: "/man-profile.png",
+    image: "CustomerTestimonialPhotos-5.png",
   },
+   {
+    id: 6,
+     text: "I've never experienced travel like this before. The wholesale pricing is incredible, and the rewards program is a game-changer. Highly recommend Approved Experiences!",
+    name: "Malcolm Stevens",
+    title: "Luxury Travel Blogger",
+    image: "/CustomerTestimonialPhotos-6.png",
+  },
+   {
+    id: 7,
+    text: "As someone who travels frequently for work, I appreciate the efficiency and savings that Approved Experiences provides. It's become an essential tool for my travel needs.",
+    name: "David Chen",
+    title: "Business Traveler",
+    image: "CustomerTestimonialPhotos-7.png",
+  },
+   {
+    id: 8,
+    text: "As someone who travels frequently for work, I appreciate the efficiency and savings that Approved Experiences provides. It's become an essential tool for my travel needs.",
+    name: "David Chen",
+    title: "Business Traveler",
+    image: "CustomerTestimonialPhotos-3.png",
+  },
+
 ];
 
 export default function ClientsSection() {
@@ -74,35 +96,35 @@ export default function ClientsSection() {
         </p>
         <div className="flex justify-center items-center mt-8 space-x-2">
           <Image
-            src="/professional-woman-headshot.png"
+            src="/CustomerTestimonialPhotos.png"
             alt="Client 1"
             width={48}
             height={48}
             className="w-12 h-12 rounded-full object-cover border-2 border-white"
           />
           <Image
-            src="/professional-man-headshot.png"
+            src="/CustomerTestimonialPhotos-2.png"
             alt="Client 2"
             width={48}
             height={48}
             className="w-12 h-12 rounded-full object-cover border-2 border-white"
           />
           <Image
-            src="/woman-profile.png"
+            src="/CustomerTestimonialPhotos-3.png"
             alt="Client 3"
             width={48}
             height={48}
             className="w-12 h-12 rounded-full object-cover border-2 border-white "
           />
           <Image
-            src="/man-profile.png"
+            src="/CustomerTestimonialPhotos-4.png"
             alt="Client 4"
             width={48}
             height={48}
             className="w-12 h-12 rounded-full object-cover border-2 border-white"
           />
           <Image
-            src="/person-headshot.png"
+            src="/CustomerTestimonialPhotos-5.png"
             alt="Client 5"
             width={48}
             height={48}
