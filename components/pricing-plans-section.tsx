@@ -68,6 +68,16 @@ export default function PricingPlansSection() {
       },
     })) ?? [];
 
+  const sortedFeatureCategories = (features: any, planFeatures: any) => {
+    return [...features].sort((a, b) => {
+      const aIncluded = planFeatures[a] === "✓";
+      const bIncluded = planFeatures[b] === "✓";
+      if (aIncluded && !bIncluded) return -1;
+      if (!aIncluded && bIncluded) return 1;
+      return 0;
+    });
+  };
+
   return (
     <section className="py-16 px-6 max-w-7xl mx-auto">
       {/* Header */}
@@ -107,76 +117,88 @@ export default function PricingPlansSection() {
           {/* Mobile Plan Details */}
           {plans
             .filter((plan: any) => plan.name === selectedPlan)
-            .map((plan: any) => (
-              <div key={plan.name}>
-                <div className="bg-[#2563EB] text-white p-6 rounded-3xl shadow-lg">
-                  <h3 className="text-2xl font-bold">{plan.name}</h3>
-                  <p className="mt-1 mb-6 text-lg">{plan.description}</p>
-                  <div>
-                    <span className="text-4xl font-semibold">{plan.price}</span>
-                    <span className="text-xl font-bold  line-through ml-2">
-                      {plan.originalPrice}
-                    </span>
-                    <span className="">/ {plan.period}</span>
+            .map((plan: any) => {
+              const sortedFeatures = sortedFeatureCategories(
+                featureCategories,
+                plan.features
+              );
+              return (
+                <div key={plan.name}>
+                  <div className="bg-[#2563EB] text-white p-6 rounded-3xl shadow-lg">
+                    <h3 className="text-2xl font-bold">{plan.name}</h3>
+                    <p className="mt-1 mb-6 text-lg">{plan.description}</p>
+                    <div>
+                      <span className="text-4xl font-semibold">
+                        {plan.price}
+                      </span>
+                      <span className="text-xl font-bold  line-through ml-2">
+                        {plan.originalPrice}
+                      </span>
+                      <span className="">/ {plan.period}</span>
+                    </div>
+                    <Button
+                      onClick={() =>
+                        router.push(`/checkout/${String(plan.id)}`)
+                      }
+                      className="w-full bg-white text-[#2563EB] font-medium py-3 mt-6 rounded-full hover:bg-gray-100 transition"
+                    >
+                      Get Started
+                    </Button>
                   </div>
-                  <Button
-                    onClick={() => router.push(`/checkout/${String(plan.id)}`)}
-                    className="w-full bg-white text-[#2563EB] font-medium py-3 mt-6 rounded-full hover:bg-gray-100 transition"
-                  >
-                    Get Started
-                  </Button>
-                </div>
 
-                {/* Mobile Feature List */}
-                <div className="mt-8 space-y-4">
-                  {featureCategories
-                    .filter((f: string) => f !== "Pricing")
-                    .map((feature: string) => (
-                      <div
-                        key={feature}
-                        className="flex items-start justify-between border-b pb-4"
-                      >
-                        <div className="pr-4">
-                          <p className="font-semibold text-gray-800">
-                            {feature}
-                          </p>
-                          <p className="text-sm text-gray-500 mt-1">
-                            {featureDetails[feature]}
-                          </p>
-                        </div>
-                        <div className="flex-shrink-0">
-                          {(() => {
-                            if (
-                              feature === "Friends & Family Benefit Sharing"
-                            ) {
+                  {/* Mobile Feature List */}
+                  <div className="mt-8 space-y-4">
+                    {sortedFeatures
+                      .filter((f: string) => f !== "Pricing")
+                      .map((feature: string) => (
+                        <div
+                          key={feature}
+                          className="flex items-start justify-between border-b pb-4"
+                        >
+                          <div className="pr-4">
+                            <p className="font-semibold text-gray-800">
+                              {feature}
+                            </p>
+                            <p className="text-sm text-gray-500 mt-1">
+                              {featureDetails[feature]}
+                            </p>
+                          </div>
+                          <div className="flex-shrink-0">
+                            {(() => {
+                              if (
+                                feature === "Friends & Family Benefit Sharing"
+                              ) {
+                                return (
+                                  <PlusCircle className="w-6 h-6 text-blue-500" />
+                                );
+                              }
+                              if (plan.features[feature] === "✓") {
+                                return (
+                                  <CheckCircle2 className="w-6 h-6 text-blue-500" />
+                                );
+                              }
                               return (
-                                <PlusCircle className="w-6 h-6 text-blue-500" />
+                                <CircleMinusIcon className="w-6 h-6 text-gray-300" />
                               );
-                            }
-                            if (plan.features[feature] === "✓") {
-                              return (
-                                <CheckCircle2 className="w-6 h-6 text-blue-500" />
-                              );
-                            }
-                            return (
-                              <CircleMinusIcon className="w-6 h-6 text-gray-300" />
-                            );
-                          })()}
+                            })()}
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                  </div>
+                  <div className="mt-8 text-center">
+                    <Button
+                      onClick={() =>
+                        router.push(`/checkout/${String(plan.id)}`)
+                      }
+                      variant="outline"
+                      className="w-full bg-[#F7FAFF] border-1 border-black text-black font-semibold py-6 mt-6 rounded-full hover:bg-gray-100 transition"
+                    >
+                      Get Started
+                    </Button>
+                  </div>
                 </div>
-                <div className="mt-8 text-center">
-                  <Button
-                    onClick={() => router.push(`/checkout/${String(plan.id)}`)}
-                    variant="outline"
-                    className="w-full bg-[#F7FAFF] border-1 border-black text-black font-semibold py-6 mt-6 rounded-full hover:bg-gray-100 transition"
-                  >
-                    Get Started
-                  </Button>
-                </div>
-              </div>
-            ))}
+              );
+            })}
         </div>
       ) : (
         <>
@@ -249,7 +271,10 @@ export default function PricingPlansSection() {
                 ))}
               </div>
 
-              {featureCategories.map((feature: string) => (
+              {sortedFeatureCategories(
+                featureCategories,
+                plans.find((p: any) => p.name === selectedPlan)?.features || {}
+              ).map((feature: string) => (
                 <div
                   key={feature}
                   className="grid grid-cols-4 gap-4 py-3 border-b border-gray-100"
