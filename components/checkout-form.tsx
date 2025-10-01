@@ -463,6 +463,11 @@ export default function CheckoutForm({ plan }: CheckoutFormProps) {
                       alt="Mastercard"
                       className="h-6"
                     />
+                     <img
+                      src="/american-express.png"
+                      alt="American Express"
+                      className="h-6"
+                    />
                   </div>
                 </div>
                 {paymentMethod === "credit-card" && (
@@ -628,10 +633,10 @@ export default function CheckoutForm({ plan }: CheckoutFormProps) {
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="space-y-4">
-                <div className="flex justify-between">
+                {/* <div className="flex justify-between">
                   <span>One Time Enrollment Fee</span>
                   <span className="font-semibold">US$149.99</span>
-                </div>
+                </div> */}
                 <div className="flex justify-between">
                   <span>{plan.name}</span>
                   <span className="font-semibold">
