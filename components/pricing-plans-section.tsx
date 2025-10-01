@@ -165,16 +165,16 @@ export default function PricingPlansSection() {
                           </div>
                           <div className="flex-shrink-0">
                             {(() => {
+                              if (plan.features[feature] === "✓") {
+                                return (
+                                  <CheckCircle2 className="w-6 h-6 text-blue-500" />
+                                );
+                              }
                               if (
                                 feature === "Friends & Family Benefit Sharing"
                               ) {
                                 return (
                                   <PlusCircle className="w-6 h-6 text-blue-500" />
-                                );
-                              }
-                              if (plan.features[feature] === "✓") {
-                                return (
-                                  <CheckCircle2 className="w-6 h-6 text-blue-500" />
                                 );
                               }
                               return (
@@ -293,6 +293,14 @@ export default function PricingPlansSection() {
                         if (plan.features[feature] === "✓") {
                           return (
                             <CheckCircle2 className="w-5 h-5 text-[#2563EB] mx-auto" />
+                          );
+                        }
+                        if (
+                          feature === "Friends & Family Benefit Sharing" &&
+                          plan.name === "Platinum"
+                        ) {
+                          return (
+                            <PlusCircle className="w-5 h-5 text-[#2563EB] mx-auto" />
                           );
                         }
                         if (plan.features[feature] === "✗") {
