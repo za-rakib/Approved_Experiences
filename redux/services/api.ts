@@ -25,50 +25,53 @@ const baseQuery = fetchBaseQuery({
 export const api = createApi({
   reducerPath: 'api',
   baseQuery,
-  tagTypes: ['Member','Order'],
+  tagTypes: ["Member", "Order", "Feature"],
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (credentials) => ({
-        url: '/api/auth/login', // Changed from '/api/auth/login'
-        method: 'POST',
+        url: "/api/auth/login", // Changed from '/api/auth/login'
+        method: "POST",
         body: credentials,
       }),
     }),
     register: builder.mutation({
       query: (userData) => ({
-        url: '/api/auth/register', // Changed from '/api/auth/register'
-        method: 'POST',
+        url: "/api/auth/register", // Changed from '/api/auth/register'
+        method: "POST",
         body: userData,
       }),
     }),
     createMemberFromPayment: builder.mutation({
       query: (paymentData) => ({
-        url: '/api/members/create-from-payment',
-        method: 'POST',
+        url: "/api/members/create-from-payment",
+        method: "POST",
         body: paymentData,
       }),
-      invalidatesTags: ['Member'],
+      invalidatesTags: ["Member"],
     }),
-     createOrder: builder.mutation({
+    createOrder: builder.mutation({
       query: (orderData) => ({
-        url: '/api/orders/',
-        method: 'POST',
+        url: "/api/orders/",
+        method: "POST",
         body: orderData,
       }),
-      invalidatesTags: ['Order'],
+      invalidatesTags: ["Order"],
     }),
     getMemberProfile: builder.query({
-      query: () => '/api/members/profile',
-      providesTags: ['Member'],
+      query: () => "/api/members/profile",
+      providesTags: ["Member"],
     }),
 
     getMembershipPlans: builder.query({
-      query: () => 'api/membership/tiers/',
-      providesTags: ['Member'],
+      query: () => "api/membership/tiers/",
+      providesTags: ["Member"],
     }),
-
+    getFeatures: builder.query({
+      query: () => "/api/features/",
+      providesTags: ["Feature"],
+    }),
   }),
-})
+});
 
 export const {
   useLoginMutation,
@@ -77,4 +80,5 @@ export const {
   useCreateOrderMutation,
   useGetMemberProfileQuery,
   useGetMembershipPlansQuery,
-} = api
+  useGetFeaturesQuery,
+} = api;

@@ -1,250 +1,10 @@
-// 'use client'
-
-// import { Button } from "@/components/ui/button"
-// import { useGetMembershipPlansQuery } from "@/redux/services/api"
-// import { Check } from "lucide-react"
-// import Link from "next/link"
-
-// const plans = [
-//   {
-//     name: "Gold",
-//     price: "$699",
-//     originalPrice: "$799",
-//     period: "per year",
-//     description: "Get Started",
-//     popular: false,
-//     features: {
-//       Pricing: "$699/year",
-//       Booking: "✓",
-//       Concierge: "✓",
-//       "Cruise Specialist": "✓",
-//       Cruises: "✓",
-//       "Car Rentals": "✓",
-//       Roadside: "✓",
-//       Flights: "✓",
-//       Hotels: "✓",
-//       "Villa & Luxury Homes": "✓",
-//       "Reward Credits": "✓",
-//       "Hotel Guarantee": "✓",
-//       "Pricing & Loyalty Benefit Pricing": "✓",
-//       "Economy Rewards": "✓",
-//       "Membership Discount 24/7": "✓",
-//     },
-//   },
-//   {
-//     name: "Platinum",
-//     price: "$999",
-//     originalPrice: "$1,199",
-//     period: "per year",
-//     description: "Most Popular",
-//     popular: true,
-//     features: {
-//       Pricing: "$999/year",
-//       Booking: "✓",
-//       Concierge: "✓",
-//       "Cruise Specialist": "✓",
-//       Cruises: "✓",
-//       "Car Rentals": "✓",
-//       Roadside: "✓",
-//       Flights: "✓",
-//       Hotels: "✓",
-//       "Villa & Luxury Homes": "✓",
-//       "Reward Credits": "✓",
-//       "Hotel Guarantee": "✓",
-//       "Pricing & Loyalty Benefit Pricing": "✓",
-//       "Economy Rewards": "✓",
-//       "Membership Discount 24/7": "✓",
-//     },
-//   },
-//   {
-//     name: "Diamond",
-//     price: "$1,499",
-//     originalPrice: "$1,799",
-//     period: "per year",
-//     description: "Get Started",
-//     popular: false,
-//     features: {
-//       Pricing: "$1,499/year",
-//       Booking: "✓",
-//       Concierge: "✓",
-//       "Cruise Specialist": "✓",
-//       Cruises: "✓",
-//       "Car Rentals": "✓",
-//       Roadside: "✓",
-//       Flights: "✓",
-//       Hotels: "✓",
-//       "Villa & Luxury Homes": "✓",
-//       "Reward Credits": "✓",
-//       "Hotel Guarantee": "✓",
-//       "Pricing & Loyalty Benefit Pricing": "✓",
-//       "Economy Rewards": "✓",
-//       "Membership Discount 24/7": "✓",
-//     },
-//   },
-// ]
-
-// const featureCategories = [
-//   "Pricing",
-//   "Booking",
-//   "Concierge",
-//   "Cruise Specialist",
-//   "Cruises",
-//   "Car Rentals",
-//   "Roadside",
-//   "Flights",
-//   "Hotels",
-//   "Villa & Luxury Homes",
-//   "Reward Credits",
-//   "Hotel Guarantee",
-//   "Pricing & Loyalty Benefit Pricing",
-//   "Economy Rewards",
-//   "Membership Discount 24/7",
-// ]
-
-// export default function PricingPlansSection() {
-
-//     const {data:membershipPlans,
-//       error:membershipError,
-//       isLoading:membershipIsLoading,
-//       isSuccess:membershipIsError,
-//       isError:membershipisError,
-//       refetch:membershipRefetch} = useGetMembershipPlansQuery(undefined);
-
-//       console.log( "membership plans in pricing section:", membershipPlans);
-
-//   return (
-//     <section className="py-16 px-4 max-w-7xl mx-auto">
-//       {/* Header */}
-//       <div className="text-center mb-12">
-//         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-//           Pricing <span className="text-blue-600">Plans</span>
-//         </h1>
-//         <p className="text-gray-600 max-w-3xl mx-auto">
-//           Unlock exclusive access to Diamond Hotels, cruise specials, and flights with our travel membership - perfect
-//           for ultimate convenience and value.
-//         </p>
-//       </div>
-
-//       {/* Pricing Cards */}
-//       <div className="grid md:grid-cols-3 gap-8 mb-16">
-//  {/* Gold Plan */}
-//           <div className="bg-(--color-light-blue-bg) p-8 rounded-3xl border border-gray-200 flex flex-col md:col-span-2 lg:col-span-1">
-//             <h3 className="text-2xl font-bold">Gold</h3>
-//             <p className="text-gray-500 mt-1">
-//               Ultimate luxury travel experience with exclusive benefits.
-//             </p>
-//             <div className="my-6">
-//               <span className="text-5xl font-extrabold text-gray-900">
-//                 $699
-//               </span>
-//               <span className="text-xl font-bold text-gray-400 line-through ml-2">
-//                 $899
-//               </span>
-//               <span className="text-gray-500">/ year</span>
-//             </div>
-//             <Link
-//               href="/checkout"
-//               className="w-full text-center border border-gray-300 text-gray-800 font-semibold py-3 rounded-full hover:bg-gray-100 transition"
-//             >
-//               Get Started
-//             </Link>
-//           </div>
-
-//  {/* Platinum Plan */}
-//           <div className="bg-(--color-custom-blue) text-white p-8 rounded-3xl shadow-2xl shadow-blue-200 flex flex-col transform md:scale-105">
-//             <h3 className="text-2xl font-bold">Platinum</h3>
-//             <p className="text-blue-200 mt-1">
-//               Premium luxury travel experience with the best value.
-//             </p>
-//             <div className="my-6">
-//               <span className="text-5xl font-extrabold">$999</span>
-//               <span className="text-xl font-bold text-blue-300 line-through ml-2">
-//                 $1,199
-//               </span>
-//               <span className="text-blue-200">/ year</span>
-//             </div>
-//             <Link
-//               href="/checkout"
-//               className="w-full text-center bg-white text-(--color-custom-blue) font-semibold py-3 rounded-full hover:bg-gray-100 transition"
-//             >
-//               Get Started
-//             </Link>
-//           </div>
-
-//           {/* Diamond Plan */}
-//           <div className="bg-(--color-light-blue-bg) p-8 rounded-3xl border border-gray-200 flex flex-col md:col-span-2 lg:col-span-1">
-//             <h3 className="text-2xl font-bold">Diamond</h3>
-//             <p className="text-gray-500 mt-1">
-//               Ultimate luxury travel experience with exclusive benefits.
-//             </p>
-//             <div className="my-6">
-//               <span className="text-5xl font-extrabold text-gray-900">
-//                 $1,499
-//               </span>
-//               <span className="text-xl font-bold text-gray-400 line-through ml-2">
-//                 $1699
-//               </span>
-//               <span className="text-gray-500">/ year</span>
-//             </div>
-//             <Link
-//               href="/checkout"
-//               className="w-full text-center border border-gray-300 text-gray-800 font-semibold py-3 rounded-full hover:bg-gray-100 transition"
-//             >
-//               Get Started
-//             </Link>
-//           </div>
-
-//       </div>
-
-//       {/* Feature Comparison Table */}
-//       <div className="overflow-x-auto">
-//         <div className="min-w-full">
-//           {/* Table Header */}
-//           <div className="grid grid-cols-4 gap-4 mb-4">
-//             <div className="font-semibold text-gray-900">Features</div>
-//             {plans.map((plan, index) => (
-//               <div key={index} className="text-center font-semibold text-gray-900">
-//                 {plan.name}
-//               </div>
-//             ))}
-//           </div>
-
-//           {/* Feature Rows */}
-//           {featureCategories.map((feature, index) => (
-//             <div key={index} className="grid grid-cols-4 gap-4 py-3 border-b border-gray-100">
-//               <div className="text-gray-700 font-medium">{feature}</div>
-//               {plans.map((plan, planIndex) => (
-//                 <div key={planIndex} className="text-center">
-//                   {feature === "Pricing" ? (
-//                     <span className="text-gray-600">{plan.features[feature]}</span>
-//                   ) : (
-//                     <Check className="w-5 h-5 text-green-500 mx-auto" />
-//                   )}
-//                 </div>
-//               ))}
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-
-//       {/* Bottom Buttons */}
-//       <div className="grid md:grid-cols-3 gap-8 mt-8">
-//         {plans.map((plan, index) => (
-//           <div key={index} className="text-center">
-//             <Button variant="outline" className="w-full bg-transparent">
-//               Get Started
-//             </Button>
-//           </div>
-//         ))}
-//       </div>
-//     </section>
-//   )
-// }
-
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useGetMembershipPlansQuery } from "@/redux/services/api";
+import {
+  useGetFeaturesQuery,
+  useGetMembershipPlansQuery,
+} from "@/redux/services/api";
 import {
   CheckCircle2,
   Circle,
@@ -257,64 +17,35 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useMobile } from "./ui/use-mobile";
 
-const featureCategories = [
-  "Pricing",
-  "Hotels",
-  "Cruises",
-  "Car Rentals",
-  "Homes",
-  "Flights",
-  "Villas & Luxury Homes",
-  "Reward Credits",
-  "Value Guarantee",
-  "Friends & Family Benefit Sharing",
-  "Boomerang Rewards",
-  "Approved Lux Concierge (24/7)",
-];
-
-const featureDetails: { [key: string]: string } = {
-  Hotels:
-    "Access to over 1 million hand-picked properties worldwide with savings up to 70% off retail rates",
-  Cruises:
-    "Discounts of up to 40% on sailings with 44 + major cruise lines (30,000+ itineraries).",
-  "Car Rentals":
-    "Car rental savings up to 50% at more than 30,000 pickup locations globally.",
-  Homes:
-    "Access to over 500,000 vacation homes—from villas to condos—in top destinations worldwide.",
-  Flights:
-    "Earn points and enjoy exclusive benefits across 700 + global airline partners.",
-  "Villas & Luxury Homes":
-    "A dedicated marketplace for bidding on or offering timeshare stays at resort properties.",
-  "Reward Credits":
-    "Redeemable at your favorite restaurants (Morton's Steakhouse), top retail stores (Best Buy, Nordstrom), and major online retailers (Apple, Amazon).",
-  "Value Guarantee":
-    "Find a lower price anywhere online? We'll refund you 110% of the difference.",
-  "Friends & Family Benefit Sharing":
-    "Share your membership benefits with up to 10 friends & family members, each of whom becomes an Approved Experiences Traveler sub-member under your account.",
-  "Boomerang Rewards":
-    "Send invites to friends -> they create a free account -> when they book discounted travel, you earn reward credits.",
-  "Approved Lux Concierge (24/7)":
-    "24/7 dedicated concierge & personal assistant service to handle any request—travel, dining reservations, lifestyle management, and more.",
-};
-
 export default function PricingPlansSection() {
   const {
     data: membershipPlans,
-    error,
-    isLoading,
-    isSuccess,
+    error: plansError,
+    isLoading: plansLoading,
   } = useGetMembershipPlansQuery(undefined);
+  const {
+    data: featuresData,
+    error: featuresError,
+    isLoading: featuresLoading,
+  } = useGetFeaturesQuery(undefined);
   const isMobile = useMobile();
   const [selectedPlan, setSelectedPlan] = useState("Platinum");
   const router = useRouter();
 
-  if (isLoading) {
-    return <p className="text-center">Loading membership plans...</p>;
+  if (plansLoading || featuresLoading) {
+    return <p className="text-center">Loading...</p>;
   }
 
-  if (error) {
-    return <p className="text-center text-red-500">Failed to load plans</p>;
+  if (plansError || featuresError) {
+    return (
+      <p className="text-center text-red-500">Failed to load data</p>
+    );
   }
+
+  const featureCategories = featuresData.data.map((f: any) => f.name);
+  const featureDetails = Object.fromEntries(
+    featuresData.data.map((f: any) => [f.name, f.description])
+  );
   console.log(
     "membership plans in pricing section:",
     membershipPlans.data[0].id
@@ -399,8 +130,8 @@ export default function PricingPlansSection() {
                 {/* Mobile Feature List */}
                 <div className="mt-8 space-y-4">
                   {featureCategories
-                    .filter((f) => f !== "Pricing")
-                    .map((feature) => (
+                    .filter((f: string) => f !== "Pricing")
+                    .map((feature: string) => (
                       <div
                         key={feature}
                         className="flex items-start justify-between border-b pb-4"
@@ -518,7 +249,7 @@ export default function PricingPlansSection() {
                 ))}
               </div>
 
-              {featureCategories.map((feature) => (
+              {featureCategories.map((feature: string) => (
                 <div
                   key={feature}
                   className="grid grid-cols-4 gap-4 py-3 border-b border-gray-100"
