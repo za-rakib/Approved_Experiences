@@ -37,9 +37,7 @@ export default function PricingPlansSection() {
   }
 
   if (plansError || featuresError) {
-    return (
-      <p className="text-center text-red-500">Failed to load data</p>
-    );
+    return <p className="text-center text-red-500">Failed to load data</p>;
   }
 
   const featureCategories = featuresData.data.map((f: any) => f.name);
@@ -279,7 +277,16 @@ export default function PricingPlansSection() {
                   key={feature}
                   className="grid grid-cols-4 gap-4 py-3 border-b border-gray-100"
                 >
-                  <div className="text-gray-700 font-medium">{feature}</div>
+                  <div className="text-gray-700 font-medium">
+                    {feature}
+                    <p className="text-sm text-gray-500 mt-1">
+                      {featureDetails[feature]}
+                    </p>
+                  </div>
+
+                  {/* <p className="text-sm text-gray-500 mt-1">
+                    {featureDetails[feature]}
+                  </p> */}
                   {plans.map((plan: any) => (
                     <div key={plan.name} className="text-center">
                       {(() => {
