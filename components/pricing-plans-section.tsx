@@ -147,15 +147,13 @@ export default function PricingPlansSection() {
                       .map((feature: string) => (
                         <div
                           key={feature}
-                          className="flex items-start justify-between border-b pb-4"
+                          className={`flex items-start justify-between p-4 rounded-md ${
+                            plan.features[feature] !== "✓"
+                              ? "border border-[#A9C4FF]"
+                              : "border-b"
+                          }`}
                         >
-                          <div
-                            className={`pr-4 ${
-                              plan.features[feature] !== "✓"
-                                ? "border border-[#A9C4FF] rounded-md p-4"
-                                : ""
-                            }`}
-                          >
+                          <div>
                             <p className="font-semibold text-gray-800">
                               {feature}
                             </p>
