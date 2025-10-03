@@ -44,10 +44,6 @@ export default function PricingPlansSection() {
   const featureDetails = Object.fromEntries(
     featuresData.data.map((f: any) => [f.name, f.description])
   );
-  console.log(
-    "membership plans in pricing section:",
-    membershipPlans.data[0].id
-  );
   // Transform API data into UI-friendly format
   const plans =
     membershipPlans?.data?.map((plan: any) => ({
@@ -153,7 +149,13 @@ export default function PricingPlansSection() {
                           key={feature}
                           className="flex items-start justify-between border-b pb-4"
                         >
-                          <div className="pr-4">
+                          <div
+                            className={`pr-4 ${
+                              plan.features[feature] !== "✓"
+                                ? "border border-[#A9C4FF] rounded-md p-4"
+                                : ""
+                            }`}
+                          >
                             <p className="font-semibold text-gray-800">
                               {feature}
                             </p>
@@ -277,7 +279,13 @@ export default function PricingPlansSection() {
                   key={feature}
                   className="grid grid-cols-4 gap-4 py-3 border-b border-gray-100"
                 >
-                  <div className="text-gray-700 font-medium">
+                  <div
+                    className={`text-gray-700 font-medium ${
+                      plans.some((p: any) => p.features[feature] !== "✓")
+                        ? "border border-[#A9C4FF] rounded-md p-5"
+                        : ""
+                    }`}
+                  >
                     {feature}
                     <p className="text-sm text-gray-500 mt-1">
                       {featureDetails[feature]}
