@@ -2,7 +2,7 @@ export default function SocialSection() {
   return (
     <section className="py-12 bg-gray-50">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
-        <div className="bg-white rounded-full px-6 py-3 flex items-center gap-4 border border-gray-200 shadow-sm">
+        <div className="bg-white rounded-full px-6 py-3 flex items-center gap-4 border border-gray-200 ">
           <p className="font-medium text-gray-700">Follow</p>
           <div className="flex items-center gap-3">
             <a href="#" className="text-gray-400 hover:text-blue-600">

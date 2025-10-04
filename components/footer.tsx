@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="px-4 text-white relative">
       <div className="bg-[#001F63] container mx-auto px-8  rounded-t-[40px] pt-12">
-        <div className="bg-[#E9F0FF] text-gray-900 rounded-2xl p-6 md:py-12 md:p-6 mb-20 shadow-xl">
+        <div className="bg-[#E9F0FF] text-gray-900 rounded-2xl p-6 md:py-12 md:p-6 mb-20 ">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="">
               <h3 className="text-3xl md:text-[32px] font-medium leading-tight text-[#0E0E0F]">

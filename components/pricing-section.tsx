@@ -60,7 +60,7 @@ export default function PricingSection({ data }: any) {
               <div
                 className={`p-8 rounded-3xl flex flex-col ${
                   activePlanData.name === "Platinum"
-                    ? "bg-blue-600 text-white shadow-2xl shadow-blue-200"
+                    ? "bg-blue-600 text-white  shadow-blue-200"
                     : "bg-gray-100 border border-gray-200"
                 }`}
               >
@@ -251,7 +251,7 @@ export default function PricingSection({ data }: any) {
             ) : (
               <div
                 key={item.id}
-                className="bg-[#2563EB] text-[#F4F4F4] p-8 rounded-3xl shadow-2xl shadow-blue-200 flex flex-col transform md:scale-105"
+                className="bg-[#2563EB] text-[#F4F4F4] p-8 rounded-3xl  shadow-blue-200 flex flex-col transform md:scale-105"
               >
                 <h3 className="text-xl text-[#F4F4F4] font-bold">
                   {item?.name}

@@ -5,7 +5,7 @@ import Link from "next/link";
 // Reusable component for the notification
 const JamesJustJoined = ({ className }: { className?: string }) => (
   <div
-    className={`bg-transparent backdrop-blur-lg px-2 rounded-2xl shadow-lg w-max border border-white/20 ${className}`}
+    className={`bg-transparent backdrop-blur-lg px-2 rounded-2xl  w-max border border-white/20 ${className}`}
   >
     <div className="flex items-center gap-2">
       <p className="font-semibold text-white text-sm">James just joined!</p>
@@ -35,7 +35,7 @@ export default function HeroSection() {
       {/* Become a member button */}
       <Link
         href="/register"
-        className="fixed flex items-center justify-center z-30 right-6 top-1/2 -translate-y-1/2 bg-blue-600 text-white font-semibold py-4 px-3 rounded-full hover:bg-blue-700 shadow-lg transition-transform transform hover:scale-105"
+        className="fixed flex items-center justify-center z-30 right-6 top-1/2 -translate-y-1/2 bg-blue-600 text-white font-semibold py-4 px-3 rounded-full hover:bg-blue-700  transition-transform transform hover:scale-105"
       >
         <span className="[writing-mode:vertical-rl] rotate-180">
           Become A Member
@@ -91,13 +91,13 @@ export default function HeroSection() {
           <JamesJustJoined className="self-end" />
           <Link
             href="/#how-it-works"
-            className="text-center bg-blue-600 text-white font-semibold rounded-full px-8 py-3.5 hover:bg-blue-700 shadow-lg transition-transform transform hover:scale-105"
+            className="text-center bg-blue-600 text-white font-semibold rounded-full px-8 py-3.5 hover:bg-blue-700  transition-transform transform hover:scale-105"
           >
             How It Works
           </Link>
           <Link
             href="/pricing"
-            className="w-full text-center bg-transparent backdrop-blur-lg backdrop-blur-lg text-white font-semibold rounded-full px-8 py-3.5 hover:bg-white/20 shadow-lg transition-transform transform hover:scale-105 border border-white/20"
+            className="w-full text-center bg-transparent backdrop-blur-lg backdrop-blur-lg text-white font-semibold rounded-full px-8 py-3.5 hover:bg-white/20  transition-transform transform hover:scale-105 border border-white/20"
           >
             Explore Pricing
           </Link>
@@ -109,13 +109,13 @@ export default function HeroSection() {
           <div className="flex items-center justify-center gap-4">
             <Link
               href="/#how-it-works"
-              className="text-center bg-blue-600 text-white font-semibold rounded-full px-8 py-3.5 hover:bg-blue-700 shadow-lg transition-transform transform hover:scale-105"
+              className="text-center bg-blue-600 text-white font-semibold rounded-full px-8 py-3.5 hover:bg-blue-700  transition-transform transform hover:scale-105"
             >
               How It Works
             </Link>
             <Link
               href="/pricing"
-              className="bg-transparent backdrop-blur-lg text-center  backdrop-blur-lg text-white font-semibold rounded-full px-8 py-3.5 hover:bg-white/20 shadow-lg transition-transform transform hover:scale-105 border border-white/20"
+              className="bg-transparent backdrop-blur-lg text-center  backdrop-blur-lg text-white font-semibold rounded-full px-8 py-3.5 hover:bg-white/20  transition-transform transform hover:scale-105 border border-white/20"
             >
               Explore Pricing
             </Link>

@@ -35,7 +35,7 @@ export default function PaymentSuccess({
 
   return (
     <div className="fixed inset-0 bg-[#00000075] bg-opacity-10 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-xl shadow-2xl max-w-md w-full overflow-hidden">
+      <div className="bg-white rounded-xl  max-w-md w-full overflow-hidden">
         {/* Header */}
         <div className="bg-white py-6 px-6 text-center">
           <div className="flex justify-center mb-4">

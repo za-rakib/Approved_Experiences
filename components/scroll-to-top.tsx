@@ -8,7 +8,7 @@ export default function ScrollToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-8 right-8 z-50 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-colors"
+      className="fixed bottom-8 right-8 z-50 p-3 bg-blue-600 text-white rounded-full  hover:bg-blue-700 transition-colors"
       aria-label="Scroll to top"
     >
       <svg

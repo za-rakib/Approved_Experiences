@@ -54,7 +54,7 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <div className="relative md:flex  rounded-xl overflow-hidden shadow-lg">
+      <div className="relative md:flex  rounded-xl overflow-hidden ">
         {/* Background image for mobile, hidden on md+ */}
         <div className="absolute inset-0 md:hidden">
           <Image

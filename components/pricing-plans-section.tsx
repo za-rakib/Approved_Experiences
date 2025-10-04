@@ -118,7 +118,7 @@ export default function PricingPlansSection() {
               );
               return (
                 <div key={plan.name}>
-                  <div className="bg-[#2563EB] text-white p-6 rounded-3xl shadow-lg">
+                  <div className="bg-[#2563EB] text-white p-6 rounded-3xl ">
                     <h3 className="text-2xl font-bold">{plan.name}</h3>
                     <p className="mt-1 mb-6 text-lg">{plan.description}</p>
                     <div>

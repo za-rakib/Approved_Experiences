@@ -25,7 +25,7 @@ export default function StatsSection() {
           </div>
 
           {/* Stat Card 2 */}
-          <div className="flex items-center gap-3 p-4 border bg-[#F2F6FC] border-[#2563EB]  rounded-xl shadow-sm">
+          <div className="flex items-center gap-3 p-4 border bg-[#F2F6FC] border-[#2563EB]  rounded-xl ">
             <div className="flex-shrink-0 bg-blue-600 text-white p-3 rounded-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +46,7 @@ export default function StatsSection() {
           </div>
 
           {/* Stat Card 3 */}
-          <div className="flex items-center gap-3 p-4 border bg-[#F2F6FC] border-[#2563EB]  rounded-xl shadow-sm">
+          <div className="flex items-center gap-3 p-4 border bg-[#F2F6FC] border-[#2563EB]  rounded-xl ">
             <div className="flex-shrink-0 bg-blue-600 text-white p-3 rounded-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
