@@ -89,7 +89,7 @@ export default function SavingsSection() {
         <div className="mt-8 flex sm:justify-start items-center gap-2">
           <button
             onClick={() => setActiveTab("Mexico")}
-            className={`flex-1 sm:flex-none px-6 py-2 text-sm font-semibold rounded ${
+            className={`flex-1 sm:flex-none px-6 py-2 text-sm font-semibold rounded-[10px] ${
               activeTab === "Mexico"
                 ? "text-[#2563EB] bg-[#E9F0FF]"
                 : "text-black hover:bg-slate-100"
@@ -99,7 +99,7 @@ export default function SavingsSection() {
           </button>
           <button
             onClick={() => setActiveTab("Miami")}
-            className={`flex-1 sm:flex-none px-6 py-2 text-sm font-semibold rounded ${
+            className={`flex-1 sm:flex-none px-6 py-2 text-sm font-semibold rounded-[10px] ${
               activeTab === "Miami"
                 ? "text-[#2563EB] bg-[#E9F0FF]"
                 : "text-black hover:bg-slate-100"
@@ -147,7 +147,7 @@ export default function SavingsSection() {
                 </div>
 
                 <hr className="my-6 border-[#F7FAFF]" />
-
+                {/* bottom part */}
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
                   <div>
                     <p className="text-sm text-[#0E0E0F]">Total Price</p>
@@ -158,7 +158,7 @@ export default function SavingsSection() {
                       </span>
                     </p>
                   </div>
-                  <div className="bg-[#E9F0FF] text-[#001F63] text-sm font-semibold px-4 py-2 rounded-full whitespace-nowrap">
+                  <div className="w-full sm:w-auto bg-[#E9F0FF] text-[#001F63] text-sm font-semibold px-4 py-2 rounded-full whitespace-nowrap text-center">
                     Savings with Traveler{" "}
                     <span className="font-bold">
                       ${deal.savings.toLocaleString()}

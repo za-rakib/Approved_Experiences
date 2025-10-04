@@ -37,7 +37,7 @@ export default function TrustedSection() {
           </div>
           {/* bottom text */}
           <div className=" flex mt-16 text-center max-w-3xl mx-auto">
-            <p className="text-[40px] font-medium md:text-3xl text-[#525253] leading-relaxed">
+            <p className="text-base md:text-[40px] font-medium text-[#525253] leading-relaxed">
               With 30+ years of industry experience, Approved Experiences has
               left its mark on the travel industry.
             </p>
