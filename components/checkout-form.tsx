@@ -95,6 +95,16 @@ export default function CheckoutForm({ plan }: CheckoutFormProps) {
     };
   }, [refetch]);
 
+
+  const handleSubmit2 =()=>{
+    setModalData({
+      open: true,
+      paymentType: "Credit Card",
+      // email: memberPayload?.userData?.email,
+      // transactionId: result.paymentIntent.id,
+      // amount: total,
+    });
+  }
   const handleSubmit = async () => {
     if (!stripe || !elements) return;
 
@@ -650,7 +660,7 @@ export default function CheckoutForm({ plan }: CheckoutFormProps) {
                 <span>US${plan.discountedPrice + 149.99}</span>
               </div>
               <Button
-                onClick={handleSubmit}
+                onClick={handleSubmit2}
                 className="w-full rounded-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-semibold"
                 disabled={!stripe || !elements}
               >

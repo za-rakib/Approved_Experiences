@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -20,7 +20,7 @@ export default function PaymentSuccess({
   onClose,
 }: PaymentSuccessProps) {
   const router = useRouter();
-   const [isOpen, setIsOpen] = useState(open);
+  const [isOpen, setIsOpen] = useState(open);
 
   const handleLogin = () => {
     router.push("/login");
@@ -28,65 +28,93 @@ export default function PaymentSuccess({
 
   const handleClose = () => {
     setIsOpen(false);
-    // You might want to redirect or perform other actions on close
+    if (onClose) {
+      onClose();
+    }
   };
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-[#00000075] bg-opacity-10 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-xl  max-w-md w-full overflow-hidden">
-        {/* Header */}
-        <div className="bg-white py-6 px-6 text-center">
+    <div className="fixed inset-0 bg-[#00000075] bg-opacity-50 flex items-center justify-center p-4 z-50">
+
+      <div className="bg-white rounded-2xl max-w-2xl w-full overflow-hidden">
+        <div className="p-8 text-center">
           <div className="flex justify-center mb-4">
-            <svg className="w-16 h-16 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-            </svg>
+            <div className="bg-[#2AD352] rounded-full p-3">
+              <svg
+                className="w-10 h-10 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
           </div>
-          <h2 className="text-3xl font-bold text-[#2AD352]">Payment Successful</h2>
+          <h2 className="text-2xl font-bold text-green-500">
+            Welcome to Approved Experiences.
+          </h2>
+          <p className="mt-4 text-[#525253] text-base">
+            You will receive a confirmation email within the next 12 hours with <br />
+            your login credentials. Once received, please login at{" "}
+            <a href="/login" className="text-blue-600 font-semibold">
+              Login
+            </a>
+            . If you do <br /> not receive the confirmation email, please contact us at{" "}
+            <br />
+            <a
+              href="mailto:support@approvedexperiences.com"
+              className="text-[#525253]"
+            >
+              support@approvedexperiences.com
+            </a>
+            .
+          </p>
         </div>
 
-        {/* Content */}
-        <div className="px-6 py-6">
+        <div className="px-26 pb-8">
           <div className="space-y-4">
-            <div className="flex justify-between items-center pb-3 ">
-              <span className="text-gray-600 font-medium">Payment Type</span>
-              <div className="flex items-center">
-                {/* <svg className="w-6 h-6 mr-2 text-blue-800" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3-8c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3z"/>
-                </svg> */}
-                <span className="font-semibold">{paymentType || "N/A"}</span>
-              </div>
+            <div className="flex justify-between items-center">
+              <span className="text-gray-500">Payment Type</span>
+              <span className="font-semibold text-gray-800">{paymentType || "Master Card"}</span>
             </div>
-
-            <div className="flex justify-between items-center pb-3 ">
-              <span className="text-gray-600 font-medium">Email Address</span>
-                  <span className="font-semibold">{email || "N/A"}</span>
+            <div className="flex justify-between items-center">
+              <span className="text-gray-500">Email Address</span>
+              <span className="font-semibold text-gray-800">{email || "example@gmail.com"}</span>
             </div>
-
-            <div className="flex justify-between items-center pb-3 ">
-              <span className="text-gray-600 font-medium">Amount Paid</span>
-                  <span className="font-semibold">US${amount?.toFixed(2) || "0.00"}</span>
+          </div>
+          <hr className="my-6" />
+          <div className="space-y-4">
+            <div className="flex justify-between items-center">
+              <span className="text-gray-500">Amount Paid</span>
+              <span className="font-semibold text-gray-800">
+                US${amount?.toFixed(2) || "449.98"}
+              </span>
             </div>
-
-            <div className="flex justify-between items-center pb-3 ">
-              <span className="text-gray-600 font-medium">Transaction ID</span>
-                <span className="font-semibold">{transactionId || "N/A"}</span>
+            <div className="flex justify-between items-center">
+              <span className="text-gray-500">Transaction id</span>
+              <span className="font-semibold text-gray-800">{transactionId || "VCC9987441997"}</span>
             </div>
           </div>
         </div>
 
-        {/* Buttons */}
-        <div className="px-6 py-4 bg-gray-50 flex flex-col sm:flex-row justify-between space-y-3 sm:space-y-0 sm:space-x-4">
+        <div className="px-26 pb-8 flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4">
           <button
             onClick={handleLogin}
-            className="px-6 py-3 bg-blue-600 text-white font-medium rounded-full  hover:bg-blue-700 transition-colors flex-1"
+            className="px-16 py-3 bg-[#2563EB] text-white font-semibold rounded-full hover:bg-blue-700 transition-colors"
           >
             Log In
           </button>
           <button
             onClick={handleClose}
-            className="px-6 py-3 border border-gray-300 text-gray-800 font-medium rounded-full hover:bg-gray-100 transition-colors flex-1"
+            className="px-16 py-3 border border-[#001F63] text-[#001F63] font-semibold rounded-full transition-colors"
           >
             Close
           </button>
