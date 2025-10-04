@@ -1,9 +1,10 @@
 'use client';
 import Image from "next/image";
 import Link from "next/link";
-import { useSelector , useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { logout } from "@/redux/slices/authSlice";
+
 export default function Header() {
   const dispatch = useDispatch();
   const token = useSelector((state: any) => state.auth.token);
@@ -17,10 +18,10 @@ export default function Header() {
 
   const handleLogout = () => {
     dispatch(logout());
-  }
+  };
 
   return (
-    <header className="w-full bg-white py-4">
+    <header className="fixed top-0 left-0 w-full bg-white py-4 z-50">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between">
           <Link href="/" className="flex items-center">
@@ -38,8 +39,8 @@ export default function Header() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden bg-[#001F63] text-white px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-gray-900"
             aria-label="Toggle mobile menu"
-          > 
-            <div className="flex flex-col">
+          >
+            <div className="flex flex-col h-3 justify-center items-center">
               {mobileMenuOpen ? (
                 <>
                   <span className="block w-4 h-0.5 bg-white transform rotate-45 translate-y-0.5"></span>
@@ -69,7 +70,7 @@ export default function Header() {
             <Link href="/pricing" className="text-sm font-medium text-[#525253] hover:text-gray-700">Pricing</Link>
           </div>
 
-          {/* Action Buttons - Hidden on mobile, shown in modal */}
+          {/* Action Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             {mounted && !token && (
               <Link href="/login" className="text-sm font-medium text-[#001F63] hover:text-gray-700">
@@ -98,26 +99,32 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             ></div>
             <div className={`fixed inset-0 bg-white transform ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-50 md:hidden`}>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-6">
-                  <img
-                    src="/approved-experiences-logo-red.jpg"
-                    alt="Approved Experiences Logo"
-                    className="h-8 w-auto"
-                  />
+              <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <div className="flex items-center justify-between">
+                  <Link href="/" className="flex items-center">
+                    <Image
+                      src="/approved-experiences-logo-red.jpg"
+                      alt="Approved Experiences Logo"
+                      width={160}
+                      height={40}
+                      className="h-8 md:h-10 w-auto"
+                    />
+                  </Link>
                   <button
                     onClick={() => setMobileMenuOpen(false)}
                     className="md:hidden bg-[#001F63] text-white px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-gray-900"
                     aria-label="Close menu"
                   >
-                    <div className="flex flex-col">
+                    <div className="flex flex-col h-3 justify-center items-center">
                       <span className="block w-4 h-0.5 bg-current transform rotate-45 translate-y-0.5"></span>
                       <span className="block w-4 h-0.5 bg-current opacity-0"></span>
                       <span className="block w-4 h-0.5 bg-current transform -rotate-45 -translate-y-0.5"></span>
                     </div>
-                     <span className="text-sm font-medium">Back</span>
+                    <span className="text-sm font-medium">Back</span>
                   </button>
                 </div>
+              </div>
+              <div className="p-6">
                 <div className="space-y-4">
                   <Link href="#" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-medium text-[#2563EB] bg-[#F7FAFF] rounded-full px-4 py-2 text-center">
                     Traveler
@@ -129,19 +136,6 @@ export default function Header() {
                   <Link href="/pricing" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-medium text-[#525253] hover:text-gray-700 text-center">Pricing</Link>
                 </div>
                 <div className="border-t border-gray-200 pt-4 mt-6 space-y-4">
-                  {/* {mounted && !token && (
-                    <Link href="/login" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-medium text-[#001F63] hover:text-gray-700 text-center">
-                      Log In
-                    </Link>
-                  )}
-                  {mounted && token && (
-                    <button
-                      onClick={() => { handleLogout(); setMobileMenuOpen(false); }}
-                      className="block w-full text-sm font-medium text-[#001F63] hover:text-gray-700 text-center"
-                    >
-                      Logout
-                    </button>
-                  )} */}
                   <Link href="#" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-medium text-white bg-[#001F63] rounded-full px-4 py-2 text-center hover:bg-gray-900 shadow">
                     Contact Us
                   </Link>
