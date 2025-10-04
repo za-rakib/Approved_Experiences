@@ -115,3 +115,10 @@
   border-radius: 4px;
   border: 1px solid #ccc;
 }
+
+/* Mobile: shift the girl (subject) to the right */
+@media (max-width: 768px) {
+  .hero-bg {
+    object-position: 58% center !important;
+  }
+}
