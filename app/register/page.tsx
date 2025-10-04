@@ -87,6 +87,12 @@ export default function LoginPage() {
             >
               &larr; Back home
             </Link>
+            <Image
+              src="/logo.jpg"
+              alt="Approved Experiences Logo"
+              width={200}
+              height={90}
+            />
             <h1 className="mt-6 text-4xl font-bold text-gray-900">
               Create Account To Explore A <br /> World Of Savings
             </h1>
