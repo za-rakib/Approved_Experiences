@@ -71,7 +71,7 @@ export default function PaymentSuccess({
             <br />
             <a
               href="mailto:support@approvedexperiences.com"
-              className="text-[#525253]"
+              className="text-[#525253] underline"
             >
               support@approvedexperiences.com
             </a>
