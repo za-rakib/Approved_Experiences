@@ -86,10 +86,10 @@ export default function SavingsSection() {
             One week in {activeTab} for two adults.
           </p>
         </div>
-        <div className="mt-8 flex justify-center md:justify-start items-center gap-2">
+        <div className="mt-8 flex sm:justify-start items-center gap-2">
           <button
             onClick={() => setActiveTab("Mexico")}
-            className={`px-16 py-2 text-sm font-semibold rounded-md ${
+            className={`flex-1 sm:flex-none px-6 py-2 text-sm font-semibold rounded ${
               activeTab === "Mexico"
                 ? "text-[#2563EB] bg-[#E9F0FF]"
                 : "text-black hover:bg-slate-100"
@@ -99,7 +99,7 @@ export default function SavingsSection() {
           </button>
           <button
             onClick={() => setActiveTab("Miami")}
-            className={`px-4 py-2 text-sm font-semibold rounded-md ${
+            className={`flex-1 sm:flex-none px-6 py-2 text-sm font-semibold rounded ${
               activeTab === "Miami"
                 ? "text-[#2563EB] bg-[#E9F0FF]"
                 : "text-black hover:bg-slate-100"
