@@ -27,9 +27,9 @@ export default function HeroSection() {
           alt="Tropical beach resort paradise"
           fill
           priority
-          className="object-cover rounded-3xl"
+          className="object-cover rounded-3xl hero-bg"
         />
-        <div className="absolute inset-0  rounded-3xl" />
+        <div className="absolute inset-0 rounded-3xl"/>
       </div>
 
       {/* Become a member button */}
