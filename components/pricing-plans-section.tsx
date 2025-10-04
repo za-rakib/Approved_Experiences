@@ -92,15 +92,15 @@ export default function PricingPlansSection() {
       {isMobile ? (
         <div>
           {/* Mobile Tabs */}
-          <div className="flex justify-center gap-2 mb-8">
+          <div className="flex items-center gap-2 sm:gap-4 mb-8">
             {plans.map((plan: any) => (
               <button
-                key={plan.name}
+                key={plan.id}
                 onClick={() => setSelectedPlan(plan.name)}
-                className={`px-6 py-4 rounded-xl text-base font-semibold transition-colors ${
+                className={`flex-1 text-center py-2.5 text-sm font-semibold rounded-[8px] ${
                   selectedPlan === plan.name
-                    ? "bg-[#E9F0FF] text-[#2563EB]"
-                    : "bg-transparent text-[#001F63]"
+                    ? "bg-blue-100 text-blue-700"
+                    : "text-gray-600"
                 }`}
               >
                 {plan.name}
