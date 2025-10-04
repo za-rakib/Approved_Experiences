@@ -80,10 +80,10 @@ export default function LoginPage() {
 
         {/* Form section */}
         <div className="relative z-10 flex w-full  justify-center p-6 md:w-1/2 md:p-12">
-          <div className="w-full max-w-md">
+          <div className="w-full max-w-md text-center md:text-left">
             <Link
               href="/"
-              className="flex items-center text-[#525253] hover:text-gray-700"
+              className="flex items-center justify-center md:justify-start text-[#525253] hover:text-gray-700"
             >
               &larr; Back home
             </Link>
@@ -92,6 +92,7 @@ export default function LoginPage() {
               alt="Approved Experiences Logo"
               width={200}
               height={90}
+              className="mx-auto md:mx-0"
             />
             <h1 className="mt-6 text-4xl font-bold text-gray-900">
               Create Account To Explore A <br /> World Of Savings
