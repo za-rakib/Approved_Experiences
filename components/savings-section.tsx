@@ -149,7 +149,7 @@ export default function SavingsSection() {
                 <hr className="my-6 border-[#F7FAFF]" />
                 {/* bottom part */}
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
-                  <div>
+                  <div className="text-center sm:text-left">
                     <p className="text-sm text-[#0E0E0F]">Total Price</p>
                     <p className="text-2xl font-bold text-[#001F63]">
                       ${deal.travelerPrice.toLocaleString()}{" "}
@@ -159,7 +159,7 @@ export default function SavingsSection() {
                     </p>
                   </div>
                   <div className="w-full sm:w-auto bg-[#E9F0FF] text-[#001F63] text-sm font-semibold px-4 py-2 rounded-full whitespace-nowrap text-center">
-                    Savings with Traveler{" "}
+                    Savings with Traveler
                     <span className="font-bold">
                       ${deal.savings.toLocaleString()}
                     </span>
